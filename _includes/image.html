@@ -1,0 +1,31 @@
+<!--
+  Creates the image path.
+  If there's no "image-path" parameter, use the post title instead.
+  Image comes from "assets/posts/<date-title>"
+-->
+{% capture post-image-path %}
+  {% if page.image-dir %}
+    {{ page.date | date: "%Y-%m-%d" }}-{{ page.image-dir | slugify }}/{{ include.name }}
+  {% else %}
+    {{ page.date | date: "%Y-%m-%d" }}-{{ page.title | slugify }}/{{ include.name }}
+  {% endif %}
+{% endcapture %}
+
+<figure>
+  {% if include.href && include.post %}
+    <a href="{{ include.href }}">
+      <img src="/assets/posts/{{ post-image-path | slugify: 'raw'}}">
+    </a>
+  
+  {% elsif include.caption && include.post %}
+    <img src="/assets/posts/{{ post-image-path | slugify: 'raw'}}">
+    <figcaption class="text-smaller caption">{{ include.caption }}</figcaption>
+  
+  {% elsif include.post %}
+    <img src="/assets/posts/{{ post-image-path | slugify: 'raw'}}">
+  
+  {% else %}
+    <!-- This is just a regular image, coming from "assets/images" -->
+    <img src="/assets/images/{{ include.name }}">
+  {% endif %}
+</figure>

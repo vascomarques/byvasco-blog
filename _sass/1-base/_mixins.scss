@@ -1,0 +1,62 @@
+
+$images-path: '/assets/images';
+
+
+// Sets background properties
+@mixin background($name: null, $color: null, $pos: "center center", $repeat: "no-repeat", $size: null) {
+  background: url(#{$images-path}/#{$name}) #{$color} #{$pos} #{$repeat} ;
+  background-size: $size ;
+}
+
+
+// Sets all necessary font properties
+@mixin font($size, $line-height, $letter-spacing: null, $weight: null, $family: null, $color: null) {
+  font-family: $family ;
+  font-size: $size + px ;
+  line-height: $line-height + px ;
+  
+  @if $letter-spacing {
+    letter-spacing: $letter-spacing + px ;
+  }
+  
+  font-weight: $weight ;
+  color: $color ;
+}
+
+
+// Sets width and height, with 'px' as the default unir
+@mixin wh($width, $height: null, $unit: 'px') {
+  width: $width#{$unit};
+  
+  // If $height is null, make it the same as $width
+  @if $height {
+    height: $height#{$unit};
+  } @else {
+    height: $width#{$unit};
+  }
+}
+
+
+// Sets the display to flex, and creates centered columns
+@mixin flex-2-columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+// Sets display to flex, and assigns other properties
+@mixin flex($justify: null, $align: null, $direction: null) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+
+// Sets a min-width media query
+@mixin mq-min($size) {
+  @media (min-width: $size + px) {
+    @content
+  }
+}

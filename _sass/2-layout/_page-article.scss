@@ -1,0 +1,53 @@
+
+/* Page - Article
+   ==================== */
+
+.article-full {
+
+  .article-content {
+    margin-bottom: 160px;
+  }
+
+  p {
+    @extend .body-small;
+    margin-bottom: 24px;
+  }
+
+  h4 {
+    margin: 100px 0 48px;
+  }
+
+  figure {
+    width: calc(100% + 324px);
+    margin: 100px 0 100px -162px;
+  }
+
+  figcaption {
+    text-align: center;
+    margin-top: 24px;
+  }
+
+  .link-back {
+    @include flex(flex-start, center);
+  
+    &::before {
+      content: '';
+      display: block;
+      @include wh(28, 12);
+      @include background('icons/icon-arrow-left.svg');
+      margin-right: 20px;
+    }
+  }
+
+	@include mq-min(768) {
+    margin-bottom: 200px;
+
+    .article-header {
+      margin-bottom: 120px;
+    }
+
+    .article-timestamp {
+      margin-bottom: 64px;
+    }
+	}
+}

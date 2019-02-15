@@ -1,0 +1,49 @@
+
+/* Page - Articles
+   ==================== */
+
+/* Articles List */
+.section-articles {
+
+  .articles-list {
+    a {
+      display: block;
+    }
+    
+    .article-preview {
+      transition: all 120ms;
+    }
+
+    .article-details,
+    .article-categories {
+      @include flex();
+    }
+
+    .article-category:not(:last-child)::after {
+      content: '/';
+      display: inline-block;
+      padding: 0 6px;
+    }
+
+    // This is the " in "
+    .category-separator { font-style: italic; }
+  }
+
+	@include mq-min(768) {
+		.articles-list {
+      margin-bottom: 160px;
+
+      li {
+        margin-bottom: 120px;
+
+        &:hover {
+          transform: translate(4px);
+        }
+      }
+
+      .article-title {
+        margin-bottom: 16px;
+      }
+    }
+	}
+}

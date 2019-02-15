@@ -1,0 +1,26 @@
+
+/* General Base Styles
+   ==================== */
+  
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  color: $color__text-dark;
+  -webkit-tap-highlight-color: transparent;
+}
+  
+body {
+  font-family: $font__main;
+  -webkit-font-smoothing: antialiased;
+}
+
+ol,
+li {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}

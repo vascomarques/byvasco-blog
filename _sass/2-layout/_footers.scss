@@ -1,0 +1,17 @@
+
+/* Footers
+   ==================== */
+
+/* Footer - Main */
+.footer-main {
+  padding: 60px 0;
+
+  @include mq-min(768) {
+    padding: 160px 0;
+
+    .social-links {
+      @include flex(space-between, center);
+      width: 50%;
+    }
+  }
+}

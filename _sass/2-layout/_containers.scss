@@ -1,0 +1,26 @@
+
+/* Containers
+   ==================== */
+
+.container {
+	width: 100%;
+	max-width: 1420px;
+	padding: 0 20px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	position: relative;
+
+	&-flex {
+		@include flex(space-between, center);
+	}
+
+	&-small {
+		@extend .container;
+		max-width: 950px;
+	}
+
+	&-smaller {
+		@extend .container;
+		max-width: 716px;
+	}
+}
