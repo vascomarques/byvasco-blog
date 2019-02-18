@@ -11,7 +11,7 @@
 	}
 
 	.hero-intro p {
-		margin-bottom: 16px;
+		max-width: 500px
 	}
 
 	@include mq-min(850) {
@@ -20,7 +20,7 @@
 
 	@include mq-min(1100) {
 		.hero-title {
-			margin-bottom: 120px;
+			margin-bottom: 80px;
 		}
 	}
 }
