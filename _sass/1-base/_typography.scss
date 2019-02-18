@@ -146,12 +146,12 @@ figcaption {
 
 /* Mozilla based browsers */
 ::-moz-selection {
-	background-color: $color__accent;
-	color: #FFF;
+	background-color: transparentize($color__accent, .94);
+	color: #2A02E2;
 }
 
 /* Works in Safari */
 ::selection {
-	background-color: $color__accent;
-	color: #FFF;
+	background-color: transparentize($color__accent, .94);
+	color: #2A02E2;
 }
