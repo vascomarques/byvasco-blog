@@ -44,17 +44,14 @@
 .header-page {
 
   @include mq-min(768) {
-    .page-title {
-      position: absolute;
-      left: 10px;
-      top: 0;
-      transform: rotate(-180deg);
-      writing-mode: vertical-lr;
-    }
-
-    .page-intro {
-      padding-top: 30px;
-      margin-bottom: 180px;
-    }
+    margin-bottom: 200px;
+    
+    // .page-title {
+    //   position: absolute;
+    //   left: 10px;
+    //   top: 0;
+    //   transform: rotate(-180deg);
+    //   writing-mode: vertical-lr;
+    // }
   }
 }
