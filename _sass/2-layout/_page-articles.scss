@@ -6,12 +6,24 @@
 .section-articles {
 
   .articles-list {
+    display: grid;
+
     a {
       display: block;
     }
     
     .article-preview {
       transition: all 120ms;
+      margin-bottom: 80px;
+    }
+
+    .article-cover {
+      margin-bottom: 32px;
+      max-width: 440px;
+    }
+
+    .article-title {
+      margin-bottom: 10px;
     }
 
     .article-details,
@@ -31,13 +43,19 @@
 
 	@include mq-min(768) {
 		.articles-list {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 30px;
       margin-bottom: 160px;
 
-      li {
-        margin-bottom: 140px;
+      .article-preview {
+        margin-bottom: 100px;
 
         &:hover {
-          transform: translate(4px);
+          transform: translateY(-4px);
+        }
+
+        &:nth-child(even) {
+          justify-self: end;
         }
       }
 

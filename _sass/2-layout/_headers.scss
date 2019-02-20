@@ -42,6 +42,7 @@
 
 
 .header-page {
+  margin-bottom: 80px;
 
   @include mq-min(768) {
     margin-bottom: 200px;
