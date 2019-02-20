@@ -45,13 +45,13 @@ So, this time, I grabbed a pen and just sketched the ideas that were floating ar
 #### To the screen
 When I feel that I dumped all my ideas onto paper, I move to the computer, where I start to play around with typography and colors.
 
-{% include image.html post=true name="image-1.png" %}
+{% include image.html type="post" name="image-1.png" %}
 
 However, my process is kind of organic. What I mean by this, is that I don’t follow a strict path or series of steps. I like to go back and forth between my notepad and my computer.
 
 It was at this time that I realized we should find a typeface for body copy.
 
-  {% include image.html post=true name="image-2.png" href="https://rsms.me/inter/" %}
+  {% include image.html type="post" name="image-2.png" href="https://rsms.me/inter/" %}
 
 Ana has been using [Raleway](https://fonts.google.com/specimen/Raleway) across all her assets, and I ended up finding [Inter UI](https://rsms.me/inter/), a somewhat neutral looking typeface that was designed to be easily legible on computer screens. I love how they look when combined!
 
@@ -65,7 +65,7 @@ So I played around a bit and ended up creating this concept for the Home.
 
   
   
-  {% include image.html post=true name="image-3.png" %}
+  {% include image.html type="post" name="image-3.png" %}
 
 There’s no pictures or colors, I just wanted to figure out how I could layout the different sections to use the content we have using the chosen typefaces.
 
@@ -73,7 +73,7 @@ Here’s a quick overview of its different parts, starting with the top section.
 
 
 
-  {% include image.html post=true name="image-4.png" caption="The top section is as simple as it gets" %}
+  {% include image.html type="post" name="image-4.png" caption="The top section is as simple as it gets" %}
 
 The header will have the same picture of Ana uses on all social media channels on the left, and a basic navigation menu on the right, with links to the other pages.
 
@@ -81,7 +81,7 @@ I think the “Hello you” and the “This is Ana Guerra” blocks help to crea
 
 
   
-  {% include image.html post=true name="image-5.png" %}
+  {% include image.html type="post" name="image-5.png" %}
 
 Now, on those 3 sections (Podcast, Blog and Newsletter), the idea is that each title works as a divider between them, and while we’re scrolling through the page it slowly slides to the left.
 
@@ -91,7 +91,7 @@ This title part actually started with a dash in between the words. But then I ha
 
 
 
-  {% include image.html post=true name="image-6.png" caption="The initial idea and a small change afterward" %}
+  {% include image.html type="post" name="image-6.png" caption="The initial idea and a small change afterward" %}
 
 I like it!
 
@@ -99,7 +99,7 @@ The Newsletter section is a bit different than the other two.
 
 
 
-  {% include image.html post=true name="image-7.png" %}
+  {% include image.html type="post" name="image-7.png" %}
 
 [The newsletter](https://chat.whatsapp.com/invite/H7NiyFlukld7scG6OuDnPp) is delivered through Whatsapp.
 
@@ -109,7 +109,7 @@ To finish things up, there’s the footer.
 
 
 
-  {% include image.html post=true name="image-8.png" %}
+  {% include image.html type="post" name="image-8.png" %}
 
 It basically consists of a series of icons that link to all the different platforms where Ana is.
 

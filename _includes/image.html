@@ -3,6 +3,7 @@
   If there's no "image-path" parameter, use the post title instead.
   Image comes from "assets/posts/<date-title>"
 -->
+
 {% capture post-image-path %}
   {% if page.image-dir %}
     {{ page.date | date: "%Y-%m-%d" }}-{{ page.image-dir | slugify }}/{{ include.name }}
@@ -11,21 +12,30 @@
   {% endif %}
 {% endcapture %}
 
-<figure>
-  {% if include.href && include.post %}
+{% if include.href && include.type == 'post' %}
+  <figure>
     <a href="{{ include.href }}">
       <img src="/assets/posts/{{ post-image-path | slugify: 'raw'}}">
     </a>
-  
-  {% elsif include.caption && include.post %}
+  </figure>
+
+{% elsif include.caption && include.type == 'post' %}
+  <figure>
     <img src="/assets/posts/{{ post-image-path | slugify: 'raw'}}">
     <figcaption class="text-smaller caption">{{ include.caption }}</figcaption>
-  
-  {% elsif include.post %}
+  </figure>
+
+{% elsif include.type == 'post' %}
+  <figure>
     <img src="/assets/posts/{{ post-image-path | slugify: 'raw'}}">
-  
-  {% else %}
-    <!-- This is just a regular image, coming from "assets/images" -->
-    <img src="/assets/images/{{ include.name }}">
-  {% endif %}
-</figure>
+  </figure>
+
+{% elsif include.type == 'post-cover' %}
+  <figure class="article-cover">
+    <img src="/assets/posts/{{ include.name | slugify: 'raw'}}">
+  </figure>
+
+{% else %}
+  <!-- This is just a regular image, coming from "assets/images" -->
+  <img src="/assets/images/{{ include.name }}">
+{% endif %}

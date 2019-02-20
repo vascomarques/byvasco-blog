@@ -7,17 +7,23 @@
 
     <header class="header-page">
       <div class="container-small">
-        <h1 class="title-2 page-title">Thoughts and ideas into words.</h1>
+        <h1 class="title-2 page-title">{{ page.page-title }}</h1>
       </div>
     </header>
     
     <section class="page-content section-articles">
-      <div class="container-smaller">
+      <div class="container-small">
         <ul class="articles-list">
           {% for post in site.posts %}
             <li class="article-preview">
               <a href="{{ post.url }}">
-                <h2 class="article-title title-5 title-light">{{ post.title }}</h2>
+                {% capture image-path %}
+                  {{ post.date | date: "%Y-%m-%d" }}-{{ post.image-dir | slugify }}/{{ post.name }}/image-cover.png
+                {% endcapture %}
+
+                {% include image.html type="post-cover" name=image-path %}
+
+                <h2 class="article-title body-large">{{ post.title }}</h2>
               </a>
 
               <div class="article-details">

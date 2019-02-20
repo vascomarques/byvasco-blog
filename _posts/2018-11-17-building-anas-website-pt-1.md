@@ -35,7 +35,7 @@ the blog, with all the blog posts
 #### Colors, typography, and overall feel
 Ana has already defined the color palette for her brand, and she’s also been using Raleway as the main typeface, so that’s awesome. I might introduce another one a bit more neutral for body copy, but I still need to explore a bit on that.
 
-  {% include image.html post=true name="image-1.png" %}
+  {% include image.html type="post" name="image-1.png" %}
 
 I’m happy that the colors are pretty bright and vivid, because that reenforces who she is: a person full of energy and with lots of will to do stuff!
 

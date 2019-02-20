@@ -2,6 +2,7 @@
 layout: article
 
 title: "On Design and Fixing Old Cars"
+image-dir: "On Design and Fixing Old Cars"
 
 permalink: /articles/:title
 
