@@ -4,27 +4,34 @@
 
 .article-full {
 
+  .article-header {
+    margin-bottom: 56px;
+  }
+
+  .article-timestamp {
+    margin-bottom: 32px;
+  }
+
   .article-content {
     margin-bottom: 160px;
   }
 
   p {
     @extend .body-small;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 
   h4 {
-    margin: 100px 0 48px;
+    margin: 64px 0 24px;
   }
 
   figure {
-    width: calc(100% + 324px);
-    margin: 100px 0 100px -162px;
+    margin: 64px 0 64px;
   }
 
   figcaption {
     text-align: center;
-    margin-top: 24px;
+    margin-top: 12px;
   }
 
   .link-back {
@@ -48,6 +55,19 @@
 
     .article-timestamp {
       margin-bottom: 64px;
+    }
+
+    h4 {
+      margin: 100px 0 48px;
+    }
+
+    figure {
+      width: calc(100% + 324px);
+      margin: 100px 0 100px -162px;
+    }
+
+    figcaption {
+      margin-top: 24px;
     }
 	}
 }
