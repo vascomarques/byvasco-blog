@@ -75,7 +75,7 @@ h4 { @extend .title-4; }
 
 		&-large { @include font(26, 40, 0); }
 		
-		&-small { @include font(20, 36, 0); }
+		&-small { @include font(19, 32, -0.04); }
 
 		&-smaller { @include font(16, 24, 0.2); }
 	}
@@ -112,6 +112,7 @@ p { @extend .body; }
 }
 
 p a {
+	font-weight: 500;
 	text-decoration: underline;
 	// text-decoration-color: $color__accent;
 
