@@ -8,13 +8,13 @@
     <article class="article-full">
       <div class="container-small">
         <header class="article-header">
-          <h1 class="article-title title-2">{{ page.title }}</h1>
+          <h1 class="article-title title-article">{{ page.title }}</h1>
         </header>
       </div>
       
       <div class="container-smaller">
-        <time class="article-timestamp">{{ page.date | date: "%B %d, %Y" }}</time>
-
+        <time class="article-date">{{ page.date | date: "%B %d, %Y" }}</time>
+        
         <div class="article-content">
           {{ content }}
         </div>

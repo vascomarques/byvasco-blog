@@ -8,10 +8,16 @@
 	
 	.hero-title {
 		margin-bottom: 32px;
+		max-width: 760px;
 	}
 
 	.hero-intro p {
-		max-width: 500px
+		max-width: 558px;
+		margin-bottom: 8px;
+
+		&.body-large {
+			margin: 100px 0 24px;
+		}
 	}
 
 	@include mq-min(850) {
@@ -21,85 +27,6 @@
 	@include mq-min(1100) {
 		.hero-title {
 			margin-bottom: 80px;
-		}
-	}
-}
-
-
-/* Recent Articles */
-.section-projects {
-	margin-bottom: 120px;
-
-	.project-image {
-		margin-bottom: 40px;
-	}
-
-	.project-info {
-		max-width: 676px;
-		margin: auto;
-	}
-
-	.project-title {
-		@include flex();
-		margin-bottom: 12px;
-
-		.project-name {
-			font-weight: 800;
-
-			&::after {
-				content: '–';
-				display: inline-block;
-				margin: 0 12px;
-				font-weight: 400;
-			}
-		}
-	}
-
-	@include mq-min(850) {
-		margin-bottom: 240px;
-
-		.project-preview {
-			margin-bottom: 140px;
-		}
-	}
-}
-
-
-/* Get In Touch */
-.get-in-touch {
-	margin-bottom: 64px;
-
-	.section-title {
-		margin-bottom: 48px;
-	}
-
-	.contact-email {
-		margin-bottom: 32px;
-	}
-
-	.social-links {
-		column-count: 2;
-
-		li {
-			margin-bottom: 16px;
-		}
-	}
-
-
-	// Desktop rules
-	@include mq-min(768) {
-		margin-bottom: 180px;
-
-		.section-title {
-			margin-bottom: 80px;
-		}
-		
-		.contact-email {
-			margin-bottom: 48px;
-		}
-
-		.social-links {
-			column-count: 1;
 		}
 	}
 }
