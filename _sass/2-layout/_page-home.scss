@@ -8,15 +8,12 @@
 	
 	.hero-title {
 		margin-bottom: 32px;
+		max-width: 760px;
 	}
 
 	.hero-intro p {
 		max-width: 558px;
 		margin-bottom: 8px;
-
-		a {
-			font-weight: 600;
-		}
 
 		&.body-large {
 			margin: 100px 0 24px;

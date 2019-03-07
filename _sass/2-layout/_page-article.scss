@@ -8,8 +8,8 @@
     margin-bottom: 56px;
   }
 
-  .article-timestamp {
-    margin-bottom: 32px;
+  .article-date {
+    margin-bottom: 56px;
   }
 
   .article-content {
@@ -17,7 +17,7 @@
   }
 
   p {
-    @extend .body-small;
+    @extend .body-serif;
     margin-bottom: 16px;
   }
 
@@ -50,11 +50,11 @@
     margin-bottom: 200px;
 
     .article-header {
-      margin-bottom: 120px;
+      margin-bottom: 64px;
     }
 
-    .article-timestamp {
-      margin-bottom: 64px;
+    .article-date {
+      margin-bottom: 88px;
     }
 
     p {
@@ -62,7 +62,7 @@
     }
 
     h4 {
-      margin: 80px 0 32px;
+      margin: 100px 0 32px;
     }
 
     figure {

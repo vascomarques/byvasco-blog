@@ -37,7 +37,7 @@ But there’s also another side of the coin. I don’t believe in pure, 100% ori
 
 What I do believe is that I’m in a constant “sponge mode”. Constantly observing the world around me, the products and interfaces I interact with, the movies I watch and the books that I read. As a result, I’m building like a mental library of ideas that I can use in my work.
 
-*[Everything is a Remix](https://www.youtube.com/watch?v=nJPERZDfyWc)* by Kirby Ferguson is a great video that relates to this line of thought.
+[Everything is a Remix](https://www.youtube.com/watch?v=nJPERZDfyWc) by Kirby Ferguson is a great video that relates to this line of thought.
 
 So, this time, I grabbed a pen and just sketched the ideas that were floating around in my head. Nothing fancy or stunning.
 

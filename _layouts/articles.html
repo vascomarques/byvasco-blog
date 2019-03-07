@@ -7,38 +7,24 @@
 
     <header class="header-page">
       <div class="container-small">
-        <h1 class="title-2 page-title">{{ page.page-title }}</h1>
+        <h1 class="title-2 page-title">{{page.page-title}}</h1>
       </div>
     </header>
     
     <section class="page-content section-articles">
-      <div class="container-small">
+      <div class="container-smaller">
         <ul class="articles-list">
           {% for post in site.posts %}
             <li class="article-preview">
-              <a href="{{ post.url }}">
-                {% capture image-path %}
-                  {{ post.date | date: "%Y-%m-%d" }}-{{ post.image-dir | slugify }}/{{ post.name }}/image-cover.png
-                {% endcapture %}
+              <a href="{{post.url}}">
+                <h2 class="article-title title-5">{{post.title}}</h2>
 
-                {% include image.html type="post-cover" name=image-path %}
-
-                <h2 class="article-title body-large">{{ post.title }}</h2>
+                <time class="article-date">{{ post.date | date: "%B %d, %Y" }}</time>
               </a>
 
-              <div class="article-details">
-                <time>{{ post.date | date: "%B %d, %Y" }}</time>
+              <p class="article-excerpt body-serif-small">{{ post.content | strip_html | truncatewords: 16 }}</p>
 
-                <!-- {% if post.categories != empty %}
-                  <p class="subtitle category-separator">, in&nbsp;</p>
-                
-                  <div class="article-categories">
-                    {% for category in post.categories %}
-                      <a href="/articles/category/{{ category | lowercase }}" class="article-category subtitle">{{ category }}</a>
-                    {% endfor %}
-                  </div>
-                {% endif %} -->
-              </div>
+              <a href="{{post.url}}" class="link-smaller">Read more</a>
             </li>
           {% endfor %}
         </ul>

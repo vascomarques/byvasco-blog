@@ -5,19 +5,15 @@
 
 /* Titles */
 .title {
-	&-1 {
-		@include font(54, 56, -1.9, 900);
-	}
+	&-1 { @include font(54, 56, -1.9, 900); }
 
-	&-2 {
-		@include font(44, 48, -1.23, 800);
-	}
+	&-2 { @include font(44, 48, -1.23, 800); }
 
-	&-3 {
-		@include font(36, 48, 0.11, 700);
-	}
+	&-3 { @include font(36, 48, 0.11, 700); }
 
 	&-4 { @include font(30, 36, -0.6, 800); }
+
+	&-article { @include font(72, 80, -1.6, 400, $font__secondary); }
 
 	// Desktop sizes
 	@include mq-min(768) {
@@ -27,15 +23,9 @@
 
 		&-3 { @include font(44, 52, -0.24, 800); }
 		
-		&-4 { @include font(36, 40, -0.7, 800); }
+		&-4 { @include font(32, 36, -1, 700); }
 	
-		&-5 {
-			@include font(32, 36, -0.2, 800);
-
-			&.title-light {
-				@include font(32, 36, -0.22, 400);
-			}
-		}
+		&-5 { @include font(30, 36, -0.6, 700); }
 	}
 }
 
@@ -69,6 +59,34 @@ h4 { @extend .title-4; }
 		font-weight: 600;
 	}
 
+	// Links inside
+
+	a {
+		@extend .link;
+	}
+
+
+	// Serif
+	&-serif {
+		@include font(24, 36, -0.2, 400, $font__secondary);
+
+		a {
+			font-weight: 400;
+			text-decoration: underline;
+			transition: all 100ms;
+
+			&:hover {
+				color: $color__text-light;
+				text-decoration-color: $color__text-light;
+			}
+		}
+	}
+
+	&-serif-small { @include font(22, 32, 0, 400, $font__secondary); }
+
+
+
+
 	// Desktop sizes
 	@include mq-min(768) {
 		@include font(22, 40, 0, 400);
@@ -87,13 +105,21 @@ p { @extend .body; }
 
 /* Links */
 .link {
-	@include font(16, 24, 0.18, 600);
+	font-weight: 600;
+	text-decoration: underline;
+	text-decoration-color: transparentize($color__text-dark, .8);
+	transition: all 120ms;
 
-	&-small {
-		@extend .body-small;
-		text-decoration: underline;
+	&:hover { text-decoration-color: $color__text-dark; }
 
-		&:hover { opacity: .7; }
+	&-smaller {
+		@extend .body-smaller;
+		font-weight: 600;
+		line-height: 17px;
+		border-bottom: 2px solid transparentize($color__text-dark, .9);
+		transition: all 120ms;
+		
+		&:hover { border-color: $color__text-dark; }
 	}
 
 	&-large {
@@ -102,44 +128,14 @@ p { @extend .body; }
 
 		&:hover { opacity: .7; }
 	}
-
-	// Desktop sizes
-	@include mq-min(768) {
-		@include font(18, 24, 0.2, 600);
-
-		&-large { @include font(26, 40, 0); }
-	}
-}
-
-p a {
-	font-weight: 500;
-	text-decoration: underline;
-	text-decoration-color: transparentize($color__text-dark, .9);
-
-	&:active {
-		color: $color__accent;
-	}
-
-	@include mq-min(768) {
-		&:hover {
-			text-decoration-color: $color__text-dark;
-		}
-	}
-}
-
-a.subtitle {
-	text-decoration: underline;
-
-	&:hover {
-		opacity: .7;
-	}
 }
 
 
 /* Other Elements */
 time {
-	@extend .subtitle;
-	display: block;
+	@extend .body-smaller;
+	color: $color__text-secondary;
+	display: inline-block;
 }
 
 figcaption {

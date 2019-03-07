@@ -9,12 +9,16 @@
     display: grid;
 
     a {
-      display: block;
+      display: inline-block;
     }
     
     .article-preview {
+      padding: 80px 0;
       transition: all 120ms;
-      margin-bottom: 80px;
+
+      &:not(:last-child) {
+        border-bottom: 2px solid transparentize($color: $color__text-dark, $amount: 0.92);
+      }
     }
 
     .article-cover {
@@ -26,9 +30,13 @@
       margin-bottom: 10px;
     }
 
-    .article-details,
-    .article-categories {
-      @include flex();
+    .article-date {
+      margin-bottom: 16px;
+    }
+
+    .article-excerpt {
+      max-width: 500px;
+      margin-bottom: 16px;
     }
 
     .article-category:not(:last-child)::after {
@@ -43,24 +51,22 @@
 
 	@include mq-min(768) {
 		.articles-list {
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 30px;
-      margin-bottom: 160px;
+      margin: -80px 0 160px;
 
       .article-preview {
-        margin-bottom: 100px;
-
-        &:hover {
-          transform: translateY(-4px);
-        }
-
-        &:nth-child(even) {
-          justify-self: end;
-        }
+        padding: 120px 0;
       }
 
       .article-title {
         margin-bottom: 16px;
+      }
+
+      .article-date {
+        margin-bottom: 20px;
+      }
+
+      .article-excerpt {
+        margin-bottom: 32px;
       }
     }
 	}
