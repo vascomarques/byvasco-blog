@@ -37,6 +37,17 @@ $images-path: '/assets/images';
 }
 
 
+// Defines position as 'absolute' and sets coordinates
+@mixin pos-abs($top: null, $right: null, $bottom: null, $left: null) {
+  position: absolute;
+
+  @if $top { top: $top + px }
+  @if $right { top: $right + px }
+  @if $bottom { top: $bottom + px }
+  @if $left { top: $left + px }
+}
+
+
 // Sets the display to flex, and creates centered columns
 @mixin flex-2-columns {
   display: flex;

@@ -2,31 +2,53 @@
 /* Page - Home
    ==================== */
 
-/* Hero */
-.hero-home {
-	margin: 0 0 100px 0;
-	
-	.hero-title {
-		margin-bottom: 32px;
-		max-width: 760px;
-	}
+/* Intro */
+section.intro {
+	margin-bottom: 80px;
 
-	.hero-intro p {
-		max-width: 558px;
-		margin-bottom: 8px;
+	.intro-text {
+		max-width: 676px;
 
-		&.body-large {
-			margin: 100px 0 24px;
+		.location {
+			position: relative;
+		}
+
+		.country {
+			@include pos-abs();
+			opacity: 0;
+			margin-left: 10px;
 		}
 	}
 
-	@include mq-min(850) {
-		margin: 0 0 180px 0;
+
+	@include mq-min(768) {
+		margin-bottom: 140px;
+		
+		.intro-text {
+			.country {
+				opacity: 0.4;
+			}
+		}
+	}
+}
+
+
+/* Details */
+section.details {
+	margin-bottom: 200px;
+	
+	.body-small {
+		margin: 80px 0 32px;
 	}
 
-	@include mq-min(1100) {
-		.hero-title {
-			margin-bottom: 80px;
+	p:not(.body-small) {
+		margin-bottom: 16px;
+	}
+
+	
+	@include mq-min(768) {
+		.body-small {
+			margin: 140px 0 48px;
 		}
 	}
 }
