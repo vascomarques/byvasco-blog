@@ -4,69 +4,52 @@
 
 /* Articles List */
 .section-articles {
+  .article-preview {
+    margin-bottom: 80px;
+    transition: all 120ms;
+  }
 
-  .articles-list {
-    display: grid;
+  a {
+    display: block;
+  }
 
-    a {
-      display: inline-block;
-    }
-    
-    .article-preview {
-      padding: 80px 0;
-      transition: all 120ms;
-
-      &:not(:last-child) {
-        border-bottom: 2px solid transparentize($color: $color__text-dark, $amount: 0.92);
-      }
-    }
-
-    .article-cover {
-      margin-bottom: 32px;
-      max-width: 440px;
-    }
-
-    .article-title {
-      margin-bottom: 10px;
-    }
-
-    .article-date {
-      margin-bottom: 16px;
-    }
-
-    .article-excerpt {
-      max-width: 500px;
-      margin-bottom: 16px;
-    }
-
-    .article-category:not(:last-child)::after {
-      content: '/';
-      display: inline-block;
-      padding: 0 6px;
-    }
-
-    // This is the " in "
-    .category-separator { font-style: italic; }
+  .article-title {
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid rgba(17, 17, 26, 0.1);
+    display: inline-block;
   }
 
 	@include mq-min(768) {
-		.articles-list {
-      margin: -80px 0 160px;
-
-      .article-preview {
-        padding: 120px 0;
-      }
+    .article-preview {
+      margin-bottom: 120px;
 
       .article-title {
-        margin-bottom: 16px;
+        margin-bottom: 12px;
+        position: relative;
+        transition: all 120ms;
+
+        &::before {
+          content: '';
+          display: block;
+          @include wh(30px);
+          @include background('icons/icon-pointer.svg');
+          @include pos-abs($left: -50);
+          opacity: 0;
+          transition: all 120ms;
+        }
       }
 
-      .article-date {
-        margin-bottom: 20px;
-      }
-
-      .article-excerpt {
-        margin-bottom: 32px;
+      &:hover {
+        .article-title {
+          color: $color__accent;
+          border-color: transparentize($color__accent, .8);
+        }
+  
+        .article-title::before {
+          opacity: 1;
+          left: -46px;
+        }
       }
     }
 	}

@@ -6,7 +6,7 @@
     {% include header.html %}
 
     <header class="header-page">
-      <div class="container-small">
+      <div class="container">
         <h1 class="title-2 page-title">{{page.page-title}}</h1>
       </div>
     </header>
@@ -17,12 +17,10 @@
           {% for post in site.posts %}
             <li class="article-preview">
               <a href="{{post.url}}">
-                <h2 class="article-title title-5">{{post.title}}</h2>
+                <h2 class="article-title body-large">{{post.title}}</h2>
 
                 <time class="article-date">{{ post.date | date: "%B %d, %Y" }}</time>
               </a>
-
-              <p class="article-excerpt body-serif-small">{{ post.content | strip_html | truncatewords: 16 }}</p>
             </li>
           {% endfor %}
         </ul>

@@ -7,7 +7,7 @@
 .title {
 	&-1 { @include font(54, 56, -1.9, 900); }
 
-	&-2 { @include font(36, 48, -0.06, 400); }
+	&-2 { @include font(34, 48, -0.2, 400); }
 
 	&-3 { @include font(36, 48, 0.11, 700); }
 
@@ -49,9 +49,9 @@ h4 { @extend .title-4; }
 .body {
 	@include font(20, 32, 0.2, 400);
 
-	&-large { @include font(24, 32, 0, 400); }
+	&-large { @include font(22, 28, 0, 400); }
 	
-	&-small { @include font(14, 20, -0.1, 400); }
+	&-small { @include font(16, 24, -0.03, 400); }
 
 	&-smaller { @include font(14, 20, 0.1, 400); }
 
@@ -91,9 +91,7 @@ h4 { @extend .title-4; }
 	@include mq-min(768) {
 		@include font(22, 40, 0, 400);
 
-		&-large { @include font(26, 40, 0); }
-		
-		&-small { @include font(16, 24, -0.1); }
+		&-large { @include font(26, 32, 0); }
 
 		&-smaller { @include font(16, 24, 0.2); }
 	}
@@ -133,9 +131,8 @@ p { @extend .body; }
 
 /* Other Elements */
 time {
-	@extend .body-smaller;
-	color: $color__text-secondary;
-	display: inline-block;
+	@extend .body-small;
+	display: block;
 }
 
 figcaption {

@@ -6,8 +6,8 @@
 .header-main {
   padding: 60px 0;
 
-  .container {
-    justify-content: flex-end;
+  .logo {
+    justify-self: end;
   }
 
   @include mq-min(768) {
@@ -21,17 +21,10 @@
 
 
 .header-page {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
+  padding-bottom: 80px;
 
   @include mq-min(768) {
     margin-bottom: 200px;
-    
-    // .page-title {
-    //   position: absolute;
-    //   left: 10px;
-    //   top: 0;
-    //   transform: rotate(-180deg);
-    //   writing-mode: vertical-lr;
-    // }
   }
 }

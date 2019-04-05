@@ -4,15 +4,11 @@
 
 .container {
 	width: 100%;
-	max-width: calc(1240px + 40px);
-	padding: 0 20px;
+	max-width: calc(1240px + 60px);
+	padding: 0 30px;
 	margin: 0 auto;
 	box-sizing: border-box;
 	position: relative;
-
-	&-flex {
-		@include flex(space-between, center);
-	}
 
 	&-small {
 		@extend .container;
@@ -22,5 +18,21 @@
 	&-smaller {
 		@extend .container;
 		max-width: 716px;
+	}
+}
+
+.grid {
+	display: grid;
+	grid-gap: 30px;
+
+	&-2 {
+		@extend .grid;
+		grid-template-columns: 1fr;
+	}
+
+	@include mq-min(768) {
+		&-2 {
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 }

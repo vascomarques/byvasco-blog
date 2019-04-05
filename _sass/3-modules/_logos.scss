@@ -4,13 +4,13 @@
 
 .logo {
   display: block;
-  @include wh(64);
+  @include wh(64px);
 
   &-dark {
     @include background('logos/logo-dark.svg', $size: cover);
   }
 
   @include mq-min(768) {
-    @include wh(80);
+    @include wh(80px);
   }
 }

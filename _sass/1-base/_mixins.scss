@@ -25,14 +25,14 @@ $images-path: '/assets/images';
 
 
 // Sets width and height, with 'px' as the default unir
-@mixin wh($width, $height: null, $unit: 'px') {
-  width: $width#{$unit};
+@mixin wh($width, $height: null) {
+  width: $width;
   
   // If $height is null, make it the same as $width
   @if $height {
-    height: $height#{$unit};
+    height: $height;
   } @else {
-    height: $width#{$unit};
+    height: $width;
   }
 }
 
@@ -42,9 +42,9 @@ $images-path: '/assets/images';
   position: absolute;
 
   @if $top { top: $top + px }
-  @if $right { top: $right + px }
-  @if $bottom { top: $bottom + px }
-  @if $left { top: $left + px }
+  @if $right { right: $right + px }
+  @if $bottom { bottom: $bottom + px }
+  @if $left { left: $left + px }
 }
 
 
