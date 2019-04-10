@@ -1,11 +1,20 @@
 
-/* Page - Article
-   ==================== */
 
+/** 
+ * Layout:
+ * Page - Article
+ */
+
+
+// Full Article
 .article-full {
 
   .article-header {
-    margin-bottom: 56px;
+    margin-bottom: 220px;
+  }
+
+  .article-title {
+    margin-bottom: 32px;
   }
 
   .article-date {
@@ -21,17 +30,42 @@
     margin-bottom: 16px;
   }
 
+  h3,
   h4 {
-    margin: 64px 0 24px;
+    margin: 80px 0 32px;
   }
 
+  h3 { @extend .title-3; }
+  
+  h4 { @extend .title-4; }
+
   figure {
-    margin: 48px 0 48px;
+    margin: 100px 0 90px;
+
+    img {
+      max-width: none;
+      width: calc(100% + 80px);
+      margin-left: -40px;
+    }
   }
 
   figcaption {
     text-align: center;
-    margin-top: 12px;
+    margin-top: 24px;
+  }
+
+  ul,
+  ol,
+  li {
+    list-style: initial;
+  }
+
+  ul {
+    padding-left: 20px;
+
+    li {
+      padding-left: 4px;
+    }
   }
 
   .link-back {
@@ -45,33 +79,4 @@
       margin-right: 20px;
     }
   }
-
-	@include mq-min(768) {
-    margin-bottom: 200px;
-
-    .article-header {
-      margin-bottom: 64px;
-    }
-
-    .article-date {
-      margin-bottom: 88px;
-    }
-
-    p {
-      margin-bottom: 24px;
-    }
-
-    h4 {
-      margin: 100px 0 32px;
-    }
-
-    figure {
-      width: calc(100% + 324px);
-      margin: 100px 0 100px -162px;
-    }
-
-    figcaption {
-      margin-top: 24px;
-    }
-	}
 }

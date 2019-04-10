@@ -1,38 +1,33 @@
 
-/* Containers
-   ==================== */
 
+/** 
+ * Layout:
+ * Containers
+ */
+
+
+// Main container
 .container {
-	width: 100%;
-	max-width: calc(1240px + 60px);
-	padding: 0 30px;
-	margin: 0 auto;
-	box-sizing: border-box;
-	position: relative;
+  width: 100%;
+  max-width: calc(1300px + 120px);
+  padding: 0 60px;
+  margin: auto;
+  position: relative;
 
-	&-small {
-		@extend .container;
-		max-width: calc(586px + 40px);
-	}
-
-	&-smaller {
-		@extend .container;
-		max-width: 716px;
-	}
+  &-narrow {
+    @extend .container;
+    max-width: calc(635px + 120px);
+  }
 }
 
+
+// Grids structure
 .grid {
-	display: grid;
-	grid-gap: 30px;
-
-	&-2 {
-		@extend .grid;
-		grid-template-columns: 1fr;
-	}
-
-	@include mq-min(768) {
-		&-2 {
-			grid-template-columns: 1fr 1fr;
-		}
-	}
+  display: grid;
+  grid-gap: 30px;
+  
+  &-2 {
+    @extend .grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

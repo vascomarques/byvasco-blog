@@ -1,5 +1,5 @@
 ---
 layout: articles
-title: ByVasco | Articles
+title: Articles
 page-title: My thoughts and ideas into words.
 ---

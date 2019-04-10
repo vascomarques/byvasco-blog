@@ -1,157 +1,87 @@
 
-/* Typography
-   ==================== */
+
+/** 
+ * Base:
+ * Typography
+ */
 
 
-/* Titles */
+// Titles
 .title {
-	&-1 { @include font(54, 56, -1.9, 900); }
-
-	&-2 { @include font(34, 48, -0.2, 400); }
-
-	&-3 { @include font(36, 48, 0.11, 700); }
-
-	&-4 { @include font(30, 36, -0.6, 800); }
-
-	&-article { @include font(72, 80, -1.6, 400, $font__secondary); }
-
-	// Desktop sizes
-	@include mq-min(768) {
-		&-1 { @include font(74, 88, -2.2, 900); }
-
-		&-2 { @include font(40, 64, -0.06, 400); }
-
-		&-3 { @include font(44, 52, -0.24, 800); }
-		
-		&-4 { @include font(32, 36, -1, 700); }
+	&-1 { @include font(56, 64, -1, $regular); }
 	
-		&-5 { @include font(30, 36, -0.6, 700); }
-	}
-}
-
-h4 { @extend .title-4; }
-
-
-
-/* Subtitles */
-.subtitle {
-	@include font(13, 20, 0.5, 400, $family: $font__secondary);
-
-	// Desktop sizes
-	@include mq-min(768) {
-		@include font(14, 24, 0.2, 400);
-	}
+	&-2 { @include font(40, 48, -0.06, $regular); }
+	
+	&-3 { @include font(32, 40, -0.1, $medium); }
+	
+	&-4 { @include font(26, 32, -0.16, $medium); }
 }
 
 
 
-/* Body */
+// Body
 .body {
-	@include font(20, 32, 0.2, 400);
+	@include font(22, 36, 0.1, $regular);
 
-	&-large { @include font(22, 28, 0, 400); }
+	&-large { @include font(26, 36, 0.08, $regular); }
 	
-	&-small { @include font(16, 24, -0.03, 400); }
+	&-small { @include font(18, 24, -0.2, $regular); }
 
-	&-smaller { @include font(14, 20, 0.1, 400); }
-
-	&-heavy {
-		font-weight: 600;
-	}
-
-	// Links inside
-
-	a {
-		@extend .link;
-	}
-
-
-	// Serif
 	&-serif {
-		@include font(24, 36, -0.2, 400, $font__secondary);
+		@include font(23, 32, -0.06, $regular, $font-serif);
 
 		a {
-			font-weight: 400;
+			font-weight: $regular;
 			text-decoration: underline;
-			transition: all 100ms;
+			transition: all 60ms;
 
 			&:hover {
-				color: $color__text-light;
-				text-decoration-color: $color__text-light;
+				opacity: .6;
 			}
 		}
 	}
-
-	&-serif-small { @include font(22, 32, 0, 400, $font__secondary); }
-
-
-
-
-	// Desktop sizes
-	@include mq-min(768) {
-		@include font(22, 40, 0, 400);
-
-		&-large { @include font(26, 32, 0); }
-
-		&-smaller { @include font(16, 24, 0.2); }
-	}
+	
+	a { @extend .link; }
 }
 
 p { @extend .body; }
 
 
 
-/* Links */
+// Links
 .link {
-	color: $color__accent;
+	color: get-color(brand, main);
 	text-decoration: underline;
-	text-decoration-color: transparentize($color__accent, .8);
+	text-decoration-color: transparentize(get-color(brand, main), .8);
 	transition: all 120ms;
 
-	&:hover { text-decoration-color: $color__accent; }
-
-	&-smaller {
-		@extend .body-smaller;
-		font-weight: 600;
-		line-height: 17px;
-		border-bottom: 2px solid transparentize($color__text-dark, .9);
-		transition: all 120ms;
-		
-		&:hover { border-color: $color__text-dark; }
+	&-nav {
+		@include font(13, 16, 0.7, $medium);
+		text-transform: uppercase;
 	}
 
-	&-large {
-		@include font(18, 24, 0.16, 400);
-		text-decoration: underline;
-
-		&:hover { opacity: .7; }
-	}
+	&:hover { text-decoration-color: get-color(brand, main); }
 }
 
 
-/* Other Elements */
+// Other Elements
 time {
 	@extend .body-small;
 	display: block;
 }
 
 figcaption {
-	@extend .body-smaller;
-	color: $color__text-secondary;
+	@include font(14, 16, 0.06, $regular);
 }
 
 
 
-/* Text Selection */
-
-/* Mozilla based browsers */
+// Text Selection
 ::-moz-selection {
-	background-color: transparentize($color__accent, .94);
+	background-color: transparentize(get-color(brand, main), .94);
 	color: #2A02E2;
 }
-
-/* Works in Safari */
 ::selection {
-	background-color: transparentize($color__accent, .94);
+	background-color: transparentize(get-color(brand, main), .94);
 	color: #2A02E2;
 }

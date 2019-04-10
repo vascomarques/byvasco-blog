@@ -1,30 +1,44 @@
 
-/* Headers
-   ==================== */
 
-/* Header - Main */
+/** 
+ * Layout:
+ * Header
+ */
+
+
+// Main Footer
 .header-main {
-  padding: 60px 0;
+  padding: 120px 0;
+
+  .header-navigation {
+    align-self: center;
+  }
 
   .logo {
     justify-self: end;
   }
 
-  @include mq-min(768) {
-    padding: 120px 0;
-
-    .nav-main a {
-      margin-left: 100px;
+  .link-nav {
+    position: relative;
+    
+    &:after {
+      content: '';
+      display: block;
+      @include wh(24px);
+      @include background('icons/icon-pointer.svg', $size: 100%);
+      @include pos-abs(26px, $left: 50%);
+      opacity: 0;
+      transition: all 120ms;
+      transform: rotate(-90deg) translateY(-50%);
     }
-  }
-}
 
-
-.header-page {
-  margin-bottom: 40px;
-  padding-bottom: 80px;
-
-  @include mq-min(768) {
-    margin-bottom: 200px;
+    &:hover {
+      color: get-color(brand, main);
+      
+      &:after {
+        opacity: 1;
+        top: 24px;
+      }
+    }
   }
 }

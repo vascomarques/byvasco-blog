@@ -17,7 +17,7 @@ This is the beginning of a series where me and Ana will document the full proces
 After we landed on this conclusion, we met for a coffee after work to chat a bit about what this website should and shouldn’t do, and what content should be in there. Basically, we defined the general concept/idea.
 
 
-#### What kind of website will this be?
+### What kind of website will this be?
 I would call this a personal website. On the home page there’s gonna be a short introduction of who Ana is and what she does, and then **3 different sections** to showcase the different types of content she creates (podcast, the blog, and the newsletter), where the podcast and the blog sections will have the most recent episodes/posts.
 
 Besides the home page, there will be a few other pages:
@@ -32,7 +32,7 @@ the blog, with all the blog posts
 - and in the future we might build a gear page, to showcase all the different equipment she uses on a daily basis
 
 
-#### Colors, typography, and overall feel
+### Colors, typography, and overall feel
 Ana has already defined the color palette for her brand, and she’s also been using Raleway as the main typeface, so that’s awesome. I might introduce another one a bit more neutral for body copy, but I still need to explore a bit on that.
 
   {% include image.html type="post" name="image-1.png" %}
@@ -42,7 +42,7 @@ I’m happy that the colors are pretty bright and vivid, because that reenforces
 Overall, the goal is to make this look simple, modern, young and to the point.
 
 
-#### First steps
+### First steps
 The first thing I did was to create the folder structure on my computer. I have 4 different folders here:
 
 - **Docs**: where I’ll save all kinds of documents Ana sends me
@@ -60,7 +60,7 @@ What I also like to do is to create a couple of artboards in Sketch to build the
 Lastly, I make sure I get all the written content that should be displayed on the website so that I can **design around the content and not the other way around** — after all, the content is the most important thing!
 
 
-#### What’s next?
+### What’s next?
 Ok so next I’ll be exploring a bit on pen and paper just to get my ideas going on how the layout could be.
 
 Another thing is to look for other people’s personal websites just to get a sense of what’s out there, and after that, it’s time to start designing!

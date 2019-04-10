@@ -3,5 +3,5 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: index
-title: ByVasco
+title: A designer and developer creating things for the digital world
 ---

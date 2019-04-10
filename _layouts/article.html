@@ -6,20 +6,17 @@
     {% include header.html %}
 
     <article class="article-full">
-      <div class="container-small">
+      <div class="container">
         <header class="article-header">
-          <h1 class="article-title title-article">{{ page.title }}</h1>
+          <h1 class="article-title title-1">{{ page.title }}</h1>
+          <time class="article-date">{{ page.date | date: "%B %d, %Y" }}</time>
         </header>
       </div>
       
-      <div class="container-smaller">
-        <time class="article-date">{{ page.date | date: "%B %d, %Y" }}</time>
-        
+      <div class="container-narrow">      
         <div class="article-content">
           {{ content }}
         </div>
-
-        <a href="/articles" class="body-small link-back">Back to articles</a>
       </div>
     </article>
 

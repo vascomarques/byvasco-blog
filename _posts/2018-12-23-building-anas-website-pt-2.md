@@ -14,7 +14,7 @@ Onto the second part of this series where I’m creating a website for my friend
 
 She is also doing it on her podcast, here’s the first episode, the second one is coming soon.
 
-#### A quick recap from the last article:
+### A quick recap from the last article:
 - We know what kind of website this is and what the goal is — to serve as a digital home for all the content and projects Ana has.
 
 - And we also know all the pages needed.
@@ -28,7 +28,7 @@ She is also doing it on her podcast, here’s the first episode, the second one 
 After this, I have kind of a clear idea of how the final product could look like.
 
 
-#### Starting out
+### Starting out
 First, a confession of a bad habit I have.
 
 Usually, in the starting phase of a project, I go straight to Google or Dribbble to grab some inspiration. I think this is a bad habit because I’m not exercising my mind to come up with an original solution for the given problem.
@@ -42,7 +42,7 @@ What I do believe is that I’m in a constant “sponge mode”. Constantly obse
 So, this time, I grabbed a pen and just sketched the ideas that were floating around in my head. Nothing fancy or stunning.
 
 
-#### To the screen
+### To the screen
 When I feel that I dumped all my ideas onto paper, I move to the computer, where I start to play around with typography and colors.
 
 {% include image.html type="post" name="image-1.png" %}
@@ -56,7 +56,7 @@ It was at this time that I realized we should find a typeface for body copy.
 Ana has been using [Raleway](https://fonts.google.com/specimen/Raleway) across all her assets, and I ended up finding [Inter UI](https://rsms.me/inter/), a somewhat neutral looking typeface that was designed to be easily legible on computer screens. I love how they look when combined!
 
 
-#### Creating the first Home concept
+### Creating the first Home concept
 After exploring a bit, I started to make a basic mockup for the Home page.
 
 One thing that went through my mind was that, besides the blog posts, there’s not much text to put on the website. And I wanted to find a way to somehow use typography to keep things interesting but at the same time maintaining the clean and simple vibe to it.
@@ -114,17 +114,17 @@ To finish things up, there’s the footer.
 It basically consists of a series of icons that link to all the different platforms where Ana is.
 
 
-#### Inspiration
+### Inspiration
 Well, in this particular case I almost did no research to check out what’s currently out there, mainly because I got to that concept I showed you above pretty quickly after exploring for a few hours.
 
 I already had a list of 4 or 5 websites that served as a reference, that we collected on the first meeting we had. Other than that I only navigated a bit through my [Typography Board on Pinterest](https://www.pinterest.pt/vascogmm/typography/) and [Typeonly](http://typeonly.tumblr.com/) to get the creative juices flowing.
 
 
-#### Communication and getting feedback
+### Communication and getting feedback
 Me and Ana have been using Whatsapp to talk and to get her opinions and feedback regarding the work, I’ve been using [Marvel](https://marvelapp.com/) to do that job.
 
 
-#### Next things to do
+### Next things to do
 The next step is to create the mockups for all the remaining pages.
 
 Once I get all done, I’ll bring some colors in and take care of things in a more detailed level.

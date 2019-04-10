@@ -1,5 +1,18 @@
 
+//
+// Mixins
+//
+
+
+// Sets variables
 $images-path: '/assets/images';
+
+$breakpoints: (
+  x-small: 576px,
+  small: 768px,
+  medium: 992px,
+  large: 1200px
+);
 
 
 // Sets background properties
@@ -15,9 +28,7 @@ $images-path: '/assets/images';
   font-size: $size + px ;
   line-height: $line-height + px ;
   
-  @if $letter-spacing {
-    letter-spacing: $letter-spacing + px ;
-  }
+  @if $letter-spacing { letter-spacing: $letter-spacing + px ; }
   
   font-weight: $weight ;
   color: $color ;
@@ -37,25 +48,6 @@ $images-path: '/assets/images';
 }
 
 
-// Defines position as 'absolute' and sets coordinates
-@mixin pos-abs($top: null, $right: null, $bottom: null, $left: null) {
-  position: absolute;
-
-  @if $top { top: $top + px }
-  @if $right { right: $right + px }
-  @if $bottom { bottom: $bottom + px }
-  @if $left { left: $left + px }
-}
-
-
-// Sets the display to flex, and creates centered columns
-@mixin flex-2-columns {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-
 // Sets display to flex, and assigns other properties
 @mixin flex($justify: null, $align: null, $direction: null) {
   display: flex;
@@ -65,9 +57,42 @@ $images-path: '/assets/images';
 }
 
 
+// Set absolute position and passed coordinates
+@mixin pos-abs($top: null, $right: null, $bottom: null, $left: null) {
+  position: absolute;
+
+  @if $top { top: $top; }
+  @if $right { right: $right; }
+  @if $bottom { bottom: $bottom; }
+  @if $left { left: $left; }
+}
+
+
 // Sets a min-width media query
-@mixin mq-min($size) {
-  @media (min-width: $size + px) {
-    @content
+@mixin mq-min($breakpoint) {
+  @media (min-width: $breakpoint + px) {
+    @content;
+  }
+}
+
+@mixin mq-after($breakpoint) {
+  $breakpoint-value: map-get($breakpoints, $breakpoint);
+  
+  @media (min-width: $breakpoint-value) {
+    @content;
+  }
+}
+
+@mixin mq-before($breakpoint) {
+  $breakpoint-value: map-get($breakpoints, $breakpoint);
+  
+  @if $breakpoint-value {
+    @media (max-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
   }
 }

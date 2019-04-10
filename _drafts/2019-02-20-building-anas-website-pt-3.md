@@ -1,7 +1,7 @@
 ---
 layout: article
 
-title: "Building Ana's Website, Pt 3"
+title: "Building Ana's Website, Pt 3 | ByVasco"
 image-dir: "Building Anas Website Pt 3"
 
 permalink: /articles/:title
@@ -14,7 +14,7 @@ Onto the second part of this series where I’m creating a website for my friend
 
 She is also doing it on her podcast, here’s the first episode, the second one is coming soon.
 
-#### A quick recap from the last article:
+### A quick recap from the last article:
 - We know what kind of website this is and what the goal is — to serve as a digital home for all the content and projects Ana has.
 
 - And we also know all the pages needed.
@@ -28,7 +28,7 @@ She is also doing it on her podcast, here’s the first episode, the second one 
 After this, I have kind of a clear idea of how the final product could look like.
 
 
-#### Starting out
+### Starting out
 First, a confession of a bad habit I have.
 
 Usually, in the starting phase of a project, I go straight to Google or Dribbble to grab some inspiration. I think this is a bad habit because I’m not exercising my mind to come up with an original solution for the given problem.
@@ -42,7 +42,7 @@ What I do believe is that I’m in a constant “sponge mode”. Constantly obse
 So, this time, I grabbed a pen and just sketched the ideas that were floating around in my head. Nothing fancy or stunning.
 
 
-#### To the screen
+### To the screen
 When I feel that I dumped all my ideas onto paper, I move to the computer, where I start to play around with typography and colors.
 
 {% include image.html type="post" name="image-1.png" %}

@@ -1,16 +1,14 @@
 
-/* Logos
-   ==================== */
 
+/** 
+ * Layout:
+ * Page - Article
+ */
+
+
+// Main Logo
 .logo {
   display: block;
-  @include wh(64px);
-
-  &-dark {
-    @include background('logos/logo-dark.svg', $size: cover);
-  }
-
-  @include mq-min(768) {
-    @include wh(80px);
-  }
+  @include wh(80px);
+  @include background('logos/logo-dark.svg', $size: cover);
 }

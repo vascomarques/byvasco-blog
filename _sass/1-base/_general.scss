@@ -1,18 +1,23 @@
 
-/* General Base Styles
-   ==================== */
-  
+
+/** 
+ * Base:
+ * General
+ */
+
+
 * {
   margin: 0;
   padding: 0;
   outline: none;
   text-decoration: none;
-  color: $color__text-dark;
+  color: get-color(text, primary);
   -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
 }
   
 body {
-  font-family: $font__main;
+  font-family: $font-main;
   -webkit-font-smoothing: antialiased;
 }
 

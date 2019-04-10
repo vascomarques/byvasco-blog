@@ -1,13 +1,21 @@
 
-/* Page - Home
-   ==================== */
 
-/* Intro */
-section.intro {
-	margin-bottom: 80px;
+/** 
+ * Layout:
+ * Page - Home
+ */
+
+
+.page-home {
+	margin-bottom: 200px;
+
+	.home-intro {
+		margin-bottom: 170px;
+	}
 
 	.intro-text {
-		max-width: 676px;
+		max-width: 635px;
+		line-height: 64px;
 
 		.location {
 			position: relative;
@@ -15,40 +23,16 @@ section.intro {
 
 		.country {
 			@include pos-abs();
-			opacity: 0;
+			opacity: 0.4;
 			margin-left: 10px;
 		}
 	}
 
+	.content-section {
+		margin-bottom: 100px;
 
-	@include mq-min(768) {
-		margin-bottom: 140px;
-		
-		.intro-text {
-			.country {
-				opacity: 0.4;
-			}
-		}
-	}
-}
-
-
-/* Details */
-section.details {
-	margin-bottom: 200px;
-	
-	.body-small {
-		margin: 80px 0 32px;
-	}
-
-	p:not(.body-small) {
-		margin-bottom: 16px;
-	}
-
-	
-	@include mq-min(768) {
-		.body-small {
-			margin: 140px 0 48px;
+		p {
+			margin-bottom: 16px;
 		}
 	}
 }

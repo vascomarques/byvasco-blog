@@ -1,21 +1,17 @@
 
-/* Footers
-   ==================== */
 
-/* Footer - Main */
+/** 
+ * Layout:
+ * Footers
+ */
+
+
+// Main Footer
 .footer-main {
-  padding: 60px 0;
+  padding: 100px 0;
 
-  .container-flex {
-    flex-direction: column;
-  }
-
-  @include mq-min(768) {
-    padding: 160px 0;
-
-    .social-links {
-      @include flex(space-between, center);
-      width: 100%;
-    }
+  .social-links {
+    display: flex;
+    justify-content: space-between;
   }
 }

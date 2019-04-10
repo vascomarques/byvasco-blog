@@ -1,12 +1,46 @@
 
-/* Page - Articles
-   ==================== */
 
-/* Articles List */
-.section-articles {
+/** 
+ * Layout:
+ * Page - Article
+ */
+
+
+.page-articles {
+  
+  .header-page {
+    margin-bottom: 310px;
+  }
+
   .article-preview {
-    margin-bottom: 80px;
-    transition: all 120ms;
+    margin-bottom: 120px;
+
+    .article-title {
+      margin-bottom: 12px;
+      position: relative;
+
+      &::before {
+        content: '';
+        display: block;
+        @include wh(30px);
+        @include background('icons/icon-pointer.svg');
+        @include pos-abs($left: -50px);
+        opacity: 0;
+        transition: all 120ms;
+      }
+    }
+
+    &:hover {
+      .article-title {
+        color: get-color(brand, main);
+        border-color: transparentize(get-color(brand, main), .8);
+      }
+
+      .article-title::before {
+        opacity: 1;
+        left: -46px;
+      }
+    }
   }
 
   a {
@@ -19,38 +53,4 @@
     border-bottom: 2px solid rgba(17, 17, 26, 0.1);
     display: inline-block;
   }
-
-	@include mq-min(768) {
-    .article-preview {
-      margin-bottom: 120px;
-
-      .article-title {
-        margin-bottom: 12px;
-        position: relative;
-        transition: all 120ms;
-
-        &::before {
-          content: '';
-          display: block;
-          @include wh(30px);
-          @include background('icons/icon-pointer.svg');
-          @include pos-abs($left: -50);
-          opacity: 0;
-          transition: all 120ms;
-        }
-      }
-
-      &:hover {
-        .article-title {
-          color: $color__accent;
-          border-color: transparentize($color__accent, .8);
-        }
-  
-        .article-title::before {
-          opacity: 1;
-          left: -46px;
-        }
-      }
-    }
-	}
 }
