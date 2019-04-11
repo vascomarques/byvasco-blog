@@ -15,19 +15,28 @@
 {% if include.href && include.type == 'post' %}
   <figure>
     <a href="{{ include.href }}">
-      <img src="/assets/posts/{{ post-image-path | slugify: 'raw'}}">
+      <img
+        src="/assets/posts/{{ post-image-path | slugify: 'raw'}}"
+        {% if include.alt %}alt="{{ include.alt }}"{% endif %}
+      />
     </a>
   </figure>
 
 {% elsif include.caption && include.type == 'post' %}
   <figure>
-    <img src="/assets/posts/{{ post-image-path | slugify: 'raw'}}">
+    <img
+      src="/assets/posts/{{ post-image-path | slugify: 'raw'}}"
+      {% if include.alt %}alt="{{ include.alt }}"{% endif %}
+    />
     <figcaption class="text-smaller caption">{{ include.caption }}</figcaption>
   </figure>
 
 {% elsif include.type == 'post' %}
   <figure>
-    <img src="/assets/posts/{{ post-image-path | slugify: 'raw'}}">
+    <img 
+      src="/assets/posts/{{ post-image-path | slugify: 'raw'}}"
+      {% if include.alt %}alt="{{ include.alt }}"{% endif %}
+    />
   </figure>
 
 {% elsif include.type == 'post-cover' %}
@@ -37,5 +46,9 @@
 
 {% else %}
   <!-- This is just a regular image, coming from "assets/images" -->
-  <img src="/assets/images/{{ include.name }}">
+  <img
+    src="/assets/images/{{ include.name }}"
+    {% if include.alt %}alt="{{ include.alt }}"{% endif %}
+  />
+    
 {% endif %}
