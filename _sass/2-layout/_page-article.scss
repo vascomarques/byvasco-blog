@@ -30,9 +30,16 @@
     margin-bottom: 28px;
   }
 
+  p code,
+  li code {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 4px;
+  }
+
   h3,
   h4 {
-    margin: 80px 0 32px;
+    padding: 60px 0 32px;
   }
 
   h3 { @extend .title-3; }
@@ -54,18 +61,34 @@
     margin-top: 24px;
   }
 
-  ul,
-  ol,
   li {
-    list-style: initial;
+    position: relative;
+
+    &:before {
+      content: '';
+      display: block;
+      @include wh(6px);
+      background-color: get-color(text, primary);
+      border-radius: 6px;
+      @include pos-abs(16px, $left: -14px);
+    }
   }
 
   ul {
     padding-left: 20px;
+    margin-bottom: 28px;
 
     li {
+      @extend .body-serif;
       padding-left: 4px;
+      margin-bottom: 12px;
     }
+  }
+
+  pre {
+    background-color: #f7f7f9;
+    padding: 20px 24px;
+    margin-bottom: 28px;
   }
 
   hr {

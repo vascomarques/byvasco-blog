@@ -74,6 +74,14 @@ figcaption {
 	@include font(14, 16, 0.06, $regular);
 }
 
+pre,
+code {
+	@include font(14, 24, 0, $regular, $font-code);
+}
+
+li a {
+	@extend .link;
+}
 
 
 // Text Selection
