@@ -1,5 +1,5 @@
 ---
-layout: index
+layout: default
 title: A designer and developer creating things for the digital world
 page-name: home
 ---

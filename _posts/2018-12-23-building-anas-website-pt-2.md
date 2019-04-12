@@ -3,10 +3,6 @@ layout: article
 
 title: "Building Ana's Website, Pt 2"
 image-dir: "Building Anas Website Pt 2"
-
-permalink: /articles/:title
-
-categories: [Ana's Website, Process]
 ---
 
 

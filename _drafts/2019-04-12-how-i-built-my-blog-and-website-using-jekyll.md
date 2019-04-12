@@ -1,12 +1,6 @@
 ---
 layout: article
-
 title: "How I built my blog and website using Jekyll"
-image-dir: "Weekly Log"
-
-permalink: /articles/:title
-
-categories: [Weekly Log]
 ---
 
 
@@ -14,6 +8,8 @@ I’ve finally launched the blog here on my website! I wanted to do this for som
 
 ### Too long, didn't read
 This is kind of a large post, so here're the some links for the different sections.
+- [Intro to Jekyll](#intro-to-jekyll)
+  - [Markdown](#markdown)
 - [Getting started](#getting-started)
 - [Setting up Jekyll](#setting-up-jekyll)
 - [Project structure](#project-structure)
@@ -23,9 +19,12 @@ This is kind of a large post, so here're the some links for the different sectio
   - [Adding logic](#adding-logic)
   - [Using includes](#using-includes)
 - [Creating pages - Articles](#creating-pages-articles)
+  - [Using loops](#using-loops)
+- [Creating articles](#creating-articles)
+  - [Using drafts](#using-drafts)
 
 
-### Enter Jekyll
+### Intro to Jekyll
 Amongst a lot of options of platforms that I could’ve used to build this, I choose [Jekyll](https://jekyllrb.com/), which is a static site generator.
 So, you have a bunch of source files in your local machine, and you can “compile” them into plain HTML/CSS/JavaScript. There are a lot of articles out there that do a much better job explaining how this works. [This one](https://wsvincent.com/what-is-a-static-site-generator/) by Will Vincent, [or this](https://dev.to/ruthreyer/what-are-static-site-generators-356p) by Ruth Reyer are great.
 
@@ -33,7 +32,12 @@ For me, there are two main reasons to use a static site generator, in this case 
 - **Cost**: It’s super low cost to something like this. I basically just pay for my domain name, because I use Netlify to host my files.
 - **Simplicity**: There are a lot of things that a SSG doesn’t allow you to do. But for my needs, it’s just perfect. I can write articles, I can create static pages, make a portfolio (which I’ll eventually create), and that’s about it. I don’t need much more that that.
 
-There are a lot of other great reasons to use something like this, like security, scalability and speed for example.
+There are other great reasons to use something like this, like security, scalability and speed for example.
+
+#### Markdown
+Another thing before we get started. To write articles on Jekyll, we'll use [Markdown](https://daringfireball.net/projects/markdown/) which is text-to-HTML markup language.
+
+If you're not familiar with it, I recommend you to watch [this video](https://www.youtube.com/watch?v=HUBNt18RFbo&t=971s) by Brad Traversy, check out [this cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet), or just search the web!
 
 
 ### Getting started
@@ -108,12 +112,15 @@ Then I created some new directories:
 - ```_includes``` to store HTML blocks like the site header or footer.
 - ```_layouts``` to store the layouts for the pages, like the articles page.
 - ```_sass``` where all the Sass files are.
+- ```assets``` where we'll place all the assets we need, like images.
 
 Here's how my site structure is looking at this stage:
 
 ```
 ├── Gemfile
 ├── Gemfile.lock
+├── assets
+├── _sass
 ├── _config.yml
 ├── _drafts
 ├── _includes
@@ -366,7 +373,7 @@ When I was creating the directories inside the site's root, I created an ```_inc
 </head>
 ```
 
-And now that we're here, let's do the same thing, but for the ```<header>``` code. So, create a ```header.html``` file and put its code inside:
+And now that we're here, let's do the same thing, but for the ```<header>``` code, and I'll also create another one for the site ```<footer>```. So, create a ```header.html``` file and put its code inside:
 
 {% include code/code-caption.html caption="_includes/header.html" %}
 ```html
@@ -379,6 +386,25 @@ And now that we're here, let's do the same thing, but for the ```<header>``` cod
     <a href="/" class="logo"></a>
   </div>
 </header>
+```
+
+And on ```footer.html```:
+
+{% include code/code-caption.html caption="_layouts/footer.html" %}
+```html
+<footer class="footer-main">
+  <div class="container grid-2">
+    <a href="mailto:hello@byvasco.com" class="link-nav">Email</a>
+
+    <ul class="social-links">
+      <li><a href="https://dribbble.com/byvasco" target="_blank" class="link-nav">Dribbble</a></li>
+      <li><a href="https://medium.com/@byvasco" target="_blank" class="link-nav">Medium</a></li>
+      <li><a href="https://www.instagram.com/byvasco/" target="_blank" class="link-nav">Instagram</a></li>
+      <li><a href="https://www.twitter.com/vascogmm/" target="_blank" class="link-nav">Twitter</a></li>
+      <li><a href="https://github.com/vascomarques" target="_blank" class="link-nav">Github</a></li>
+    </ul>
+  </div>
+</footer>
 ```
 
 Next, got to the ```default.html``` file, remove the ```<head>```and the ```<header>``` code, and type this in:
@@ -399,5 +425,216 @@ Next, got to the ```default.html``` file, remove the ```<head>```and the ```<hea
 </html>
 ```
 
+Now, instead of having to repeat all that code for every layout, we can just include them where we want them to be. Another advantage for doing this is that if we want to change something in our code, we just need to change it once, and it will reflect those changes everywhere.
+
+When using ```include```, you just need to make sure the file exists in the ```_includes``` directory. As you can see, to include a file it's as easy as this:
+```liquid
+{{ "{% include filename.html " }}%}
+```
+
+You can also organize your include files in directories, and access them like this:
+```liquid
+{{ "{% include directory/filename.html " }}%}
+```
+
+Awesome, we're done here. Now I'll just quickly create another layout file, and I'll name it ```article.html```. This is the layout that I'll use to render my individual articles.
+
+{% include code/code-caption.html caption="_layouts/article.html" %}
+```html
+<!DOCTYPE html>
+<html lang="en">
+  {{ "{% include head.html " }}%}
+
+  <body>
+    {{ "{% include header.html " }}%}
+
+    <article class="article-full">
+      <div class="container">
+        <header class="article-header">
+          <h1 class="article-title title-1">{{ "{{ page.title " }}}}</h1>
+          <time class="article-date">{{ "{{ page.date | date: '%B %d, %Y' " }}}}</time>
+        </header>
+      </div>
+      
+      <div class="container-narrow">      
+        <div class="article-content">
+          {{ "{{ content " }}}}
+        </div>
+      </div>
+    </article>
+
+    {{ "{% include footer.html " }}%}
+  </body>
+</html>
+```
+
+By the way, take a look at how I'm outputting ```page.date```:
+
+```html
+{{ "{{ page.date | date: '%B %d, %Y' " }}}}
+```
+
+I'm using what's called a _filter_. I won't get into much detail, but just know that in this ```date``` case, we can format it in different ways. Using that format, the date will be showed like this: "April 11, 2019". Here's a usefull list of [Jekyll date formatting examples](http://alanwsmith.com/jekyll-liquid-date-formatting-examples), writen by Alan Smith.
+
+The Home page is done, and we have all the necessary layouts and includes. Now it's time to take care of the Articles page.
 
 ### Creating pages - Articles
+First, let's just take an overview of our file structure.
+
+```
+├── Gemfile
+├── Gemfile.lock
+├── assets
+├── _sass
+├── _config.yml
+├── _drafts
+├── _includes
+│   ├── head.html
+│   ├── header.html
+│   └── footer.html
+├── _layouts
+│   ├── default.html
+│   └── article.html
+├── _posts
+│   └── 2019-04-11-welcome-to-jekyll.md
+└── index.md
+```
+
+Ok, time to create the ```articles.md``` file:
+
+{% include code/code-caption.html caption="articles.md" %}
+```html
+---
+layout: default
+title: Articles
+page-name: articles
+---
+
+<header class="header-page">
+  <div class="container">
+    <h1 class="title-2 page-title">My thoughts and ideas into words.</h1>
+  </div>
+</header>
+
+<section class="page-content section-articles">
+  <div class="container-narrow">
+    <ul class="articles-list">
+      {{ "{% for post in site.posts " }}%}
+        <li class="article-preview">
+          <a href="{{ "{{ post.url " }}}}">
+            <h2 class="article-title body-large">{{ "{{ post.title " }}}}</h2>
+            <time class="article-date">{{ "{{ post.date | date: '%B %d, %Y' " }}}}</time>
+          </a>
+        </li>
+      {{ "{% endfor " }}%}
+    </ul>
+  </div>
+</section>
+```
+
+Almost the same as the ```index.md```, but using something new: a _for loop_. Let's take a quick look at it, and how it's used to display all the articles.
+
+
+#### Using loops
+You're probably familiar of how _for loops_ work. Here we use it to iterate through ```site.posts``` (```site``` is a global variable, that contains all the ```posts```). We can now display a block of code for every existing ```post```. In this case, I created an ```<li>``` with the ```post.title``` and the ```post.date```.
+
+```html
+{{ "{% for post in site.posts " }}%}
+  <li class="article-preview">
+    <a href="{{ "{{ post.url " }}}}">
+      <h2 class="article-title body-large">{{ "{{ post.title " }}}}</h2>
+      <time class="article-date">{{ "{{ post.date | date: '%B %d, %Y' " }}}}</time>
+    </a>
+  </li>
+{{ "{% endfor " }}%}
+```
+
+So, you start the loop with ```{{ "{% for post in site.posts " }}%}```, and end with ```{{ "{% endfor " }}%}```. Everything in between that will be displayed for every iteration, and we also get access to that ```post``` variable, which in this case, contains information related to the current post iteration.
+
+I'll talk about creating posts later, but they also have a _front matter_ where you can create variables. Here, the ```post.title``` is set in a ```title``` variable, in the post _front matter_.
+
+The ```post.url``` and the ```post.date``` are also post-related variables, but they're automatically created by Jekyll.
+
+At this point, I'm done with the pages for the site! Here's how your Articles page should be looking on the browser:
+
+img er
+
+Now let's take a look on how to create new posts!
+
+
+### Creating articles
+We already have that "Welcome to Jekyll", so let's and inspect what's inside that file. All your posts should be inside the ```_posts``` directory.
+
+{% include code/code-caption.html caption="_posts/2019-04-12-welcome-to-jekyll.md" %}
+```html
+---
+layout: post
+title:  "Welcome to Jekyll!"
+date:   2019-04-12 17:40:41 +0100
+categories: jekyll update
+---
+You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+
+(...)
+```
+
+You can see that this is basically the same thing we have on the ```index.md``` and on the ```articles.md``` pages. Theres a _front matter_ with some variables, and everything after that is the article content.
+
+Something important we should pay atention to, is the format we use to name our post file.
+
+```
+yyyy-mm-dd-title.md
+```
+
+They should start with **4** digits for the year, **2** for the month, **2** for the day, and then the title. Everything should be separated by hyphens.
+
+In my case, I only use a ```layout``` and a ```title``` variable:
+
+```
+---
+layout: article
+title: "How I built my blog and website using Jekyll"
+---
+```
+
+There are much more to know about this, but remember that I want this to be as simple as possible. If you want to know more, here's the [documentation for posts](https://jekyllrb.com/docs/posts/).
+
+
+#### Using drafts
+What happens if you're still working on some articles, but thei're not ready to share yet? Enter: drafts.
+
+Remember that we created a ```_drafts``` directory? Well, this is where your drafts will live. A draft is basically the same thing as a regular post file, but without a date in its filename.
+
+If you want to run the website with drafts, you just need to add a ```--drafts``` flag when starting the server. Like this:
+
+```bash
+$ jekyll serve --drafts
+```
+
+As easy as that!
+
+
+### Adding the styles
+The last thing I want to cover here is how I added the styles for my website. In my case, I've used SCSS (but Sass works too) to do that. If you don't know what Sass/SCSS is, it's a CSS pre-processor that makes our lives much easier.
+
+There are so many resources available for you to learn it! Here a great [crash course video](https://www.youtube.com/watch?v=roywYSEPSvc), for example.
+
+Now, 2 important things we need to to. First, we need to create a ```css``` directory, inside the ```assets``` directory, and place a ```main.scss``` inside it.
+
+```
+├── assets
+│   └── css
+│       └── main.scss
+```
+
+When Jekyll compiles this ```main.scss``` into our ```main.css```, it will place it inside the same directory, but in ```_site```.
+
+So, this will result in something like this:
+```
+├── _site
+│   └── assets
+│       └── css
+│           └── main.css
+```
+
+Now, what should we put inside our ```main.scss```?

@@ -15,6 +15,10 @@
   -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
   
 body {
   font-family: $font-main;
