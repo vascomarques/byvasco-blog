@@ -5,9 +5,8 @@
   <body>
     {% include header.html %}
 
-    <main class="page-home">
+    <main class="{% if page.page-name %}page-{{ page.page-name }}{% else %}page{% endif %}"">
       {{ content }}
-      {{ page.yeah }}
     </main>
   </body>
 </html>

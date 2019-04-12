@@ -1,9 +1,10 @@
 ---
 layout: index
 title: A designer and developer creating things for the digital world
-yeah: YEahYEah
+page-name: home
 ---
 
+<main class="page-home">
 <section class="home-intro">
   <div class="container">
     <h1 class="intro-text title-2">Hey, I’m Vasco! A designer and developer creating things for the digital world, from <span class="location">Lisbon<span class="country body-small">(Portugal)</span></span></h1>
