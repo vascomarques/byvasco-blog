@@ -43,7 +43,21 @@ If you're not familiar with it, I recommend you to watch [this video](https://ww
 ### Getting started
 The first step was to design my website. This is probably the 1000th version, but this time I’m certain this one is here to stay. It’s super basic, and it currently only has a couple of pages: Home and Articles (and the  Article page of course). Here’s how it looks:
 
-Img here
+{% 
+  include image.html
+  type="post"
+  name="home-page.png"
+  caption="Home page"
+  alt="ByVasco Home page design"
+%}
+
+{% 
+  include image.html
+  type="post"
+  name="articles-page.png"
+  caption="Articles page"
+  alt="ByVasco Articles page design"
+%}
 
 Ok, nice, design is done. I can add and make things better later on, but for now it’s perfect.
 
@@ -638,3 +652,35 @@ So, this will result in something like this:
 ```
 
 Now, what should we put inside our ```main.scss```?
+
+First of all, it is required by Jekyll that we start the file with two lines of triple dashes, like the ones we use on the _front matter_.
+
+{% include code/code-caption.html caption="assets/css/main.scss" %}
+```sass
+---
+---
+
+@import "1-base/base-main";
+
+@import "2-layout/layout-main";
+
+@import "3-modules/modules-main";
+```
+
+You can write you Sass/SCSS right here, or use _sass partials_. Think of _sass partials_ like the includes we used in our layouts. They are individual files that contain different parts of the website's styles, and they live inside that ```_sass``` directory.
+
+For example, here's a basic structure for my SCSS files:
+
+```
+├── _sass
+│   ├── 1-base
+│   │   └── _base-main.scss
+│   ├── 2-layout
+│   │   └── _layout-main.scss
+│   └── 3-modules
+│       └── _modules-main.scss
+```
+
+Partials need to start with an "_", and when importing them in our ```main.scss``` file, we can ommit both that, and the ".scss" part.
+
+I don't want to get into much details on this Sass/SCSS thing, because it would make this article even bigger, but I'm planning on writing another article just talking about that.
