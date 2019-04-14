@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Building Ana's Website, Pt 3 | ByVasco</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" type="image/png" href="/favicon.png">
+
+  
+</head>
+
+  <body>
+    <header class="header-main">
+  <div class="container grid-2">
+    <nav class="header-navigation">
+      <a href="/articles" class="link-nav">Articles</a>
+    </nav>
+    
+    <a href="/" class="logo"></a>
+  </div>
+</header>
+
+    <article class="article-full">
+      <div class="container">
+        <header class="article-header">
+          <h1 class="article-title title-1">Building Ana's Website, Pt 3</h1>
+          <time class="article-date">March 07, 2019</time>
+        </header>
+      </div>
+      
+      <div class="container-narrow">      
+        <div class="article-content">
+          <p>Hey there, welcome to the 3rd part of this series that I’ve been writing, about building my friend <a href="https://medium.com/@anarlguerra">Ana Guerra</a> a personal website.</p>
+
+<p><a href="https://www.byvasco.com/articles/building-anas-website-pt-2">On part 2</a> we drafted all the required pages for the website: the About Me page, which works like a home page, the Podcast page, Blog, Newsletter and Contacts page.</p>
+
+<p>I have a good starting point. I’ve created a rough layout of how this might all look without using any images and colors, but I already used the two chosen typefaces (Raleway and InterUI).</p>
+
+<p>To be honest, me and Ana were pretty happy with what came out. So the next step is to give these grayscale compositions a bit of life!</p>
+
+<h4 id="abouthome-page">About/Home page</h4>
+<p>Starting from the beginning, this is how the About/Home page looks after going through it.</p>
+
+<!--
+  Creates the image path.
+  If there's no "image-path" parameter, use the post title instead.
+  Image comes from "assets/posts/<date-title>"
+-->
+
+<figure>
+    <img src="/assets/posts/2019-03-07-building-anas-website-pt-3/home-top.png" alt="Ana's Website - Home page, top part." />
+  </figure>
+
+<p>Here we have the Hero, with an introduction to who Ana is and a big “Let’s Talk” call to action, that takes us to the Contact page once clicked. We also decided to add this confetti looking thing on the background with the emojis, to give this top section some color. The emojis are a TV, some headphones and an open book: the same emojis Ana uses on her newsletter.</p>
+
+<p>Above that, there’s the first content section: the Podcast, with the last 4 episodes and a link to the Podcast page.</p>
+
+<p>Each other section (Blog and Newsletter) will have these big repeated titles, with a text label in-between, indicating the sharing frequency. So for example, because Ana shares a new podcast episode around once per week, we wrote “An Episode a Week or So” in that label.</p>
+
+<p>Another detail is that the titles should be constantly moving, sliding from right to left, overflowing the page. I think this will make things look a bit more interesting.</p>
+
+<p>And because these sections are visually similar, I wanted to find a way to clearly divide them. I ended up with these big fat titles that work really well, creating a lot of contrast.</p>
+
+<!--
+  Creates the image path.
+  If there's no "image-path" parameter, use the post title instead.
+  Image comes from "assets/posts/<date-title>"
+-->
+
+<figure>
+    <img src="/assets/posts/2019-03-07-building-anas-website-pt-3/home-bottom.png" alt="Ana's Website - Home page, bottom part." />
+  </figure>
+
+<p>The Newsletter section works as an introduction and clicking on the “Find Out More” button, we’ll be taken to the Newsletter page, with a bit more information. There’s also a small excerpt of a real Newsletter Ana shared on the right side, as you can see.</p>
+
+<p>The footer remained as it was before, with icons/links to all social media channels that Ana is at.</p>
+
+<h4 id="podcast-and-blog-pages">Podcast and Blog pages</h4>
+<p>These two pages basically follow the exact same layout, excluding the fact that the podcasts are in a 4 column grid, and the blog posts in a 3 column one.</p>
+
+<!--
+  Creates the image path.
+  If there's no "image-path" parameter, use the post title instead.
+  Image comes from "assets/posts/<date-title>"
+-->
+
+<figure>
+    <img src="/assets/posts/2019-03-07-building-anas-website-pt-3/podcast-blog.png" alt="Ana's Website - Podcast and Blog pages." />
+  </figure>
+
+<p>It works perfectly for the purpose it has, and it fits the overall visual style for the website.</p>
+
+<p>Oh, and in these “interior” pages the titles are static</p>
+
+<h4 id="newsletter-page">Newsletter page</h4>
+<p>It follows the same 2 column layout from the Home page, but this time there’s a bit more information. The call-to-action remains the same, which takes us to the Whatsapp page to join it.</p>
+
+<p>Above that, we have a couple of bullet points giving some more details about the newsletter.</p>
+
+<!--
+  Creates the image path.
+  If there's no "image-path" parameter, use the post title instead.
+  Image comes from "assets/posts/<date-title>"
+-->
+
+<figure>
+    <img src="/assets/posts/2019-03-07-building-anas-website-pt-3/newsletter.png" alt="Ana's Website - Newsletter page." />
+  </figure>
+
+<p>And here, the “demo” on the right side is actually scrollable, so instead of just a small excerpt, we have a full-size newsletter message.</p>
+
+<h4 id="contact-page">Contact page</h4>
+<p>Finally, there’s the Contact page, with a link to send Ana an email or to open her Twitter profile.</p>
+
+<!--
+  Creates the image path.
+  If there's no "image-path" parameter, use the post title instead.
+  Image comes from "assets/posts/<date-title>"
+-->
+
+<figure>
+    <img src="/assets/posts/2019-03-07-building-anas-website-pt-3/contact.png" alt="Ana's Website - Contact page." />
+  </figure>
+
+<p>And on the bottom, her last 10 Instagram pictures or videos.</p>
+
+<hr />
+
+<p>We’re really liking how this came up. It’s simple, and not too much information so it’s straight to the point: Ana’s content.</p>
+
+<h4 id="next-step-lets-code">Next step: let’s code</h4>
+<p>So as you can imagine, the next step is to make this baby get out of Sketch and give it the life it deserves.</p>
+
+<p>The goal of all this is to make Ana’s content to be the main focus. And that content needs to be managed by its maker! So, for that reason, this is going to be transformed into a custom Wordpress theme.</p>
+
+<p>I’ll be honest: I’m not experienced in working with Wordpress development. I have no knowledge of what the best workflow is, or the best practices.</p>
+
+<p>At the moment I’m writing this (March 6), the front-end code is already created and I’m learning Wordpress development on the fly, but I’m confident I’ll be able to pull this off!</p>
+
+<p>See you soon! 👋🏼</p>
+
+<p><a href="https://www.byvasco.com/articles/building-anas-website-pt-2">← Part 2</a></p>
+
+        </div>
+      </div>
+    </article>
+
+    <footer class="footer-main">
+  <div class="container grid-2">
+    <a href="mailto:hello@byvasco.com" class="link-nav">Email</a>
+
+    <ul class="social-links">
+      <li><a href="https://dribbble.com/byvasco" target="_blank" class="link-nav">Dribbble</a></li>
+      <li><a href="https://medium.com/@byvasco" target="_blank" class="link-nav">Medium</a></li>
+      <li><a href="https://www.instagram.com/byvasco/" target="_blank" class="link-nav">Instagram</a></li>
+      <li><a href="https://www.twitter.com/vascogmm/" target="_blank" class="link-nav">Twitter</a></li>
+      <li><a href="https://github.com/vascomarques" target="_blank" class="link-nav">Github</a></li>
+    </ul>
+  </div>
+</footer>
+  </body>
+</html>

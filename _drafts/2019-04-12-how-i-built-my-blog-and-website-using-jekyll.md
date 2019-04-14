@@ -22,6 +22,7 @@ This is kind of a large post, so here're the some links for the different sectio
   - [Using loops](#using-loops)
 - [Creating articles](#creating-articles)
   - [Using drafts](#using-drafts)
+- [Adding the styles](#adding-the-styles)
 
 
 ### Intro to Jekyll
@@ -46,17 +47,9 @@ The first step was to design my website. This is probably the 1000th version, bu
 {% 
   include image.html
   type="post"
-  name="home-page.png"
-  caption="Home page"
-  alt="ByVasco Home page design"
-%}
-
-{% 
-  include image.html
-  type="post"
-  name="articles-page.png"
-  caption="Articles page"
-  alt="ByVasco Articles page design"
+  name="home-articles-pages.jpg"
+  caption="Home and Articles page"
+  alt="ByVasco - Home and Articles page design"
 %}
 
 Ok, nice, design is done. I can add and make things better later on, but for now it’s perfect.
@@ -91,7 +84,7 @@ And run:
 $ jekyll serve
 ```
 
-This will run the server, so go aheada and open your browser, navigate to [http://localhost:4000](http://localhost:4000) , and there it is, your Jekyll website!
+This will run the server, so go ahead and open your browser, navigate to [http://localhost:4000](http://localhost:4000) , and there it is, your Jekyll website!
 
 
 ### Project structure
@@ -160,13 +153,15 @@ layout: home
 ---
 ```
 
-As you can see, it’s almost empty. That block of code at the start of the file, enclosed by these tripple dashes is called **Front Matter**. This is the place where we can set variables that allows us to control a few things.
+This is the file where I'll place all the content for my home page.
 
-Right now, there’s only that ```layout: home```. This means that the index page will use a ```layout``` called ```home```. But because we deleted the line in the ```_config.yml``` that said to Jekyll to use the Minima theme, it now has no ```home``` layout to point to. Let's fix this.
+And as you can see, it’s almost empty. That block of code at the start of the file, enclosed by these tripple dashes is called _front matter_. This is the place where we can set variables that allows us to control a few things.
+
+Right now, there’s only that ```layout``` variable, with a ```home``` value. This means that the index page will use a ```layout``` called ```home```. But because we deleted the line in the ```_config.yml``` that said to Jekyll to use the Minima theme, it now has no ```home``` layout to point to. Let's fix this.
  
-Create a new file inside the ```_layouts``` directory, named ```home.html```, and add  this code inside:
+A layout is basically an HTML file, that as a basic structure, and where we can insert content dynamically. So, let's create a new file inside the ```_layouts``` directory, named ```home.html```, and add  this code inside:
 
-{% include code/code-caption.html caption="home.html" %}
+{% include code/code-caption.html caption="_layouts/home.html" %}
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -198,7 +193,12 @@ Hello world! This is comming directly from the index.md file.
 
 Go to [localhost:4000](http://localhost:4000), and this is what you be seeing:
 
-img here
+{% 
+  include image.html
+  type="post"
+  name="jekyll-basic-site.jpg"
+  alt="Jekyll basic site"
+%}
 
 Fantastic! Now, let's try another thing. In your ```index.md```, add another variable to the front matter. Here's mine:
 
@@ -571,7 +571,12 @@ The ```post.url``` and the ```post.date``` are also post-related variables, but 
 
 At this point, I'm done with the pages for the site! Here's how your Articles page should be looking on the browser:
 
-img er
+{% 
+  include image.html
+  type="post"
+  name="jekyll-basic-site-articles.jpg"
+  alt="Jekyll basic site Articles page"
+%}
 
 Now let's take a look on how to create new posts!
 
@@ -684,3 +689,13 @@ For example, here's a basic structure for my SCSS files:
 Partials need to start with an "_", and when importing them in our ```main.scss``` file, we can ommit both that, and the ".scss" part.
 
 I don't want to get into much details on this Sass/SCSS thing, because it would make this article even bigger, but I'm planning on writing another article just talking about that.
+
+And I guess that's it! The website is done. My last step was to deploy this to Netlify so let's take a quick look on how I'm doing it.
+
+
+#### A conclusion
+Hope you find this useful! This turned out to be a pretty larger article than what I was planning, but I expect to write a few others to share the progress on my website and also some of the ways I'll use Jekyll to my advantage!
+
+Also, keep in mind that I'm no expert developer, and I'm doing things my own way, which means that there's probably a few things that could've been made in a different/better way.
+
+See you next time 👋🏼
