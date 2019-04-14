@@ -693,6 +693,9 @@ img {
   position: relative; }
   .container-narrow {
     max-width: calc(635px + 120px); }
+  @media (max-width: 768px) {
+    .container, .container-narrow {
+      padding: 0 30px; } }
 
 .grid, .grid-2 {
   display: grid;
