@@ -4,10 +4,10 @@ title: "How I built my blog and website using Jekyll"
 ---
 
 
-I’ve finally launched the blog here on my website! I wanted to do this for some time, mainly because I want to start writing more and I want to start building like an online home for myself, to host all my projects, my ideas, my thoughts, and even though I also share my words on Medium, it’s a good idea to have my own blog as well, so I can get full control.
+I’ve finally launched the blog here on my website! I wanted to do this for some time, because I want to start writing more and I want to build like an online home for myself, to host all my projects, my ideas, my thoughts, and even though I also share [my words on Medium](https://medium.com/@byvasco), it’s a good idea to have my own blog as well, so I can get full control.
 
 ### Too long, didn't read
-This is kind of a large post, so here're the some links for the different sections.
+This turned out to be kind of a large post, so here're the some links for the different sections.
 - [Intro to Jekyll](#intro-to-jekyll)
   - [Markdown](#markdown)
 - [Getting started](#getting-started)
@@ -23,6 +23,8 @@ This is kind of a large post, so here're the some links for the different sectio
 - [Creating articles](#creating-articles)
   - [Using drafts](#using-drafts)
 - [Adding the styles](#adding-the-styles)
+- [Deploying to Netlify](#deploying-to-netlify)
+  - [Using the CLI](#using-the-cli)
 
 
 ### Intro to Jekyll
@@ -693,7 +695,47 @@ I don't want to get into much details on this Sass/SCSS thing, because it would 
 And I guess that's it! The website is done. My last step was to deploy this to Netlify so let's take a quick look on how I'm doing it.
 
 
-#### A conclusion
+### Deploying to Netlify
+I've recently discovered [Netlify](https://netlify.com), and I instantly became a fan of it. Netlify is basically a service that allows you to host static websites/apps, and you can even use a custom domain with a SSL/TLS Certificate to have HTTPS. All of this can be done for free! How cool is that?
+
+Let's get started. First, go to [Netlify's website](https://netlify.com) and create a new account. Once that's done, your ready to deploy the website files.
+
+Now, there are a few ways to do this:
+- You can drag-and-drop a .zip in the Netlify dashboard
+- Deploy using Git, where you link a Github/Gitlab/Bitbucket repository, and then when you push to Git, Netlify builds the site for you (in our case it would run ```jekyll build```)
+- Or, you can use the Netlify CLI, which allows you to deploy directly from you terminal.
+
+In my case, I use this last option. Here's how I do it.
+
+#### Using the CLI
+To install the the Netlify CLI, the only requirement is to have [Node.js](https://nodejs.org/en/download/) installed. Once that's done, you just need to run this in your terminal:
+
+```bash
+npm install netlify-cli -g
+```
+
+And now you have access to the ```netlify``` command. So, in your terminal, navigate to your site's directory and run
+
+```bash
+netlify deploy
+```
+
+The CLI will now ask you if you want to link the directory to an existing site, or create and configure a new site. Let's go with this last option, and then you'll go through the configuration.
+
+Remember to type ```_site``` as your deploy path!
+
+Once you're done with that, Netlify will generate a draft URL. You can also deploy it to production using this command:
+
+```bash
+netlify deploy --prod
+```
+
+And this time, a new Live URL will be created. Congrats, you have your site live! Now, to use my own domain that I've already purchased, I just need to go into Netlify's dashboard, go to my site's settings, and add my domain.
+
+If you want to know a bit more about this, I recomment you to watch [this video](https://www.youtube.com/watch?v=bjVUqvcCnxM&t=509s) by Brad Traversy.
+
+
+### A conclusion
 Hope you find this useful! This turned out to be a pretty larger article than what I was planning, but I expect to write a few others to share the progress on my website and also some of the ways I'll use Jekyll to my advantage!
 
 Also, keep in mind that I'm no expert developer, and I'm doing things my own way, which means that there's probably a few things that could've been made in a different/better way.

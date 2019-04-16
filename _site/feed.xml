@@ -1,4 +1,722 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-04-14T14:18:51+01:00</updated><id>/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Building Ana’s Website, Pt 3</title><link href="/articles/building-anas-website-pt-3" rel="alternate" type="text/html" title="Building Ana's Website, Pt 3" /><published>2019-03-07T00:00:00+00:00</published><updated>2019-03-07T00:00:00+00:00</updated><id>/articles/building-anas-website-pt-3</id><content type="html" xml:base="/articles/building-anas-website-pt-3">&lt;p&gt;Hey there, welcome to the 3rd part of this series that I’ve been writing, about building my friend &lt;a href=&quot;https://medium.com/@anarlguerra&quot;&gt;Ana Guerra&lt;/a&gt; a personal website.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-04-14T16:19:56+01:00</updated><id>/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">How I built my blog and website using Jekyll</title><link href="/articles/how-i-built-my-blog-and-website-using-jekyll/" rel="alternate" type="text/html" title="How I built my blog and website using Jekyll" /><published>2019-04-14T00:00:00+01:00</published><updated>2019-04-14T00:00:00+01:00</updated><id>/articles/how-i-built-my-blog-and-website-using-jekyll</id><content type="html" xml:base="/articles/how-i-built-my-blog-and-website-using-jekyll/">&lt;p&gt;I’ve finally launched the blog here on my website! I wanted to do this for some time, because I want to start writing more and I want to build like an online home for myself, to host all my projects, my ideas, my thoughts, and even though I also share &lt;a href=&quot;https://medium.com/@byvasco&quot;&gt;my words on Medium&lt;/a&gt;, it’s a good idea to have my own blog as well, so I can get full control.&lt;/p&gt;
+
+&lt;h3 id=&quot;too-long-didnt-read&quot;&gt;Too long, didn’t read&lt;/h3&gt;
+&lt;p&gt;This turned out to be kind of a large post, so here’re the some links for the different sections.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#intro-to-jekyll&quot;&gt;Intro to Jekyll&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#markdown&quot;&gt;Markdown&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#getting-started&quot;&gt;Getting started&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#setting-up-jekyll&quot;&gt;Setting up Jekyll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#project-structure&quot;&gt;Project structure&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#overriding-the-default-theme&quot;&gt;Overriding the default theme&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#creating-pages-home&quot;&gt;Creating pages - Home&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#using-variables&quot;&gt;Using variables&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#adding-logic&quot;&gt;Adding logic&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#using-includes&quot;&gt;Using includes&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#creating-pages-articles&quot;&gt;Creating pages - Articles&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#using-loops&quot;&gt;Using loops&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#creating-articles&quot;&gt;Creating articles&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#using-drafts&quot;&gt;Using drafts&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#adding-the-styles&quot;&gt;Adding the styles&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#deploying-to-netlify&quot;&gt;Deploying to Netlify&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#using-the-cli&quot;&gt;Using the CLI&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;intro-to-jekyll&quot;&gt;Intro to Jekyll&lt;/h3&gt;
+&lt;p&gt;Amongst a lot of options of platforms that I could’ve used to build this, I choose &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;, which is a static site generator.
+So, you have a bunch of source files in your local machine, and you can “compile” them into plain HTML/CSS/JavaScript. There are a lot of articles out there that do a much better job explaining how this works. &lt;a href=&quot;https://wsvincent.com/what-is-a-static-site-generator/&quot;&gt;This one&lt;/a&gt; by Will Vincent, &lt;a href=&quot;https://dev.to/ruthreyer/what-are-static-site-generators-356p&quot;&gt;or this&lt;/a&gt; by Ruth Reyer are great.&lt;/p&gt;
+
+&lt;p&gt;For me, there are two main reasons to use a static site generator, in this case being Jekyll:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Cost&lt;/strong&gt;: It’s super low cost to something like this. I basically just pay for my domain name, because I use Netlify to host my files.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Simplicity&lt;/strong&gt;: There are a lot of things that a SSG doesn’t allow you to do. But for my needs, it’s just perfect. I can write articles, I can create static pages, make a portfolio (which I’ll eventually create), and that’s about it. I don’t need much more that that.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are other great reasons to use something like this, like security, scalability and speed for example.&lt;/p&gt;
+
+&lt;h4 id=&quot;markdown&quot;&gt;Markdown&lt;/h4&gt;
+&lt;p&gt;Another thing before we get started. To write articles on Jekyll, we’ll use &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt; which is text-to-HTML markup language.&lt;/p&gt;
+
+&lt;p&gt;If you’re not familiar with it, I recommend you to watch &lt;a href=&quot;https://www.youtube.com/watch?v=HUBNt18RFbo&amp;amp;t=971s&quot;&gt;this video&lt;/a&gt; by Brad Traversy, check out &lt;a href=&quot;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&quot;&gt;this cheatsheet&lt;/a&gt;, or just search the web!&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
+&lt;p&gt;The first step was to design my website. This is probably the 1000th version, but this time I’m certain this one is here to stay. It’s super basic, and it currently only has a couple of pages: Home and Articles (and the  Article page of course). Here’s how it looks:&lt;/p&gt;
+
+&lt;!--
+  Creates the image path.
+  If there's no &quot;image-path&quot; parameter, use the post title instead.
+  Image comes from &quot;assets/posts/&lt;date-title&gt;&quot;
+--&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/assets/posts/2019-04-14-how-i-built-my-blog-and-website-using-jekyll/home-articles-pages.jpg&quot; alt=&quot;ByVasco - Home and Articles page design&quot; /&gt;
+    &lt;figcaption class=&quot;text-smaller caption&quot;&gt;Home and Articles page&lt;/figcaption&gt;
+  &lt;/figure&gt;
+
+&lt;p&gt;Ok, nice, design is done. I can add and make things better later on, but for now it’s perfect.&lt;/p&gt;
+
+&lt;h3 id=&quot;setting-up-jekyll&quot;&gt;Setting up Jekyll&lt;/h3&gt;
+&lt;p&gt;Being no expert on web development (I’m still in the beginning phases of my journey), this how-to Jekyll “guide” will be written in a super non-technical way. Also, I’m using MacOS, but I assume that it won’t change a lot for Windows.&lt;/p&gt;
+
+&lt;p&gt;The first thing you’ll want to do is to install it on your computer. Open up your terminal, and run:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;bundler jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This will install &lt;a href=&quot;https://bundler.io/&quot;&gt;Bundler&lt;/a&gt; and Jekyll. Bundler is a tool that allows you to install all your project gems in a single command.&lt;/p&gt;
+
+&lt;p&gt;Next, go to the directory where you want to have your website files, and run:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll new my-website
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This will create a new directory called “my-website” (you can name it whatever you want). Now, navigate into that directory:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;my-website
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And run:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This will run the server, so go ahead and open your browser, navigate to &lt;a href=&quot;http://localhost:4000&quot;&gt;http://localhost:4000&lt;/a&gt; , and there it is, your Jekyll website!&lt;/p&gt;
+
+&lt;h3 id=&quot;project-structure&quot;&gt;Project structure&lt;/h3&gt;
+&lt;p&gt;By default, Jekyll will create a few files for you:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; this is your configuration file.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;404.html&lt;/code&gt; the page that get’s rendered on the browser when there’s a 404 error.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt; a .md file with the content for your Home page.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;about.md&lt;/code&gt; a .md file with the content for your About page.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile.lock&lt;/code&gt; the files that allows you to manage all your required gems for the project.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And a couple of directories:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; this is the directory that contains all the HTML, CSS and JavaScript files, after Jekyll “compiles” everything. It’s what you’ll want to deploy to the server later on.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; where all your posts’ files live.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When we created the website using the &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new&lt;/code&gt; command, Jekyll will build the site using a default gem-based theme called &lt;a href=&quot;https://github.com/jekyll/minima&quot;&gt;Minima&lt;/a&gt;. This means that there are some files and directories that are stored in the theme’s gem, and we don’t have access to them.&lt;/p&gt;
+
+&lt;h3 id=&quot;overriding-the-default-theme&quot;&gt;Overriding the default theme&lt;/h3&gt;
+
+&lt;p&gt;In my case, I wanted to completely override this with my own styles and structure. To do this, I first opened the &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file and deleted this line:&lt;/p&gt;
+
+&lt;p class=&quot;code-caption&quot;&gt;_config.yml&lt;/p&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;minima&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And I also deleted the &lt;code class=&quot;highlighter-rouge&quot;&gt;about.md&lt;/code&gt; file because I won’t have an About page right now.&lt;/p&gt;
+
+&lt;p&gt;Then I created some new directories:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_drafts&lt;/code&gt; to store all the blog drafts.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt; to store HTML blocks like the site header or footer.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_layouts&lt;/code&gt; to store the layouts for the pages, like the articles page.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_sass&lt;/code&gt; where all the Sass files are.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;assets&lt;/code&gt; where we’ll place all the assets we need, like images.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here’s how my site structure is looking at this stage:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── Gemfile
+├── Gemfile.lock
+├── assets
+├── _sass
+├── _config.yml
+├── _drafts
+├── _includes
+├── _layouts
+├── _posts
+│   └── 2019-04-11-welcome-to-jekyll.md
+└── index.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, if you try to open your site, everything will be empty. The reason why is because of how Jekyll works with pages and layouts. I’ll try to explain this in the next section.&lt;/p&gt;
+
+&lt;h3 id=&quot;creating-pages---home&quot;&gt;Creating pages - Home&lt;/h3&gt;
+&lt;p&gt;Let’s first open up that &lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt; and checkout what’s inside.&lt;/p&gt;
+
+&lt;p class=&quot;code-caption&quot;&gt;index.md&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: home
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This is the file where I’ll place all the content for my home page.&lt;/p&gt;
+
+&lt;p&gt;And as you can see, it’s almost empty. That block of code at the start of the file, enclosed by these tripple dashes is called &lt;em&gt;front matter&lt;/em&gt;. This is the place where we can set variables that allows us to control a few things.&lt;/p&gt;
+
+&lt;p&gt;Right now, there’s only that &lt;code class=&quot;highlighter-rouge&quot;&gt;layout&lt;/code&gt; variable, with a &lt;code class=&quot;highlighter-rouge&quot;&gt;home&lt;/code&gt; value. This means that the index page will use a &lt;code class=&quot;highlighter-rouge&quot;&gt;layout&lt;/code&gt; called &lt;code class=&quot;highlighter-rouge&quot;&gt;home&lt;/code&gt;. But because we deleted the line in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; that said to Jekyll to use the Minima theme, it now has no &lt;code class=&quot;highlighter-rouge&quot;&gt;home&lt;/code&gt; layout to point to. Let’s fix this.&lt;/p&gt;
+
+&lt;p&gt;A layout is basically an HTML file, that as a basic structure, and where we can insert content dynamically. So, let’s create a new file inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;_layouts&lt;/code&gt; directory, named &lt;code class=&quot;highlighter-rouge&quot;&gt;home.html&lt;/code&gt;, and add  this code inside:&lt;/p&gt;
+
+&lt;p class=&quot;code-caption&quot;&gt;_layouts/home.html&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;My Jekyll Site&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    {{ content }}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;using-variables&quot;&gt;Using variables&lt;/h4&gt;
+&lt;p&gt;This is a basic HTML structure, but take a look at that &lt;code class=&quot;highlighter-rouge&quot;&gt;{{ content }}&lt;/code&gt;. That’s a &lt;a href=&quot;https://shopify.github.io/liquid/&quot;&gt;Liquid&lt;/a&gt; tag. Liquid is a template language created by &lt;a href=&quot;https://shopify.com&quot;&gt;Shopify&lt;/a&gt;, and in very simple terms, it allows us to introduce dynamic content inside our pages. And those double &lt;code class=&quot;highlighter-rouge&quot;&gt;{&lt;/code&gt; are used to output the contents of &lt;strong&gt;a variable&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;In this case, it’s outputting a variable named &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt;. But if you open up your site in the browser, it is still completely empty. That’s because &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; holds whatever you typed in your &lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;So, let’s try this out. Open up &lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt;, and type whatever you want after the end of the Front Matter. Here’s mine:&lt;/p&gt;
+
+&lt;p class=&quot;code-caption&quot;&gt;index.md&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+layout: home
+---
+
+Hello world! This is comming directly from the index.md file.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Go to &lt;a href=&quot;http://localhost:4000&quot;&gt;localhost:4000&lt;/a&gt;, and this is what you be seeing:&lt;/p&gt;
+
+&lt;!--
+  Creates the image path.
+  If there's no &quot;image-path&quot; parameter, use the post title instead.
+  Image comes from &quot;assets/posts/&lt;date-title&gt;&quot;
+--&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/assets/posts/2019-04-14-how-i-built-my-blog-and-website-using-jekyll/jekyll-basic-site.jpg&quot; alt=&quot;Jekyll basic site&quot; /&gt;
+  &lt;/figure&gt;
+
+&lt;p&gt;Fantastic! Now, let’s try another thing. In your &lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt;, add another variable to the front matter. Here’s mine:&lt;/p&gt;
+
+&lt;p class=&quot;code-caption&quot;&gt;index.md front matter&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+layout: home
+title: My Jekyll Site
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now go back to your &lt;code class=&quot;highlighter-rouge&quot;&gt;home.html&lt;/code&gt;, and instead of having the page title hardcoded inside those &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;title&amp;gt;&lt;/code&gt; tags, place your &lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt; variable in there, like this:&lt;/p&gt;
+
+&lt;p class=&quot;code-caption&quot;&gt;home.html&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;{{ page.title }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    {{ content }}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that we had to use &lt;code class=&quot;highlighter-rouge&quot;&gt;{{ page.title }}&lt;/code&gt; instead of just &lt;code class=&quot;highlighter-rouge&quot;&gt;{{ title }}&lt;/code&gt;, because the &lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt; variable is in the front matter of that page. It’s a variable within the context of a page.&lt;/p&gt;
+
+&lt;p&gt;In my case, I did some other stuff in the &lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt;. I’ve changed the layout to one named &lt;code class=&quot;highlighter-rouge&quot;&gt;default&lt;/code&gt;, and added a &lt;code class=&quot;highlighter-rouge&quot;&gt;page-name&lt;/code&gt; variable. You’ll see why I did that, next.&lt;/p&gt;
+
+&lt;p&gt;Here’s my &lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt;&lt;/p&gt;
+
+&lt;p class=&quot;code-caption&quot;&gt;index.md&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+layout: default
+title: A designer and developer creating things for the digital world
+page-name: home
+---
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;section&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;home-intro&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;intro-text title-2&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Hey, I’m Vasco! A designer and developer creating things for the digital world, from &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;location&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Lisbon&lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;country body-small&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;(Portugal)&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;section&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;home-details&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;container-narrow&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;content-section&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;During the day I work in-house at &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.hole19golf.com/&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Hole19 Golf&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;, where I’m helping to build the best platform for golfers.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;During the night, I get busy learning new things, building my own projects, reading and fixing my old cars.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;content-section&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;I’m currently building a community for old Volkswagen lovers, making a website for my friend Ana Guerra, and learning JavaScript.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;content-section&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Get in touch by reaching out at &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;mailto:hello@byvasco.com&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;hello@byvasco.com&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Join me on &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://medium.com/@byvasco&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;target=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_blank&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Medium&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;, &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://twitter.com/vascogmm&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Twitter&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; and &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.instagram.com/byvasco/&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;target=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_blank&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Instagram&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;, view on-going work on &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://dribbble.com/byvasco&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;target=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_blank&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Dribbble&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;, and my code on &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://github.com/vascomarques&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;target=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_blank&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Github&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And here’s my new layout &lt;code class=&quot;highlighter-rouge&quot;&gt;default.html&lt;/code&gt;&lt;/p&gt;
+
+&lt;p class=&quot;code-caption&quot;&gt;default.html&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;{{ page.title }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;main&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;page-name&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-{{ page.page-name }}&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;endif&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      {{ content }}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/main&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Everythings’ basically the same, except of that weird thing in the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;main&amp;gt;&lt;/code&gt; tag that looks like an if statement. That’s because it is!&lt;/p&gt;
+
+&lt;h4 id=&quot;adding-logic&quot;&gt;Adding logic&lt;/h4&gt;
+&lt;p&gt;Here’s whats going on with that &lt;em&gt;if statement&lt;/em&gt;: as you can see, I’ve added a &lt;code class=&quot;highlighter-rouge&quot;&gt;page-name&lt;/code&gt; variable to the &lt;em&gt;front matter&lt;/em&gt; of my &lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;What I want to do with this, is to add a dynamic class name to the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;main&amp;gt;&lt;/code&gt;HTML tag, so that I can manipulate things differently on my CSS. But if there’s no &lt;code class=&quot;highlighter-rouge&quot;&gt;page-name&lt;/code&gt; variable available, I don’t want to add any class.&lt;/p&gt;
+
+&lt;p&gt;Liquid logical statements are pretty easy to make. Here’s basically the same thing that I have up there, but formatted in different lines:&lt;/p&gt;
+
+&lt;div class=&quot;language-liquid highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+  class=&quot;page-&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&quot;
+&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;endif&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can also add &lt;em&gt;elsif&lt;/em&gt; and &lt;em&gt;else&lt;/em&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-liquid highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+  do something
+&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;elsif&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+  do something else
+&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+  do something else
+&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;endif&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;using-includes&quot;&gt;Using includes&lt;/h4&gt;
+&lt;p&gt;Before I talk about includes, there are some other things that I want to add to my &lt;code class=&quot;highlighter-rouge&quot;&gt;default.html&lt;/code&gt; layout.&lt;/p&gt;
+
+&lt;p&gt;Firstly, I want to add some more stuff inside &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p class=&quot;code-caption&quot;&gt;default.html&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewport&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width=device-width, initial-scale=1.0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;http-equiv=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;X-UA-Compatible&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ie=edge&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;{{ page.title }} | ByVasco&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/css/main.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;shortcut icon&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;image/png&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/favicon.png&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;main&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;page-name&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-{{ page.page-name }}&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;endif&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      {{ content }}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/main&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Awesome. You can see that I’ve added a few &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;meta&amp;gt;&lt;/code&gt; tags, linked my &lt;code class=&quot;highlighter-rouge&quot;&gt;main.css&lt;/code&gt; file (more on that later), and a &lt;em&gt;favicon&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Secondly, I want to create a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;header&amp;gt;&lt;/code&gt; for my website:&lt;/p&gt;
+
+&lt;p class=&quot;code-caption&quot;&gt;default.html&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewport&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width=device-width, initial-scale=1.0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;http-equiv=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;X-UA-Compatible&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ie=edge&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;{{ page.title }} | ByVasco&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/css/main.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;shortcut icon&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;image/png&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/favicon.png&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;header&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;header-main&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;container grid-2&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;nav&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;header-navigation&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/articles&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;link-nav&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Articles&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/nav&amp;gt;&lt;/span&gt;
+        
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;logo&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;main&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;page-name&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-{{ page.page-name }}&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;endif&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      {{ content }}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/main&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ok, and it’s done. This is fine, it works! However, what would happen if I wanted to create another layout file, let’s say an &lt;code class=&quot;highlighter-rouge&quot;&gt;article.html&lt;/code&gt; layout? I would have to repeat all that &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;header&amp;gt;&lt;/code&gt; code. There’s a better way to do this, and it’s using includes.&lt;/p&gt;
+
+&lt;p&gt;When I was creating the directories inside the site’s root, I created an &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt; directory. Let’s create a file inside that directory, named &lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt;, and put all the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt; code inside it:&lt;/p&gt;
+
+&lt;p class=&quot;code-caption&quot;&gt;_includes/head.html&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewport&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width=device-width, initial-scale=1.0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;http-equiv=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;X-UA-Compatible&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ie=edge&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;{{ page.title }} | ByVasco&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/css/main.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;shortcut icon&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;image/png&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/favicon.png&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And now that we’re here, let’s do the same thing, but for the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;header&amp;gt;&lt;/code&gt; code, and I’ll also create another one for the site &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;footer&amp;gt;&lt;/code&gt;. So, create a &lt;code class=&quot;highlighter-rouge&quot;&gt;header.html&lt;/code&gt; file and put its code inside:&lt;/p&gt;
+
+&lt;p class=&quot;code-caption&quot;&gt;_includes/header.html&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;header&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;header-main&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;container grid-2&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;nav&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;header-navigation&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/articles&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;link-nav&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Articles&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/nav&amp;gt;&lt;/span&gt;
+    
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;logo&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And on &lt;code class=&quot;highlighter-rouge&quot;&gt;footer.html&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p class=&quot;code-caption&quot;&gt;_layouts/footer.html&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;footer&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;footer-main&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;container grid-2&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;mailto:hello@byvasco.com&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;link-nav&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Email&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;social-links&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://dribbble.com/byvasco&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;target=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_blank&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;link-nav&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Dribbble&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://medium.com/@byvasco&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;target=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_blank&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;link-nav&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Medium&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.instagram.com/byvasco/&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;target=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_blank&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;link-nav&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Instagram&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.twitter.com/vascogmm/&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;target=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_blank&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;link-nav&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Twitter&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://github.com/vascomarques&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;target=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_blank&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;link-nav&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Github&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/footer&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Next, got to the &lt;code class=&quot;highlighter-rouge&quot;&gt;default.html&lt;/code&gt; file, remove the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt;and the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;header&amp;gt;&lt;/code&gt; code, and type this in:&lt;/p&gt;
+
+&lt;p class=&quot;code-caption&quot;&gt;_layouts/default.html&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  {% include head.html %}
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    {% include header.html %}
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;main&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;page-name&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-{{ page.page-name }}&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;endif&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      {{ content }}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/main&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, instead of having to repeat all that code for every layout, we can just include them where we want them to be. Another advantage for doing this is that if we want to change something in our code, we just need to change it once, and it will reflect those changes everywhere.&lt;/p&gt;
+
+&lt;p&gt;When using &lt;code class=&quot;highlighter-rouge&quot;&gt;include&lt;/code&gt;, you just need to make sure the file exists in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt; directory. As you can see, to include a file it’s as easy as this:&lt;/p&gt;
+&lt;div class=&quot;language-liquid highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can also organize your include files in directories, and access them like this:&lt;/p&gt;
+&lt;div class=&quot;language-liquid highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;directory/filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Awesome, we’re done here. Now I’ll just quickly create another layout file, and I’ll name it &lt;code class=&quot;highlighter-rouge&quot;&gt;article.html&lt;/code&gt;. This is the layout that I’ll use to render my individual articles.&lt;/p&gt;
+
+&lt;p class=&quot;code-caption&quot;&gt;_layouts/article.html&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  {% include head.html %}
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    {% include header.html %}
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;article&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;article-full&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;header&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;article-header&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;article-title title-1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ page.title }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;time&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;article-date&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ page.date | date: '%B %d, %Y' }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/time&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+      
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;container-narrow&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;      
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;article-content&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+          {{ content }}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/article&amp;gt;&lt;/span&gt;
+
+    {% include footer.html %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;By the way, take a look at how I’m outputting &lt;code class=&quot;highlighter-rouge&quot;&gt;page.date&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{{ page.date | date: '%B %d, %Y' }}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I’m using what’s called a &lt;em&gt;filter&lt;/em&gt;. I won’t get into much detail, but just know that in this &lt;code class=&quot;highlighter-rouge&quot;&gt;date&lt;/code&gt; case, we can format it in different ways. Using that format, the date will be showed like this: “April 11, 2019”. Here’s a usefull list of &lt;a href=&quot;http://alanwsmith.com/jekyll-liquid-date-formatting-examples&quot;&gt;Jekyll date formatting examples&lt;/a&gt;, writen by Alan Smith.&lt;/p&gt;
+
+&lt;p&gt;The Home page is done, and we have all the necessary layouts and includes. Now it’s time to take care of the Articles page.&lt;/p&gt;
+
+&lt;h3 id=&quot;creating-pages---articles&quot;&gt;Creating pages - Articles&lt;/h3&gt;
+&lt;p&gt;First, let’s just take an overview of our file structure.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── Gemfile
+├── Gemfile.lock
+├── assets
+├── _sass
+├── _config.yml
+├── _drafts
+├── _includes
+│   ├── head.html
+│   ├── header.html
+│   └── footer.html
+├── _layouts
+│   ├── default.html
+│   └── article.html
+├── _posts
+│   └── 2019-04-11-welcome-to-jekyll.md
+└── index.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ok, time to create the &lt;code class=&quot;highlighter-rouge&quot;&gt;articles.md&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;p class=&quot;code-caption&quot;&gt;articles.md&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+layout: default
+title: Articles
+page-name: articles
+---
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;header&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;header-page&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;title-2 page-title&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;My thoughts and ideas into words.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;section&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-content section-articles&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;container-narrow&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;articles-list&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      {% for post in site.posts %}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;article-preview&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ post.url }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;article-title body-large&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ post.title }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;time&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;article-date&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ post.date | date: '%B %d, %Y' }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/time&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+      {% endfor %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Almost the same as the &lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt;, but using something new: a &lt;em&gt;for loop&lt;/em&gt;. Let’s take a quick look at it, and how it’s used to display all the articles.&lt;/p&gt;
+
+&lt;h4 id=&quot;using-loops&quot;&gt;Using loops&lt;/h4&gt;
+&lt;p&gt;You’re probably familiar of how &lt;em&gt;for loops&lt;/em&gt; work. Here we use it to iterate through &lt;code class=&quot;highlighter-rouge&quot;&gt;site.posts&lt;/code&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;site&lt;/code&gt; is a global variable, that contains all the &lt;code class=&quot;highlighter-rouge&quot;&gt;posts&lt;/code&gt;). We can now display a block of code for every existing &lt;code class=&quot;highlighter-rouge&quot;&gt;post&lt;/code&gt;. In this case, I created an &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;li&amp;gt;&lt;/code&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;post.title&lt;/code&gt; and the &lt;code class=&quot;highlighter-rouge&quot;&gt;post.date&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% for post in site.posts %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;article-preview&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ post.url }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;article-title body-large&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ post.title }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;time&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;article-date&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ post.date | date: '%B %d, %Y' }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/time&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+{% endfor %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;So, you start the loop with &lt;code class=&quot;highlighter-rouge&quot;&gt;{% for post in site.posts %}&lt;/code&gt;, and end with &lt;code class=&quot;highlighter-rouge&quot;&gt;{% endfor %}&lt;/code&gt;. Everything in between that will be displayed for every iteration, and we also get access to that &lt;code class=&quot;highlighter-rouge&quot;&gt;post&lt;/code&gt; variable, which in this case, contains information related to the current post iteration.&lt;/p&gt;
+
+&lt;p&gt;I’ll talk about creating posts later, but they also have a &lt;em&gt;front matter&lt;/em&gt; where you can create variables. Here, the &lt;code class=&quot;highlighter-rouge&quot;&gt;post.title&lt;/code&gt; is set in a &lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt; variable, in the post &lt;em&gt;front matter&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;post.url&lt;/code&gt; and the &lt;code class=&quot;highlighter-rouge&quot;&gt;post.date&lt;/code&gt; are also post-related variables, but they’re automatically created by Jekyll.&lt;/p&gt;
+
+&lt;p&gt;At this point, I’m done with the pages for the site! Here’s how your Articles page should be looking on the browser:&lt;/p&gt;
+
+&lt;!--
+  Creates the image path.
+  If there's no &quot;image-path&quot; parameter, use the post title instead.
+  Image comes from &quot;assets/posts/&lt;date-title&gt;&quot;
+--&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/assets/posts/2019-04-14-how-i-built-my-blog-and-website-using-jekyll/jekyll-basic-site-articles.jpg&quot; alt=&quot;Jekyll basic site Articles page&quot; /&gt;
+  &lt;/figure&gt;
+
+&lt;p&gt;Now let’s take a look on how to create new posts!&lt;/p&gt;
+
+&lt;h3 id=&quot;creating-articles&quot;&gt;Creating articles&lt;/h3&gt;
+&lt;p&gt;We already have that “Welcome to Jekyll”, so let’s and inspect what’s inside that file. All your posts should be inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p class=&quot;code-caption&quot;&gt;_posts/2019-04-12-welcome-to-jekyll.md&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+layout: post
+title:  &quot;Welcome to Jekyll!&quot;
+date:   2019-04-12 17:40:41 +0100
+categories: jekyll update
+---
+You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+
+(...)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can see that this is basically the same thing we have on the &lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt; and on the &lt;code class=&quot;highlighter-rouge&quot;&gt;articles.md&lt;/code&gt; pages. Theres a &lt;em&gt;front matter&lt;/em&gt; with some variables, and everything after that is the article content.&lt;/p&gt;
+
+&lt;p&gt;Something important we should pay atention to, is the format we use to name our post file.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yyyy-mm-dd-title.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;They should start with &lt;strong&gt;4&lt;/strong&gt; digits for the year, &lt;strong&gt;2&lt;/strong&gt; for the month, &lt;strong&gt;2&lt;/strong&gt; for the day, and then the title. Everything should be separated by hyphens.&lt;/p&gt;
+
+&lt;p&gt;In my case, I only use a &lt;code class=&quot;highlighter-rouge&quot;&gt;layout&lt;/code&gt; and a &lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt; variable:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+layout: article
+title: &quot;How I built my blog and website using Jekyll&quot;
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;There are much more to know about this, but remember that I want this to be as simple as possible. If you want to know more, here’s the &lt;a href=&quot;https://jekyllrb.com/docs/posts/&quot;&gt;documentation for posts&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;using-drafts&quot;&gt;Using drafts&lt;/h4&gt;
+&lt;p&gt;What happens if you’re still working on some articles, but thei’re not ready to share yet? Enter: drafts.&lt;/p&gt;
+
+&lt;p&gt;Remember that we created a &lt;code class=&quot;highlighter-rouge&quot;&gt;_drafts&lt;/code&gt; directory? Well, this is where your drafts will live. A draft is basically the same thing as a regular post file, but without a date in its filename.&lt;/p&gt;
+
+&lt;p&gt;If you want to run the website with drafts, you just need to add a &lt;code class=&quot;highlighter-rouge&quot;&gt;--drafts&lt;/code&gt; flag when starting the server. Like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll serve &lt;span class=&quot;nt&quot;&gt;--drafts&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;As easy as that!&lt;/p&gt;
+
+&lt;h3 id=&quot;adding-the-styles&quot;&gt;Adding the styles&lt;/h3&gt;
+&lt;p&gt;The last thing I want to cover here is how I added the styles for my website. In my case, I’ve used SCSS (but Sass works too) to do that. If you don’t know what Sass/SCSS is, it’s a CSS pre-processor that makes our lives much easier.&lt;/p&gt;
+
+&lt;p&gt;There are so many resources available for you to learn it! Here a great &lt;a href=&quot;https://www.youtube.com/watch?v=roywYSEPSvc&quot;&gt;crash course video&lt;/a&gt;, for example.&lt;/p&gt;
+
+&lt;p&gt;Now, 2 important things we need to to. First, we need to create a &lt;code class=&quot;highlighter-rouge&quot;&gt;css&lt;/code&gt; directory, inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;assets&lt;/code&gt; directory, and place a &lt;code class=&quot;highlighter-rouge&quot;&gt;main.scss&lt;/code&gt; inside it.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── assets
+│   └── css
+│       └── main.scss
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When Jekyll compiles this &lt;code class=&quot;highlighter-rouge&quot;&gt;main.scss&lt;/code&gt; into our &lt;code class=&quot;highlighter-rouge&quot;&gt;main.css&lt;/code&gt;, it will place it inside the same directory, but in &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;So, this will result in something like this:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── _site
+│   └── assets
+│       └── css
+│           └── main.css
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, what should we put inside our &lt;code class=&quot;highlighter-rouge&quot;&gt;main.scss&lt;/code&gt;?&lt;/p&gt;
+
+&lt;p&gt;First of all, it is required by Jekyll that we start the file with two lines of triple dashes, like the ones we use on the &lt;em&gt;front matter&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p class=&quot;code-caption&quot;&gt;assets/css/main.scss&lt;/p&gt;
+&lt;div class=&quot;language-sass highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;---&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;1-base/base-main&quot;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;2-layout/layout-main&quot;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;3-modules/modules-main&quot;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can write you Sass/SCSS right here, or use &lt;em&gt;sass partials&lt;/em&gt;. Think of &lt;em&gt;sass partials&lt;/em&gt; like the includes we used in our layouts. They are individual files that contain different parts of the website’s styles, and they live inside that &lt;code class=&quot;highlighter-rouge&quot;&gt;_sass&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;For example, here’s a basic structure for my SCSS files:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── _sass
+│   ├── 1-base
+│   │   └── _base-main.scss
+│   ├── 2-layout
+│   │   └── _layout-main.scss
+│   └── 3-modules
+│       └── _modules-main.scss
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Partials need to start with an “_”, and when importing them in our &lt;code class=&quot;highlighter-rouge&quot;&gt;main.scss&lt;/code&gt; file, we can ommit both that, and the “.scss” part.&lt;/p&gt;
+
+&lt;p&gt;I don’t want to get into much details on this Sass/SCSS thing, because it would make this article even bigger, but I’m planning on writing another article just talking about that.&lt;/p&gt;
+
+&lt;p&gt;And I guess that’s it! The website is done. My last step was to deploy this to Netlify so let’s take a quick look on how I’m doing it.&lt;/p&gt;
+
+&lt;h3 id=&quot;deploying-to-netlify&quot;&gt;Deploying to Netlify&lt;/h3&gt;
+&lt;p&gt;I’ve recently discovered &lt;a href=&quot;https://netlify.com&quot;&gt;Netlify&lt;/a&gt;, and I instantly became a fan of it. Netlify is basically a service that allows you to host static websites/apps, and you can even use a custom domain with a SSL/TLS Certificate to have HTTPS. All of this can be done for free! How cool is that?&lt;/p&gt;
+
+&lt;p&gt;Let’s get started. First, go to &lt;a href=&quot;https://netlify.com&quot;&gt;Netlify’s website&lt;/a&gt; and create a new account. Once that’s done, your ready to deploy the website files.&lt;/p&gt;
+
+&lt;p&gt;Now, there are a few ways to do this:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;You can drag-and-drop a .zip in the Netlify dashboard&lt;/li&gt;
+  &lt;li&gt;Deploy using Git, where you link a Github/Gitlab/Bitbucket repository, and then when you push to Git, Netlify builds the site for you (in our case it would run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;Or, you can use the Netlify CLI, which allows you to deploy directly from you terminal.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In my case, I use this last option. Here’s how I do it.&lt;/p&gt;
+
+&lt;h4 id=&quot;using-the-cli&quot;&gt;Using the CLI&lt;/h4&gt;
+&lt;p&gt;To install the the Netlify CLI, the only requirement is to have &lt;a href=&quot;https://nodejs.org/en/download/&quot;&gt;Node.js&lt;/a&gt; installed. Once that’s done, you just need to run this in your terminal:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;netlify-cli &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And now you have access to the &lt;code class=&quot;highlighter-rouge&quot;&gt;netlify&lt;/code&gt; command. So, in your terminal, navigate to your site’s directory and run&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;netlify deploy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The CLI will now ask you if you want to link the directory to an existing site, or create and configure a new site. Let’s go with this last option, and then you’ll go through the configuration.&lt;/p&gt;
+
+&lt;p&gt;Remember to type &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; as your deploy path!&lt;/p&gt;
+
+&lt;p&gt;Once you’re done with that, Netlify will generate a draft URL. You can also deploy it to production using this command:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;netlify deploy &lt;span class=&quot;nt&quot;&gt;--prod&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And this time, a new Live URL will be created. Congrats, you have your site live! Now, to use my own domain that I’ve already purchased, I just need to go into Netlify’s dashboard, go to my site’s settings, and add my domain.&lt;/p&gt;
+
+&lt;p&gt;If you want to know a bit more about this, I recomment you to watch &lt;a href=&quot;https://www.youtube.com/watch?v=bjVUqvcCnxM&amp;amp;t=509s&quot;&gt;this video&lt;/a&gt; by Brad Traversy.&lt;/p&gt;
+
+&lt;h3 id=&quot;a-conclusion&quot;&gt;A conclusion&lt;/h3&gt;
+&lt;p&gt;Hope you find this useful! This turned out to be a pretty larger article than what I was planning, but I expect to write a few others to share the progress on my website and also some of the ways I’ll use Jekyll to my advantage!&lt;/p&gt;
+
+&lt;p&gt;Also, keep in mind that I’m no expert developer, and I’m doing things my own way, which means that there’s probably a few things that could’ve been made in a different/better way.&lt;/p&gt;
+
+&lt;p&gt;See you next time 👋🏼&lt;/p&gt;</content><author><name></name></author><summary type="html">I’ve finally launched the blog here on my website! I wanted to do this for some time, because I want to start writing more and I want to build like an online home for myself, to host all my projects, my ideas, my thoughts, and even though I also share my words on Medium, it’s a good idea to have my own blog as well, so I can get full control.</summary></entry><entry><title type="html">Building Ana’s Website, Pt 3</title><link href="/articles/building-anas-website-pt-3" rel="alternate" type="text/html" title="Building Ana's Website, Pt 3" /><published>2019-03-07T00:00:00+00:00</published><updated>2019-03-07T00:00:00+00:00</updated><id>/articles/building-anas-website-pt-3</id><content type="html" xml:base="/articles/building-anas-website-pt-3">&lt;p&gt;Hey there, welcome to the 3rd part of this series that I’ve been writing, about building my friend &lt;a href=&quot;https://medium.com/@anarlguerra&quot;&gt;Ana Guerra&lt;/a&gt; a personal website.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.byvasco.com/articles/building-anas-website-pt-2&quot;&gt;On part 2&lt;/a&gt; we drafted all the required pages for the website: the About Me page, which works like a home page, the Podcast page, Blog, Newsletter and Contacts page.&lt;/p&gt;
 
