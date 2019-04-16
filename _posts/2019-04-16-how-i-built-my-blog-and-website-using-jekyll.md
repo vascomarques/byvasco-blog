@@ -33,14 +33,14 @@ So, you have a bunch of source files in your local machine, and you can “compi
 
 For me, there are two main reasons to use a static site generator, in this case being Jekyll:
 - **Cost**: It’s super low cost to something like this. I basically just pay for my domain name, because I use Netlify to host my files.
-- **Simplicity**: There are a lot of things that a SSG doesn’t allow you to do. But for my needs, it’s just perfect. I can write articles, I can create static pages, make a portfolio (which I’ll eventually create), and that’s about it. I don’t need much more that that.
+- **Simplicity**: There are a lot of things that an SSG doesn’t allow you to do. But for my needs, it’s just perfect. I can write articles, I can create static pages, make a portfolio (which I’ll eventually create), and that’s about it. I don’t need much more than that.
 
-There are other great reasons to use something like this, like security, scalability and speed for example.
+There are other great reasons to use something like this, like security, scalability, and speed for example.
 
 #### Markdown
 Another thing before we get started. To write articles on Jekyll, we'll use [Markdown](https://daringfireball.net/projects/markdown/) which is text-to-HTML markup language.
 
-If you're not familiar with it, I recommend you to watch [this video](https://www.youtube.com/watch?v=HUBNt18RFbo&t=971s) by Brad Traversy, check out [this cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet), or just search the web!
+If you're not familiar with it, I recommend you to watch [this video](https://www.youtube.com/watch?v=HUBNt18RFbo&t=971s) by Brad Traversy, check out [this cheat sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet), or just search the web!
 
 
 ### Getting started
@@ -54,7 +54,7 @@ The first step was to design my website. This is probably the 1000th version, bu
   alt="ByVasco - Home and Articles page design"
 %}
 
-Ok, nice, design is done. I can add and make things better later on, but for now it’s perfect.
+Ok, nice, the design is done. I can add and make things better later on, but for now, it’s perfect.
 
 
 ### Setting up Jekyll
@@ -92,13 +92,13 @@ This will run the server, so go ahead and open your browser, navigate to [http:/
 ### Project structure
 By default, Jekyll will create a few files for you:
 - ```_config.yml``` this is your configuration file.
-- ```404.html``` the page that get’s rendered on the browser when there’s a 404 error.
+- ```404.html``` the page that gets rendered on the browser when there’s a 404 error.
 - ```index.md``` a .md file with the content for your Home page.
 - ```about.md``` a .md file with the content for your About page.
-- ```Gemfile``` and ```Gemfile.lock``` the files that allows you to manage all your required gems for the project.
+- ```Gemfile``` and ```Gemfile.lock``` the files that allow you to manage all your required gems for the project.
 
 And a couple of directories:
-- ```_site``` this is the directory that contains all the HTML, CSS and JavaScript files, after Jekyll “compiles” everything. It’s what you’ll want to deploy to the server later on.
+- ```_site``` this is the directory that contains all the HTML, CSS and JavaScript files after Jekyll “compiles” everything. It’s what you’ll want to deploy to the server later on.
 - ```_posts``` where all your posts’ files live.
 
 
@@ -114,7 +114,7 @@ In my case, I wanted to completely override this with my own styles and structur
 theme: minima
 ```
 
-And I also deleted the ```about.md``` file because I won't have an About page right now.
+And I also deleted the ```about.md``` file because I don't have an About page right now.
 
 Then I created some new directories: 
 - ```_drafts``` to store all the blog drafts.
@@ -143,7 +143,7 @@ Now, if you try to open your site, everything will be empty. The reason why is b
 
 
 ### Creating pages - Home
-Let’s first open up that ```index.md``` and checkout what’s inside.
+Let’s first open up that ```index.md``` and check out what’s inside.
 
 {% include code/code-caption.html caption="index.md" %}
 ```
@@ -157,7 +157,7 @@ layout: home
 
 This is the file where I'll place all the content for my home page.
 
-And as you can see, it’s almost empty. That block of code at the start of the file, enclosed by these tripple dashes is called _front matter_. This is the place where we can set variables that allows us to control a few things.
+And as you can see, it’s almost empty. That block of code at the start of the file, enclosed by these triple dashes is called _front matter_. This is the place where we can set variables that allow us to control a few things.
 
 Right now, there’s only that ```layout``` variable, with a ```home``` value. This means that the index page will use a ```layout``` called ```home```. But because we deleted the line in the ```_config.yml``` that said to Jekyll to use the Minima theme, it now has no ```home``` layout to point to. Let's fix this.
  
@@ -283,11 +283,11 @@ And here's my new layout ```default.html```
 </html>
 ```
 
-Everythings' basically the same, except of that weird thing in the ```<main>``` tag that looks like an if statement. That's because it is!
+Everything's basically the same, except that weird thing in the ```<main>``` tag that looks like an if statement. That's because it is!
 
 
 #### Adding logic
-Here's whats going on with that _if statement_: as you can see, I've added a ```page-name``` variable to the _front matter_ of my ```index.md```.
+Here's what's going on with that _if statement_: as you can see, I've added a ```page-name``` variable to the _front matter_ of my ```index.md```.
 
 What I want to do with this, is to add a dynamic class name to the ```<main>```HTML tag, so that I can manipulate things differently on my CSS. But if there's no ```page-name``` variable available, I don't want to add any class.
 
@@ -441,7 +441,7 @@ Next, got to the ```default.html``` file, remove the ```<head>```and the ```<hea
 </html>
 ```
 
-Now, instead of having to repeat all that code for every layout, we can just include them where we want them to be. Another advantage for doing this is that if we want to change something in our code, we just need to change it once, and it will reflect those changes everywhere.
+Now, instead of having to repeat all that code for every layout, we can just include them where we want them to be. Another advantage of doing this is that if we want to change something in our code, we just need to change it once, and it will reflect those changes everywhere.
 
 When using ```include```, you just need to make sure the file exists in the ```_includes``` directory. As you can see, to include a file it's as easy as this:
 ```liquid
@@ -490,7 +490,7 @@ By the way, take a look at how I'm outputting ```page.date```:
 {{ "{{ page.date | date: '%B %d, %Y' " }}}}
 ```
 
-I'm using what's called a _filter_. I won't get into much detail, but just know that in this ```date``` case, we can format it in different ways. Using that format, the date will be showed like this: "April 11, 2019". Here's a usefull list of [Jekyll date formatting examples](http://alanwsmith.com/jekyll-liquid-date-formatting-examples), writen by Alan Smith.
+I'm using what's called a _filter_. I won't get into much detail, but just know that in this ```date``` case, we can format it in different ways. Using that format, the date will be showed like this: "April 11, 2019". Here's a useful list of [Jekyll date formatting examples](http://alanwsmith.com/jekyll-liquid-date-formatting-examples), written by Alan Smith.
 
 The Home page is done, and we have all the necessary layouts and includes. Now it's time to take care of the Articles page.
 
@@ -552,7 +552,7 @@ Almost the same as the ```index.md```, but using something new: a _for loop_. Le
 
 
 #### Using loops
-You're probably familiar of how _for loops_ work. Here we use it to iterate through ```site.posts``` (```site``` is a global variable, that contains all the ```posts```). We can now display a block of code for every existing ```post```. In this case, I created an ```<li>``` with the ```post.title``` and the ```post.date```.
+You're probably familiar with how _for loops_ work. Here we use it to iterate through ```site.posts``` (```site``` is a global variable, that contains all the ```posts```). We can now display a block of code for every existing ```post```. In this case, I created an ```<li>``` with the ```post.title``` and the ```post.date```.
 
 ```html
 {{ "{% for post in site.posts " }}%}
@@ -580,7 +580,7 @@ At this point, I'm done with the pages for the site! Here's how your Articles pa
   alt="Jekyll basic site Articles page"
 %}
 
-Now let's take a look on how to create new posts!
+Now let's take a look at how to create new posts!
 
 
 ### Creating articles
@@ -599,9 +599,9 @@ You’ll find this post in your `_posts` directory. Go ahead and edit it and re-
 (...)
 ```
 
-You can see that this is basically the same thing we have on the ```index.md``` and on the ```articles.md``` pages. Theres a _front matter_ with some variables, and everything after that is the article content.
+You can see that this is basically the same thing we have on the ```index.md``` and on the ```articles.md``` pages. There's a _front matter_ with some variables, and everything after that is the article content.
 
-Something important we should pay atention to, is the format we use to name our post file.
+Something important we should pay attention to is the format we use to name our post file.
 
 ```
 yyyy-mm-dd-title.md
@@ -622,7 +622,7 @@ There are much more to know about this, but remember that I want this to be as s
 
 
 #### Using drafts
-What happens if you're still working on some articles, but thei're not ready to share yet? Enter: drafts.
+What happens if you're still working on some articles, but they're not ready to share yet? Enter: drafts.
 
 Remember that we created a ```_drafts``` directory? Well, this is where your drafts will live. A draft is basically the same thing as a regular post file, but without a date in its filename.
 
@@ -640,7 +640,7 @@ The last thing I want to cover here is how I added the styles for my website. In
 
 There are so many resources available for you to learn it! Here a great [crash course video](https://www.youtube.com/watch?v=roywYSEPSvc), for example.
 
-Now, 2 important things we need to to. First, we need to create a ```css``` directory, inside the ```assets``` directory, and place a ```main.scss``` inside it.
+Now, 2 important things we need to do. First, we need to create a ```css``` directory, inside the ```assets``` directory, and place a ```main.scss``` inside it.
 
 ```
 ├── assets
@@ -688,27 +688,27 @@ For example, here's a basic structure for my SCSS files:
 │       └── _modules-main.scss
 ```
 
-Partials need to start with an "_", and when importing them in our ```main.scss``` file, we can ommit both that, and the ".scss" part.
+Partials need to start with an "_", and when importing them in our ```main.scss``` file, we can omit both that and the ".scss" part.
 
 I don't want to get into much details on this Sass/SCSS thing, because it would make this article even bigger, but I'm planning on writing another article just talking about that.
 
-And I guess that's it! The website is done. My last step was to deploy this to Netlify so let's take a quick look on how I'm doing it.
+And I guess that's it! The website is done. My last step was to deploy this to Netlify so let's take a quick look at how I'm doing it.
 
 
 ### Deploying to Netlify
-I've recently discovered [Netlify](https://netlify.com), and I instantly became a fan of it. Netlify is basically a service that allows you to host static websites/apps, and you can even use a custom domain with a SSL/TLS Certificate to have HTTPS. All of this can be done for free! How cool is that?
+I've recently discovered [Netlify](https://netlify.com), and I instantly became a fan of it. Netlify is basically a service that allows you to host static websites/apps, and you can even use a custom domain with an SSL/TLS Certificate to have HTTPS. All of this can be done for free! How cool is that?
 
-Let's get started. First, go to [Netlify's website](https://netlify.com) and create a new account. Once that's done, your ready to deploy the website files.
+Let's get started. First, go to [Netlify's website](https://netlify.com) and create a new account. Once that's done, you're ready to deploy the website files.
 
 Now, there are a few ways to do this:
 - You can drag-and-drop a .zip in the Netlify dashboard
 - Deploy using Git, where you link a Github/Gitlab/Bitbucket repository, and then when you push to Git, Netlify builds the site for you (in our case it would run ```jekyll build```)
-- Or, you can use the Netlify CLI, which allows you to deploy directly from you terminal.
+- Or, you can use the Netlify CLI, which allows you to deploy directly from your terminal.
 
 In my case, I use this last option. Here's how I do it.
 
 #### Using the CLI
-To install the the Netlify CLI, the only requirement is to have [Node.js](https://nodejs.org/en/download/) installed. Once that's done, you just need to run this in your terminal:
+To install the Netlify CLI, the only requirement is to have [Node.js](https://nodejs.org/en/download/) installed. Once that's done, you just need to run this in your terminal:
 
 ```bash
 npm install netlify-cli -g
@@ -720,7 +720,7 @@ And now you have access to the ```netlify``` command. So, in your terminal, navi
 netlify deploy
 ```
 
-The CLI will now ask you if you want to link the directory to an existing site, or create and configure a new site. Let's go with this last option, and then you'll go through the configuration.
+The CLI will now ask you if you want to link the directory to an existing site or create and configure a new site. Let's go with this last option, and then you'll go through the configuration.
 
 Remember to type ```_site``` as your deploy path!
 
@@ -732,12 +732,12 @@ netlify deploy --prod
 
 And this time, a new Live URL will be created. Congrats, you have your site live! Now, to use my own domain that I've already purchased, I just need to go into Netlify's dashboard, go to my site's settings, and add my domain.
 
-If you want to know a bit more about this, I recomment you to watch [this video](https://www.youtube.com/watch?v=bjVUqvcCnxM&t=509s) by Brad Traversy.
+If you want to know a bit more about this, I recommend you to watch [this video](https://www.youtube.com/watch?v=bjVUqvcCnxM&t=509s) by Brad Traversy.
 
 
 ### A conclusion
 Hope you find this useful! This turned out to be a pretty larger article than what I was planning, but I expect to write a few others to share the progress on my website and also some of the ways I'll use Jekyll to my advantage!
 
-Also, keep in mind that I'm no expert developer, and I'm doing things my own way, which means that there's probably a few things that could've been made in a different/better way.
+Also, keep in mind that I'm no expert developer, and I'm doing things my own way, which means that there are probably a few things that could've been made in a different/better way.
 
 See you next time 👋🏼

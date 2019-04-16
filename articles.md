@@ -3,6 +3,7 @@ layout: default
 title: Articles
 page-name: articles
 page-title: My thoughts and ideas into words.
+has-footer: yes
 ---
 
 <header class="header-page">

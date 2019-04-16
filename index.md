@@ -18,7 +18,7 @@ page-name: home
       <p>During the night, I get busy learning new things, building my own projects, reading and fixing my old cars.</p>
     </div>
     <div class="content-section">
-      <p>I’m currently building a community for old Volkswagen lovers, making a website for my friend Ana Guerra, and learning JavaScript.</p>
+      <p>I’m currently building <a href="http://mk2swag.com/">a community</a> for old Volkswagen lovers, making <a href="http://anarlguerra.com/">a website</a> for my friend Ana Guerra, and learning JavaScript.</p>
     </div>
     <div class="content-section">
       <p>Get in touch by reaching out at <a href="mailto:hello@byvasco.com">hello@byvasco.com</a>.</p>

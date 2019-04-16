@@ -8,5 +8,9 @@
     <main class="{% if page.page-name %}page-{{ page.page-name }}{% else %}page{% endif %}"">
       {{ content }}
     </main>
+
+    {% if page.has-footer %}
+      {% include footer.html %}
+    {% endif %}
   </body>
 </html>

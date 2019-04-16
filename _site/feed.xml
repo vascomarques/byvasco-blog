@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-04-14T16:19:56+01:00</updated><id>/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">How I built my blog and website using Jekyll</title><link href="/articles/how-i-built-my-blog-and-website-using-jekyll/" rel="alternate" type="text/html" title="How I built my blog and website using Jekyll" /><published>2019-04-14T00:00:00+01:00</published><updated>2019-04-14T00:00:00+01:00</updated><id>/articles/how-i-built-my-blog-and-website-using-jekyll</id><content type="html" xml:base="/articles/how-i-built-my-blog-and-website-using-jekyll/">&lt;p&gt;I’ve finally launched the blog here on my website! I wanted to do this for some time, because I want to start writing more and I want to build like an online home for myself, to host all my projects, my ideas, my thoughts, and even though I also share &lt;a href=&quot;https://medium.com/@byvasco&quot;&gt;my words on Medium&lt;/a&gt;, it’s a good idea to have my own blog as well, so I can get full control.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-04-16T17:53:02+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">How I built my blog and website using Jekyll</title><link href="http://localhost:4000/articles/how-i-built-my-blog-and-website-using-jekyll/" rel="alternate" type="text/html" title="How I built my blog and website using Jekyll" /><published>2019-04-16T00:00:00+01:00</published><updated>2019-04-16T00:00:00+01:00</updated><id>http://localhost:4000/articles/how-i-built-my-blog-and-website-using-jekyll</id><content type="html" xml:base="http://localhost:4000/articles/how-i-built-my-blog-and-website-using-jekyll/">&lt;p&gt;I’ve finally launched the blog here on my website! I wanted to do this for some time, because I want to start writing more and I want to build like an online home for myself, to host all my projects, my ideas, my thoughts, and even though I also share &lt;a href=&quot;https://medium.com/@byvasco&quot;&gt;my words on Medium&lt;/a&gt;, it’s a good idea to have my own blog as well, so I can get full control.&lt;/p&gt;
 
 &lt;h3 id=&quot;too-long-didnt-read&quot;&gt;Too long, didn’t read&lt;/h3&gt;
 &lt;p&gt;This turned out to be kind of a large post, so here’re the some links for the different sections.&lt;/p&gt;
@@ -44,15 +44,15 @@ So, you have a bunch of source files in your local machine, and you can “compi
 &lt;p&gt;For me, there are two main reasons to use a static site generator, in this case being Jekyll:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Cost&lt;/strong&gt;: It’s super low cost to something like this. I basically just pay for my domain name, because I use Netlify to host my files.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Simplicity&lt;/strong&gt;: There are a lot of things that a SSG doesn’t allow you to do. But for my needs, it’s just perfect. I can write articles, I can create static pages, make a portfolio (which I’ll eventually create), and that’s about it. I don’t need much more that that.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Simplicity&lt;/strong&gt;: There are a lot of things that an SSG doesn’t allow you to do. But for my needs, it’s just perfect. I can write articles, I can create static pages, make a portfolio (which I’ll eventually create), and that’s about it. I don’t need much more than that.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;There are other great reasons to use something like this, like security, scalability and speed for example.&lt;/p&gt;
+&lt;p&gt;There are other great reasons to use something like this, like security, scalability, and speed for example.&lt;/p&gt;
 
 &lt;h4 id=&quot;markdown&quot;&gt;Markdown&lt;/h4&gt;
 &lt;p&gt;Another thing before we get started. To write articles on Jekyll, we’ll use &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt; which is text-to-HTML markup language.&lt;/p&gt;
 
-&lt;p&gt;If you’re not familiar with it, I recommend you to watch &lt;a href=&quot;https://www.youtube.com/watch?v=HUBNt18RFbo&amp;amp;t=971s&quot;&gt;this video&lt;/a&gt; by Brad Traversy, check out &lt;a href=&quot;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&quot;&gt;this cheatsheet&lt;/a&gt;, or just search the web!&lt;/p&gt;
+&lt;p&gt;If you’re not familiar with it, I recommend you to watch &lt;a href=&quot;https://www.youtube.com/watch?v=HUBNt18RFbo&amp;amp;t=971s&quot;&gt;this video&lt;/a&gt; by Brad Traversy, check out &lt;a href=&quot;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&quot;&gt;this cheat sheet&lt;/a&gt;, or just search the web!&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 &lt;p&gt;The first step was to design my website. This is probably the 1000th version, but this time I’m certain this one is here to stay. It’s super basic, and it currently only has a couple of pages: Home and Articles (and the  Article page of course). Here’s how it looks:&lt;/p&gt;
@@ -64,11 +64,11 @@ So, you have a bunch of source files in your local machine, and you can “compi
 --&gt;
 
 &lt;figure&gt;
-    &lt;img src=&quot;/assets/posts/2019-04-14-how-i-built-my-blog-and-website-using-jekyll/home-articles-pages.jpg&quot; alt=&quot;ByVasco - Home and Articles page design&quot; /&gt;
+    &lt;img src=&quot;/assets/posts/2019-04-16-how-i-built-my-blog-and-website-using-jekyll/home-articles-pages.jpg&quot; alt=&quot;ByVasco - Home and Articles page design&quot; /&gt;
     &lt;figcaption class=&quot;text-smaller caption&quot;&gt;Home and Articles page&lt;/figcaption&gt;
   &lt;/figure&gt;
 
-&lt;p&gt;Ok, nice, design is done. I can add and make things better later on, but for now it’s perfect.&lt;/p&gt;
+&lt;p&gt;Ok, nice, the design is done. I can add and make things better later on, but for now, it’s perfect.&lt;/p&gt;
 
 &lt;h3 id=&quot;setting-up-jekyll&quot;&gt;Setting up Jekyll&lt;/h3&gt;
 &lt;p&gt;Being no expert on web development (I’m still in the beginning phases of my journey), this how-to Jekyll “guide” will be written in a super non-technical way. Also, I’m using MacOS, but I assume that it won’t change a lot for Windows.&lt;/p&gt;
@@ -101,15 +101,15 @@ So, you have a bunch of source files in your local machine, and you can “compi
 &lt;p&gt;By default, Jekyll will create a few files for you:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; this is your configuration file.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;404.html&lt;/code&gt; the page that get’s rendered on the browser when there’s a 404 error.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;404.html&lt;/code&gt; the page that gets rendered on the browser when there’s a 404 error.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt; a .md file with the content for your Home page.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;about.md&lt;/code&gt; a .md file with the content for your About page.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile.lock&lt;/code&gt; the files that allows you to manage all your required gems for the project.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile.lock&lt;/code&gt; the files that allow you to manage all your required gems for the project.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;And a couple of directories:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; this is the directory that contains all the HTML, CSS and JavaScript files, after Jekyll “compiles” everything. It’s what you’ll want to deploy to the server later on.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; this is the directory that contains all the HTML, CSS and JavaScript files after Jekyll “compiles” everything. It’s what you’ll want to deploy to the server later on.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; where all your posts’ files live.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -123,7 +123,7 @@ So, you have a bunch of source files in your local machine, and you can “compi
 &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;minima&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;And I also deleted the &lt;code class=&quot;highlighter-rouge&quot;&gt;about.md&lt;/code&gt; file because I won’t have an About page right now.&lt;/p&gt;
+&lt;p&gt;And I also deleted the &lt;code class=&quot;highlighter-rouge&quot;&gt;about.md&lt;/code&gt; file because I don’t have an About page right now.&lt;/p&gt;
 
 &lt;p&gt;Then I created some new directories:&lt;/p&gt;
 &lt;ul&gt;
@@ -152,7 +152,7 @@ So, you have a bunch of source files in your local machine, and you can “compi
 &lt;p&gt;Now, if you try to open your site, everything will be empty. The reason why is because of how Jekyll works with pages and layouts. I’ll try to explain this in the next section.&lt;/p&gt;
 
 &lt;h3 id=&quot;creating-pages---home&quot;&gt;Creating pages - Home&lt;/h3&gt;
-&lt;p&gt;Let’s first open up that &lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt; and checkout what’s inside.&lt;/p&gt;
+&lt;p&gt;Let’s first open up that &lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt; and check out what’s inside.&lt;/p&gt;
 
 &lt;p class=&quot;code-caption&quot;&gt;index.md&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
@@ -165,7 +165,7 @@ layout: home
 
 &lt;p&gt;This is the file where I’ll place all the content for my home page.&lt;/p&gt;
 
-&lt;p&gt;And as you can see, it’s almost empty. That block of code at the start of the file, enclosed by these tripple dashes is called &lt;em&gt;front matter&lt;/em&gt;. This is the place where we can set variables that allows us to control a few things.&lt;/p&gt;
+&lt;p&gt;And as you can see, it’s almost empty. That block of code at the start of the file, enclosed by these triple dashes is called &lt;em&gt;front matter&lt;/em&gt;. This is the place where we can set variables that allow us to control a few things.&lt;/p&gt;
 
 &lt;p&gt;Right now, there’s only that &lt;code class=&quot;highlighter-rouge&quot;&gt;layout&lt;/code&gt; variable, with a &lt;code class=&quot;highlighter-rouge&quot;&gt;home&lt;/code&gt; value. This means that the index page will use a &lt;code class=&quot;highlighter-rouge&quot;&gt;layout&lt;/code&gt; called &lt;code class=&quot;highlighter-rouge&quot;&gt;home&lt;/code&gt;. But because we deleted the line in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; that said to Jekyll to use the Minima theme, it now has no &lt;code class=&quot;highlighter-rouge&quot;&gt;home&lt;/code&gt; layout to point to. Let’s fix this.&lt;/p&gt;
 
@@ -208,7 +208,7 @@ Hello world! This is comming directly from the index.md file.
 --&gt;
 
 &lt;figure&gt;
-    &lt;img src=&quot;/assets/posts/2019-04-14-how-i-built-my-blog-and-website-using-jekyll/jekyll-basic-site.jpg&quot; alt=&quot;Jekyll basic site&quot; /&gt;
+    &lt;img src=&quot;/assets/posts/2019-04-16-how-i-built-my-blog-and-website-using-jekyll/jekyll-basic-site.jpg&quot; alt=&quot;Jekyll basic site&quot; /&gt;
   &lt;/figure&gt;
 
 &lt;p&gt;Fantastic! Now, let’s try another thing. In your &lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt;, add another variable to the front matter. Here’s mine:&lt;/p&gt;
@@ -288,10 +288,10 @@ page-name: home
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Everythings’ basically the same, except of that weird thing in the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;main&amp;gt;&lt;/code&gt; tag that looks like an if statement. That’s because it is!&lt;/p&gt;
+&lt;p&gt;Everything’s basically the same, except that weird thing in the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;main&amp;gt;&lt;/code&gt; tag that looks like an if statement. That’s because it is!&lt;/p&gt;
 
 &lt;h4 id=&quot;adding-logic&quot;&gt;Adding logic&lt;/h4&gt;
-&lt;p&gt;Here’s whats going on with that &lt;em&gt;if statement&lt;/em&gt;: as you can see, I’ve added a &lt;code class=&quot;highlighter-rouge&quot;&gt;page-name&lt;/code&gt; variable to the &lt;em&gt;front matter&lt;/em&gt; of my &lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Here’s what’s going on with that &lt;em&gt;if statement&lt;/em&gt;: as you can see, I’ve added a &lt;code class=&quot;highlighter-rouge&quot;&gt;page-name&lt;/code&gt; variable to the &lt;em&gt;front matter&lt;/em&gt; of my &lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;What I want to do with this, is to add a dynamic class name to the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;main&amp;gt;&lt;/code&gt;HTML tag, so that I can manipulate things differently on my CSS. But if there’s no &lt;code class=&quot;highlighter-rouge&quot;&gt;page-name&lt;/code&gt; variable available, I don’t want to add any class.&lt;/p&gt;
 
@@ -436,7 +436,7 @@ page-name: home
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Now, instead of having to repeat all that code for every layout, we can just include them where we want them to be. Another advantage for doing this is that if we want to change something in our code, we just need to change it once, and it will reflect those changes everywhere.&lt;/p&gt;
+&lt;p&gt;Now, instead of having to repeat all that code for every layout, we can just include them where we want them to be. Another advantage of doing this is that if we want to change something in our code, we just need to change it once, and it will reflect those changes everywhere.&lt;/p&gt;
 
 &lt;p&gt;When using &lt;code class=&quot;highlighter-rouge&quot;&gt;include&lt;/code&gt;, you just need to make sure the file exists in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt; directory. As you can see, to include a file it’s as easy as this:&lt;/p&gt;
 &lt;div class=&quot;language-liquid highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
@@ -481,7 +481,7 @@ page-name: home
 &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{{ page.date | date: '%B %d, %Y' }}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;I’m using what’s called a &lt;em&gt;filter&lt;/em&gt;. I won’t get into much detail, but just know that in this &lt;code class=&quot;highlighter-rouge&quot;&gt;date&lt;/code&gt; case, we can format it in different ways. Using that format, the date will be showed like this: “April 11, 2019”. Here’s a usefull list of &lt;a href=&quot;http://alanwsmith.com/jekyll-liquid-date-formatting-examples&quot;&gt;Jekyll date formatting examples&lt;/a&gt;, writen by Alan Smith.&lt;/p&gt;
+&lt;p&gt;I’m using what’s called a &lt;em&gt;filter&lt;/em&gt;. I won’t get into much detail, but just know that in this &lt;code class=&quot;highlighter-rouge&quot;&gt;date&lt;/code&gt; case, we can format it in different ways. Using that format, the date will be showed like this: “April 11, 2019”. Here’s a useful list of &lt;a href=&quot;http://alanwsmith.com/jekyll-liquid-date-formatting-examples&quot;&gt;Jekyll date formatting examples&lt;/a&gt;, written by Alan Smith.&lt;/p&gt;
 
 &lt;p&gt;The Home page is done, and we have all the necessary layouts and includes. Now it’s time to take care of the Articles page.&lt;/p&gt;
 
@@ -540,7 +540,7 @@ page-name: articles
 &lt;p&gt;Almost the same as the &lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt;, but using something new: a &lt;em&gt;for loop&lt;/em&gt;. Let’s take a quick look at it, and how it’s used to display all the articles.&lt;/p&gt;
 
 &lt;h4 id=&quot;using-loops&quot;&gt;Using loops&lt;/h4&gt;
-&lt;p&gt;You’re probably familiar of how &lt;em&gt;for loops&lt;/em&gt; work. Here we use it to iterate through &lt;code class=&quot;highlighter-rouge&quot;&gt;site.posts&lt;/code&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;site&lt;/code&gt; is a global variable, that contains all the &lt;code class=&quot;highlighter-rouge&quot;&gt;posts&lt;/code&gt;). We can now display a block of code for every existing &lt;code class=&quot;highlighter-rouge&quot;&gt;post&lt;/code&gt;. In this case, I created an &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;li&amp;gt;&lt;/code&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;post.title&lt;/code&gt; and the &lt;code class=&quot;highlighter-rouge&quot;&gt;post.date&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You’re probably familiar with how &lt;em&gt;for loops&lt;/em&gt; work. Here we use it to iterate through &lt;code class=&quot;highlighter-rouge&quot;&gt;site.posts&lt;/code&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;site&lt;/code&gt; is a global variable, that contains all the &lt;code class=&quot;highlighter-rouge&quot;&gt;posts&lt;/code&gt;). We can now display a block of code for every existing &lt;code class=&quot;highlighter-rouge&quot;&gt;post&lt;/code&gt;. In this case, I created an &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;li&amp;gt;&lt;/code&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;post.title&lt;/code&gt; and the &lt;code class=&quot;highlighter-rouge&quot;&gt;post.date&lt;/code&gt;.&lt;/p&gt;
 
 &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% for post in site.posts %}
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;article-preview&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -567,10 +567,10 @@ page-name: articles
 --&gt;
 
 &lt;figure&gt;
-    &lt;img src=&quot;/assets/posts/2019-04-14-how-i-built-my-blog-and-website-using-jekyll/jekyll-basic-site-articles.jpg&quot; alt=&quot;Jekyll basic site Articles page&quot; /&gt;
+    &lt;img src=&quot;/assets/posts/2019-04-16-how-i-built-my-blog-and-website-using-jekyll/jekyll-basic-site-articles.jpg&quot; alt=&quot;Jekyll basic site Articles page&quot; /&gt;
   &lt;/figure&gt;
 
-&lt;p&gt;Now let’s take a look on how to create new posts!&lt;/p&gt;
+&lt;p&gt;Now let’s take a look at how to create new posts!&lt;/p&gt;
 
 &lt;h3 id=&quot;creating-articles&quot;&gt;Creating articles&lt;/h3&gt;
 &lt;p&gt;We already have that “Welcome to Jekyll”, so let’s and inspect what’s inside that file. All your posts should be inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory.&lt;/p&gt;
@@ -587,9 +587,9 @@ You’ll find this post in your `_posts` directory. Go ahead and edit it and re-
 (...)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;You can see that this is basically the same thing we have on the &lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt; and on the &lt;code class=&quot;highlighter-rouge&quot;&gt;articles.md&lt;/code&gt; pages. Theres a &lt;em&gt;front matter&lt;/em&gt; with some variables, and everything after that is the article content.&lt;/p&gt;
+&lt;p&gt;You can see that this is basically the same thing we have on the &lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt; and on the &lt;code class=&quot;highlighter-rouge&quot;&gt;articles.md&lt;/code&gt; pages. There’s a &lt;em&gt;front matter&lt;/em&gt; with some variables, and everything after that is the article content.&lt;/p&gt;
 
-&lt;p&gt;Something important we should pay atention to, is the format we use to name our post file.&lt;/p&gt;
+&lt;p&gt;Something important we should pay attention to is the format we use to name our post file.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yyyy-mm-dd-title.md
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -607,7 +607,7 @@ title: &quot;How I built my blog and website using Jekyll&quot;
 &lt;p&gt;There are much more to know about this, but remember that I want this to be as simple as possible. If you want to know more, here’s the &lt;a href=&quot;https://jekyllrb.com/docs/posts/&quot;&gt;documentation for posts&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h4 id=&quot;using-drafts&quot;&gt;Using drafts&lt;/h4&gt;
-&lt;p&gt;What happens if you’re still working on some articles, but thei’re not ready to share yet? Enter: drafts.&lt;/p&gt;
+&lt;p&gt;What happens if you’re still working on some articles, but they’re not ready to share yet? Enter: drafts.&lt;/p&gt;
 
 &lt;p&gt;Remember that we created a &lt;code class=&quot;highlighter-rouge&quot;&gt;_drafts&lt;/code&gt; directory? Well, this is where your drafts will live. A draft is basically the same thing as a regular post file, but without a date in its filename.&lt;/p&gt;
 
@@ -623,7 +623,7 @@ title: &quot;How I built my blog and website using Jekyll&quot;
 
 &lt;p&gt;There are so many resources available for you to learn it! Here a great &lt;a href=&quot;https://www.youtube.com/watch?v=roywYSEPSvc&quot;&gt;crash course video&lt;/a&gt;, for example.&lt;/p&gt;
 
-&lt;p&gt;Now, 2 important things we need to to. First, we need to create a &lt;code class=&quot;highlighter-rouge&quot;&gt;css&lt;/code&gt; directory, inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;assets&lt;/code&gt; directory, and place a &lt;code class=&quot;highlighter-rouge&quot;&gt;main.scss&lt;/code&gt; inside it.&lt;/p&gt;
+&lt;p&gt;Now, 2 important things we need to do. First, we need to create a &lt;code class=&quot;highlighter-rouge&quot;&gt;css&lt;/code&gt; directory, inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;assets&lt;/code&gt; directory, and place a &lt;code class=&quot;highlighter-rouge&quot;&gt;main.scss&lt;/code&gt; inside it.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── assets
 │   └── css
@@ -667,28 +667,28 @@ title: &quot;How I built my blog and website using Jekyll&quot;
 │       └── _modules-main.scss
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Partials need to start with an “_”, and when importing them in our &lt;code class=&quot;highlighter-rouge&quot;&gt;main.scss&lt;/code&gt; file, we can ommit both that, and the “.scss” part.&lt;/p&gt;
+&lt;p&gt;Partials need to start with an “_”, and when importing them in our &lt;code class=&quot;highlighter-rouge&quot;&gt;main.scss&lt;/code&gt; file, we can omit both that and the “.scss” part.&lt;/p&gt;
 
 &lt;p&gt;I don’t want to get into much details on this Sass/SCSS thing, because it would make this article even bigger, but I’m planning on writing another article just talking about that.&lt;/p&gt;
 
-&lt;p&gt;And I guess that’s it! The website is done. My last step was to deploy this to Netlify so let’s take a quick look on how I’m doing it.&lt;/p&gt;
+&lt;p&gt;And I guess that’s it! The website is done. My last step was to deploy this to Netlify so let’s take a quick look at how I’m doing it.&lt;/p&gt;
 
 &lt;h3 id=&quot;deploying-to-netlify&quot;&gt;Deploying to Netlify&lt;/h3&gt;
-&lt;p&gt;I’ve recently discovered &lt;a href=&quot;https://netlify.com&quot;&gt;Netlify&lt;/a&gt;, and I instantly became a fan of it. Netlify is basically a service that allows you to host static websites/apps, and you can even use a custom domain with a SSL/TLS Certificate to have HTTPS. All of this can be done for free! How cool is that?&lt;/p&gt;
+&lt;p&gt;I’ve recently discovered &lt;a href=&quot;https://netlify.com&quot;&gt;Netlify&lt;/a&gt;, and I instantly became a fan of it. Netlify is basically a service that allows you to host static websites/apps, and you can even use a custom domain with an SSL/TLS Certificate to have HTTPS. All of this can be done for free! How cool is that?&lt;/p&gt;
 
-&lt;p&gt;Let’s get started. First, go to &lt;a href=&quot;https://netlify.com&quot;&gt;Netlify’s website&lt;/a&gt; and create a new account. Once that’s done, your ready to deploy the website files.&lt;/p&gt;
+&lt;p&gt;Let’s get started. First, go to &lt;a href=&quot;https://netlify.com&quot;&gt;Netlify’s website&lt;/a&gt; and create a new account. Once that’s done, you’re ready to deploy the website files.&lt;/p&gt;
 
 &lt;p&gt;Now, there are a few ways to do this:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;You can drag-and-drop a .zip in the Netlify dashboard&lt;/li&gt;
   &lt;li&gt;Deploy using Git, where you link a Github/Gitlab/Bitbucket repository, and then when you push to Git, Netlify builds the site for you (in our case it would run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;Or, you can use the Netlify CLI, which allows you to deploy directly from you terminal.&lt;/li&gt;
+  &lt;li&gt;Or, you can use the Netlify CLI, which allows you to deploy directly from your terminal.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;In my case, I use this last option. Here’s how I do it.&lt;/p&gt;
 
 &lt;h4 id=&quot;using-the-cli&quot;&gt;Using the CLI&lt;/h4&gt;
-&lt;p&gt;To install the the Netlify CLI, the only requirement is to have &lt;a href=&quot;https://nodejs.org/en/download/&quot;&gt;Node.js&lt;/a&gt; installed. Once that’s done, you just need to run this in your terminal:&lt;/p&gt;
+&lt;p&gt;To install the Netlify CLI, the only requirement is to have &lt;a href=&quot;https://nodejs.org/en/download/&quot;&gt;Node.js&lt;/a&gt; installed. Once that’s done, you just need to run this in your terminal:&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;netlify-cli &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -698,7 +698,7 @@ title: &quot;How I built my blog and website using Jekyll&quot;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;netlify deploy
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;The CLI will now ask you if you want to link the directory to an existing site, or create and configure a new site. Let’s go with this last option, and then you’ll go through the configuration.&lt;/p&gt;
+&lt;p&gt;The CLI will now ask you if you want to link the directory to an existing site or create and configure a new site. Let’s go with this last option, and then you’ll go through the configuration.&lt;/p&gt;
 
 &lt;p&gt;Remember to type &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; as your deploy path!&lt;/p&gt;
 
@@ -709,14 +709,14 @@ title: &quot;How I built my blog and website using Jekyll&quot;
 
 &lt;p&gt;And this time, a new Live URL will be created. Congrats, you have your site live! Now, to use my own domain that I’ve already purchased, I just need to go into Netlify’s dashboard, go to my site’s settings, and add my domain.&lt;/p&gt;
 
-&lt;p&gt;If you want to know a bit more about this, I recomment you to watch &lt;a href=&quot;https://www.youtube.com/watch?v=bjVUqvcCnxM&amp;amp;t=509s&quot;&gt;this video&lt;/a&gt; by Brad Traversy.&lt;/p&gt;
+&lt;p&gt;If you want to know a bit more about this, I recommend you to watch &lt;a href=&quot;https://www.youtube.com/watch?v=bjVUqvcCnxM&amp;amp;t=509s&quot;&gt;this video&lt;/a&gt; by Brad Traversy.&lt;/p&gt;
 
 &lt;h3 id=&quot;a-conclusion&quot;&gt;A conclusion&lt;/h3&gt;
 &lt;p&gt;Hope you find this useful! This turned out to be a pretty larger article than what I was planning, but I expect to write a few others to share the progress on my website and also some of the ways I’ll use Jekyll to my advantage!&lt;/p&gt;
 
-&lt;p&gt;Also, keep in mind that I’m no expert developer, and I’m doing things my own way, which means that there’s probably a few things that could’ve been made in a different/better way.&lt;/p&gt;
+&lt;p&gt;Also, keep in mind that I’m no expert developer, and I’m doing things my own way, which means that there are probably a few things that could’ve been made in a different/better way.&lt;/p&gt;
 
-&lt;p&gt;See you next time 👋🏼&lt;/p&gt;</content><author><name></name></author><summary type="html">I’ve finally launched the blog here on my website! I wanted to do this for some time, because I want to start writing more and I want to build like an online home for myself, to host all my projects, my ideas, my thoughts, and even though I also share my words on Medium, it’s a good idea to have my own blog as well, so I can get full control.</summary></entry><entry><title type="html">Building Ana’s Website, Pt 3</title><link href="/articles/building-anas-website-pt-3" rel="alternate" type="text/html" title="Building Ana's Website, Pt 3" /><published>2019-03-07T00:00:00+00:00</published><updated>2019-03-07T00:00:00+00:00</updated><id>/articles/building-anas-website-pt-3</id><content type="html" xml:base="/articles/building-anas-website-pt-3">&lt;p&gt;Hey there, welcome to the 3rd part of this series that I’ve been writing, about building my friend &lt;a href=&quot;https://medium.com/@anarlguerra&quot;&gt;Ana Guerra&lt;/a&gt; a personal website.&lt;/p&gt;
+&lt;p&gt;See you next time 👋🏼&lt;/p&gt;</content><author><name></name></author><summary type="html">I’ve finally launched the blog here on my website! I wanted to do this for some time, because I want to start writing more and I want to build like an online home for myself, to host all my projects, my ideas, my thoughts, and even though I also share my words on Medium, it’s a good idea to have my own blog as well, so I can get full control.</summary></entry><entry><title type="html">Building Ana’s Website, Pt 3</title><link href="http://localhost:4000/articles/building-anas-website-pt-3" rel="alternate" type="text/html" title="Building Ana's Website, Pt 3" /><published>2019-03-07T00:00:00+00:00</published><updated>2019-03-07T00:00:00+00:00</updated><id>http://localhost:4000/articles/building-anas-website-pt-3</id><content type="html" xml:base="http://localhost:4000/articles/building-anas-website-pt-3">&lt;p&gt;Hey there, welcome to the 3rd part of this series that I’ve been writing, about building my friend &lt;a href=&quot;https://medium.com/@anarlguerra&quot;&gt;Ana Guerra&lt;/a&gt; a personal website.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.byvasco.com/articles/building-anas-website-pt-2&quot;&gt;On part 2&lt;/a&gt; we drafted all the required pages for the website: the About Me page, which works like a home page, the Podcast page, Blog, Newsletter and Contacts page.&lt;/p&gt;
 
@@ -825,7 +825,7 @@ title: &quot;How I built my blog and website using Jekyll&quot;
 
 &lt;p&gt;See you soon! 👋🏼&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.byvasco.com/articles/building-anas-website-pt-2&quot;&gt;← Part 2&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Hey there, welcome to the 3rd part of this series that I’ve been writing, about building my friend Ana Guerra a personal website.</summary></entry><entry><title type="html">Building Ana’s Website, Pt 2</title><link href="/articles/building-anas-website-pt-2/" rel="alternate" type="text/html" title="Building Ana's Website, Pt 2" /><published>2018-12-23T00:00:00+00:00</published><updated>2018-12-23T00:00:00+00:00</updated><id>/articles/building-anas-website-pt-2</id><content type="html" xml:base="/articles/building-anas-website-pt-2/">&lt;p&gt;Onto the second part of this series where I’m creating a website for my friend Ana Guerra and documenting the process of doing so! To get some context of what’s going on, here’s the 1st part.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.byvasco.com/articles/building-anas-website-pt-2&quot;&gt;← Part 2&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Hey there, welcome to the 3rd part of this series that I’ve been writing, about building my friend Ana Guerra a personal website.</summary></entry><entry><title type="html">Building Ana’s Website, Pt 2</title><link href="http://localhost:4000/articles/building-anas-website-pt-2/" rel="alternate" type="text/html" title="Building Ana's Website, Pt 2" /><published>2018-12-23T00:00:00+00:00</published><updated>2018-12-23T00:00:00+00:00</updated><id>http://localhost:4000/articles/building-anas-website-pt-2</id><content type="html" xml:base="http://localhost:4000/articles/building-anas-website-pt-2/">&lt;p&gt;Onto the second part of this series where I’m creating a website for my friend Ana Guerra and documenting the process of doing so! To get some context of what’s going on, here’s the 1st part.&lt;/p&gt;
 
 &lt;p&gt;She is also doing it on her podcast, here’s the first episode, the second one is coming soon.&lt;/p&gt;
 
@@ -1002,7 +1002,7 @@ title: &quot;How I built my blog and website using Jekyll&quot;
 
 &lt;p&gt;Once I get all done, I’ll bring some colors in and take care of things in a more detailed level.&lt;/p&gt;
 
-&lt;p&gt;See you soon in part 3! 👋🏼&lt;/p&gt;</content><author><name></name></author><summary type="html">Onto the second part of this series where I’m creating a website for my friend Ana Guerra and documenting the process of doing so! To get some context of what’s going on, here’s the 1st part.</summary></entry><entry><title type="html">Building Ana’s Website, Pt 1</title><link href="/articles/building-anas-website-pt-1" rel="alternate" type="text/html" title="Building Ana's Website, Pt 1" /><published>2018-11-17T00:00:00+00:00</published><updated>2018-11-17T00:00:00+00:00</updated><id>/articles/building-anas-website-pt-1</id><content type="html" xml:base="/articles/building-anas-website-pt-1">&lt;p&gt;Starting from the beginning. My friend Ana Guerra started thinking about creating a newsletter and we talked about creating some kind of landing page for that. However, there are a few more things she’s into — she also writes and has a podcast. So we thought we should take it a step further and just create a full website to serve as her personal home on the internet to house every project she has going on, and for future stuff as well!&lt;/p&gt;
+&lt;p&gt;See you soon in part 3! 👋🏼&lt;/p&gt;</content><author><name></name></author><summary type="html">Onto the second part of this series where I’m creating a website for my friend Ana Guerra and documenting the process of doing so! To get some context of what’s going on, here’s the 1st part.</summary></entry><entry><title type="html">Building Ana’s Website, Pt 1</title><link href="http://localhost:4000/articles/building-anas-website-pt-1" rel="alternate" type="text/html" title="Building Ana's Website, Pt 1" /><published>2018-11-17T00:00:00+00:00</published><updated>2018-11-17T00:00:00+00:00</updated><id>http://localhost:4000/articles/building-anas-website-pt-1</id><content type="html" xml:base="http://localhost:4000/articles/building-anas-website-pt-1">&lt;p&gt;Starting from the beginning. My friend Ana Guerra started thinking about creating a newsletter and we talked about creating some kind of landing page for that. However, there are a few more things she’s into — she also writes and has a podcast. So we thought we should take it a step further and just create a full website to serve as her personal home on the internet to house every project she has going on, and for future stuff as well!&lt;/p&gt;
 
 &lt;p&gt;This is the beginning of a series where me and Ana will document the full process of building her website. I’ll write here on Medium and on my website, and she’s doing it on her podcast. &lt;a href=&quot;https://anchor.fm/anarlguerra/episodes/Vasco-is-building-my-website-EP-1-e2hfas/a-a698fv&quot;&gt;Here’s the first episode&lt;/a&gt;!&lt;/p&gt;
 
@@ -1077,7 +1077,7 @@ the blog, with all the blog posts&lt;/p&gt;
 
 &lt;p&gt;I’ll leave this for the next post, which shouldn’t take too long to come out.&lt;/p&gt;
 
-&lt;p&gt;See you in part 2! 👋🏼&lt;/p&gt;</content><author><name></name></author><summary type="html">Starting from the beginning. My friend Ana Guerra started thinking about creating a newsletter and we talked about creating some kind of landing page for that. However, there are a few more things she’s into — she also writes and has a podcast. So we thought we should take it a step further and just create a full website to serve as her personal home on the internet to house every project she has going on, and for future stuff as well!</summary></entry><entry><title type="html">On Design and Fixing Old Cars</title><link href="/articles/on-design-and-fixing-old-cars" rel="alternate" type="text/html" title="On Design and Fixing Old Cars" /><published>2018-10-15T00:00:00+01:00</published><updated>2018-10-15T00:00:00+01:00</updated><id>/articles/on-design-and-fixing-old-cars</id><content type="html" xml:base="/articles/on-design-and-fixing-old-cars">&lt;!--
+&lt;p&gt;See you in part 2! 👋🏼&lt;/p&gt;</content><author><name></name></author><summary type="html">Starting from the beginning. My friend Ana Guerra started thinking about creating a newsletter and we talked about creating some kind of landing page for that. However, there are a few more things she’s into — she also writes and has a podcast. So we thought we should take it a step further and just create a full website to serve as her personal home on the internet to house every project she has going on, and for future stuff as well!</summary></entry><entry><title type="html">On Design and Fixing Old Cars</title><link href="http://localhost:4000/articles/on-design-and-fixing-old-cars" rel="alternate" type="text/html" title="On Design and Fixing Old Cars" /><published>2018-10-15T00:00:00+01:00</published><updated>2018-10-15T00:00:00+01:00</updated><id>http://localhost:4000/articles/on-design-and-fixing-old-cars</id><content type="html" xml:base="http://localhost:4000/articles/on-design-and-fixing-old-cars">&lt;!--
   Creates the image path.
   If there's no &quot;image-path&quot; parameter, use the post title instead.
   Image comes from &quot;assets/posts/&lt;date-title&gt;&quot;
