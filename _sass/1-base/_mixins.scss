@@ -1,11 +1,9 @@
-
 //
 // Mixins
 //
 
-
 // Sets variables
-$images-path: '/assets/images';
+$images-path: "/assets/images";
 
 $breakpoints: (
   x-small: 576px,
@@ -14,31 +12,30 @@ $breakpoints: (
   large: 1200px
 );
 
-
 // Sets background properties
 @mixin background($name: null, $color: null, $pos: "center center", $repeat: "no-repeat", $size: null) {
-  background: url(#{$images-path}/#{$name}) #{$color} #{$pos} #{$repeat} ;
-  background-size: $size ;
+  background: url(#{$images-path}/#{$name}) #{$color} #{$pos} #{$repeat};
+  background-size: $size;
 }
-
 
 // Sets all necessary font properties
 @mixin font($size, $line-height, $letter-spacing: null, $weight: null, $family: null, $color: null) {
-  font-family: $family ;
-  font-size: $size + px ;
-  line-height: $line-height + px ;
-  
-  @if $letter-spacing { letter-spacing: $letter-spacing + px ; }
-  
-  font-weight: $weight ;
-  color: $color ;
-}
+  font-family: $family;
+  font-size: $size + px;
+  line-height: $line-height + px;
 
+  @if $letter-spacing {
+    letter-spacing: $letter-spacing + px;
+  }
+
+  font-weight: $weight;
+  color: $color;
+}
 
 // Sets width and height, with 'px' as the default unir
 @mixin wh($width, $height: null) {
   width: $width;
-  
+
   // If $height is null, make it the same as $width
   @if $height {
     height: $height;
@@ -46,7 +43,6 @@ $breakpoints: (
     height: $width;
   }
 }
-
 
 // Sets display to flex, and assigns other properties
 @mixin flex($justify: null, $align: null, $direction: null) {
@@ -56,17 +52,23 @@ $breakpoints: (
   align-items: $align;
 }
 
-
 // Set absolute position and passed coordinates
 @mixin pos-abs($top: null, $right: null, $bottom: null, $left: null) {
   position: absolute;
 
-  @if $top { top: $top; }
-  @if $right { right: $right; }
-  @if $bottom { bottom: $bottom; }
-  @if $left { left: $left; }
+  @if $top {
+    top: $top;
+  }
+  @if $right {
+    right: $right;
+  }
+  @if $bottom {
+    bottom: $bottom;
+  }
+  @if $left {
+    left: $left;
+  }
 }
-
 
 // Sets a min-width media query
 @mixin mq-min($breakpoint) {
@@ -77,15 +79,21 @@ $breakpoints: (
 
 @mixin mq-after($breakpoint) {
   $breakpoint-value: map-get($breakpoints, $breakpoint);
-  
-  @media (min-width: $breakpoint-value) {
-    @content;
+
+  @if $breakpoint-value {
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
   }
 }
 
 @mixin mq-before($breakpoint) {
   $breakpoint-value: map-get($breakpoints, $breakpoint);
-  
+
   @if $breakpoint-value {
     @media (max-width: $breakpoint-value) {
       @content;
@@ -94,5 +102,11 @@ $breakpoints: (
     @media (max-width: $breakpoint) {
       @content;
     }
+  }
+}
+
+@mixin mq-hover {
+  @media (hover: hover) {
+    @content;
   }
 }

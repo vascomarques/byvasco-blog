@@ -12,45 +12,46 @@
     margin-bottom: 310px;
   }
 
-  .article-preview {
-    margin-bottom: 120px;
-
-    .article-title {
-      margin-bottom: 12px;
-      position: relative;
-
-      &::before {
-        content: '';
-        display: block;
-        @include wh(30px);
-        @include background('icons/icon-pointer.svg');
-        @include pos-abs($left: -50px);
-        opacity: 0;
-        transition: all 120ms;
-      }
-    }
-
-    &:hover {
-      .article-title {
-        color: get-color(brand, main);
-        border-color: transparentize(get-color(brand, main), .8);
-      }
-
-      .article-title::before {
-        opacity: 1;
-        left: -46px;
-      }
-    }
-  }
-
   a {
     display: block;
   }
+}
 
+.article-preview {
   .article-title {
-    margin-bottom: 10px;
-    padding-bottom: 4px;
-    border-bottom: 2px solid rgba(17, 17, 26, 0.1);
-    display: inline-block;
+    display: inline;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparentize(get-color(text, primary), .9);
+    line-height: 36px;
+    position: relative;
+    transition: all 80ms;
+  }
+
+  .article-date {
+    margin-top: 8px;
+  }
+
+  &:active {
+    .article-title {
+      display: inline;
+      color: get-color(brand, main);
+    }
+  }
+
+  @include mq-hover {
+    .article-title:hover {
+      color: get-color(brand, main);
+      border-color: transparentize(get-color(brand, main), .8);
+    }
+  }
+
+  @include mq-after(1000px) {
+    .article-title {
+      padding-bottom: 6px;
+    }
+
+    .article-date {
+      margin-top: 20px;
+    }
   }
 }

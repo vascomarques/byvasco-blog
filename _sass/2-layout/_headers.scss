@@ -8,37 +8,21 @@
 
 // Main Footer
 .header-main {
-  padding: 120px 0;
+  padding: 48px 0 80px 0;
 
   .header-navigation {
+    justify-self: end;
     align-self: center;
   }
 
-  .logo {
-    justify-self: end;
-  }
-
   .link-nav {
-    position: relative;
-    
-    &:after {
-      content: '';
-      display: block;
-      @include wh(24px);
-      @include background('icons/icon-pointer.svg', $size: 100%);
-      @include pos-abs(26px, $left: 50%);
-      opacity: 0;
-      transition: all 120ms;
-      transform: rotate(-90deg) translateY(-50%);
-    }
 
     &:hover {
       color: get-color(brand, main);
-      
-      &:after {
-        opacity: 1;
-        top: 24px;
-      }
     }
+  }
+
+  @include mq-after(1000px) {
+    padding: 100px 0;
   }
 }

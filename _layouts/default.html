@@ -5,12 +5,16 @@
   <body>
     {% include header.html %}
 
-    <main class="{% if page.page-name %}page-{{ page.page-name }}{% else %}page{% endif %}"">
+    <main class="{% if page.page_name %}page-{{ page.page_name }}{% else %}page{% endif %}"">
       {{ content }}
     </main>
 
     {% if page.has-footer %}
       {% include footer.html %}
+    {% endif %}
+
+    {% if page.page_name == 'home' %}
+      <script src="/js/copy-email.js"></script>
     {% endif %}
   </body>
 </html>

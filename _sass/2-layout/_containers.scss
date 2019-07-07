@@ -9,20 +9,14 @@
 // Main container
 .container {
   width: 100%;
-  max-width: calc(1300px + 120px);
-  padding: 0 60px;
+  max-width: calc(1200px + 60px);
+  padding: 0 30px;
   margin: auto;
   position: relative;
 
   &-narrow {
     @extend .container;
-    max-width: calc(635px + 120px);
-  }
-
-  
-  // Media Queries
-  @include mq-before('small') {
-    padding: 0 30px;
+    max-width: calc(586px + 60px);
   }
 }
 
