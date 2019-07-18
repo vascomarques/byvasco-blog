@@ -8,10 +8,11 @@ page_name: home
   <div class="container grid">
     <div class="content">
       <div class="intro-text">
-        <h1 class="title-3">Hey, I’m Vasco Marques. <br />A web designer and developer, creating things for
-          the internet.</h1>
-        <p class="title-3">Born in Lisbon, from where I’m currently working in-house at <a href="https://www.hole19golf.com/">Hole19
-            Golf</a>, building <a href="https://www.mk2swag.com/">a community</a>, and learning new skills.</p>
+        <p class="title-3">Hey, I’m Vasco! 👋🏼</p>
+        <h1 class="title-3">A web designer and developer, creating things on the internet from the beautiful city of Lisbon.</h1>
+        <p class="title-3">Currently working at <a href="https://www.hole19golf.com/">Hole19 Golf</a>, where we’re making products for golfers to improve their game.</p>
+        <p class="title-3">I’m also building <a href="https://www.mk2swag.com/">a community</a> for old Volkswagen lovers, helping to grow <a href="https://www.mk2swag.com/">JekyllThemes</a>, learning JavaScript and writing on <a href="/articles">my blog.</a></p>
+        <p class="title-3">If I’m not in front of a screen, I’m probably getting dirty fixing my old cars, reading a non-fiction book, or hanging out with my friends.</p>
       </div>
 
       <ul class="contacts grid-2">
@@ -19,31 +20,14 @@ page_name: home
         <li class="instagram title-4"><a href="https://www.instagram.com/byvasco/" target="_blank">Instagram</a></li>
         <li class="medium title-4"><a href="https://medium.com/@byvasco" target="_blank">Medium</a></li>
         <li class="dribbble title-4"><a href="https://dribbble.com/byvasco" target="_blank">Dribbble</a></li>
-        <li class="github title-4"><a href="https://github.com/vascomarques" target="_blank">Github</a></li>
+        <!-- <li class="github title-4"><a href="https://github.com/vascomarques" target="_blank">Github</a></li> -->
         <li class="twitter title-4"><a href="https://twitter.com/vascogmm" target="_blank">Twitter</a></li>
-        <li class="linkedin title-4"><a href="https://dribbble.com/byvasco" target="_blank">LinkedIn</a></li>
+        <!-- <li class="linkedin title-4"><a href="https://dribbble.com/byvasco" target="_blank">LinkedIn</a></li> -->
       </ul>
     </div>
 
     <div class="profile-image">
-      <img src="/assets/images/image-profile.jpg" />
+      <img src="/assets/images/image-profile.png" />
     </div>
-  </div>
-</section>
-
-<section class="home-articles">
-  <div class="container-narrow">
-    <h2 class="title title-2">Recent Articles</h2>
-
-    <ul class="articles-list">
-      {% for post in site.posts limit: 3 %}
-      <li class="article-preview">
-        <a href="{{post.url}}">
-          <h2 class="article-title title-4">{{ post.title }}</h2>
-          <time class="article-date">{{ post.date | date: "%B %d, %Y" }}</time>
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
   </div>
 </section>

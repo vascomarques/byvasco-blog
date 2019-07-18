@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Articles
-page-name: articles
+page_name: articles
 page-title: My thoughts and ideas into words.
-has-footer: yes
+has_footer: false
 ---
 
 <header class="header-page">
@@ -18,7 +18,7 @@ has-footer: yes
       {% for post in site.posts %}
         <li class="article-preview">
           <a href="{{post.url}}">
-            <h2 class="article-title body-large">{{ post.title }}</h2>
+            <h2 class="article-title title-4">{{ post.title }}</h2>
             <time class="article-date">{{ post.date | date: "%B %d, %Y" }}</time>
           </a>
         </li>

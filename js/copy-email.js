@@ -19,11 +19,9 @@ emailLink.addEventListener('click', (e) => {
   copyEmail();
 
   let labelText = label.innerText;
-  label.classList.add('active');
   label.innerText = 'Copied!';
 
   setTimeout(() => {
     label.innerText = labelText;
-    label.classList.remove('active');
   }, 3000);
 });

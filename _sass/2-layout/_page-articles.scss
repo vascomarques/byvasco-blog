@@ -7,13 +7,22 @@
 
 
 .page-articles {
+  margin-bottom: 120px;
   
   .header-page {
-    margin-bottom: 310px;
+    margin-bottom: 64px;
   }
 
-  a {
-    display: block;
+  .article-preview:not(:last-child) {
+    margin-bottom: 64px;
+  }
+
+  @include mq-after(1000px) {
+    margin-bottom: 200px;
+    
+    .article-preview:not(:last-child) {
+      margin-bottom: 100px;
+    }
   }
 }
 
@@ -28,7 +37,7 @@
   }
 
   .article-date {
-    margin-top: 8px;
+    margin-top: 12px;
   }
 
   &:active {
@@ -48,10 +57,11 @@
   @include mq-after(1000px) {
     .article-title {
       padding-bottom: 6px;
+      line-height: 44px;
     }
 
     .article-date {
-      margin-top: 20px;
+      margin-top: 16px;
     }
   }
 }
