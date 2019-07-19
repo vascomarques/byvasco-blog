@@ -10,7 +10,7 @@
   }
 
   &-2 {
-    @include font(32, 48, 0, $regular);
+    @include font(32, 40, 0, $medium);
   }
 
   &-3 {
@@ -29,7 +29,7 @@
 
   @include mq-after(medium) {
     &-2 {
-      @include font(42, 48, 0, $regular);
+      @include font(40, 52, .1, $medium);
     }
 
     &-3 {
@@ -62,7 +62,7 @@
   }
 
   &-serif {
-    @include font(23, 32, -0.06, $regular, $font-serif);
+    @include font(20, 32, -0.1, $regular, $font-serif);
 
     a {
       font-weight: $regular;
@@ -79,11 +79,31 @@
     &-small {
       @include font(18, 24, 0, $regular);
     }
+
+    &-serif {
+      @include font(22, 36, -0.1, $regular, $font-serif);
+    }
   }
 }
 
 p {
   @extend .body;
+}
+
+a {
+  &.body-serif {
+    @include font(20, 32, -0.1, $semi, $font-serif, get-color(brand, main));
+    position: relative;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      border-bottom: 2px solid transparentize(get-color(brand, main), .9);
+      @include pos-abs($bottom: 3px);
+      z-index: -1;
+    }
+  }
 }
 
 // Text Button

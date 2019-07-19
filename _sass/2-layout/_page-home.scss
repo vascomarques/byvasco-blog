@@ -20,6 +20,10 @@
 	.intro-text {
 		max-width: 556px;
 		margin-bottom: 64px;
+		
+		* {
+			margin-bottom: 24px;
+		}
 	}
 
 	.contacts {
@@ -87,10 +91,6 @@
 
 			.intro-text {
 				margin-bottom: 80px;
-
-				* {
-					margin-bottom: 24px;
-				}
 			}
 
 			.contacts {

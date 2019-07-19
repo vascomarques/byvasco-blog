@@ -1,5 +1,5 @@
 @import url("https://rsms.me/inter/inter.css");
-@import url("https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,700");
+@import url("https://fonts.googleapis.com/css?family=Vollkorn:400,400i,600&display=swap");
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
 	 ========================================================================== */
@@ -50,7 +50,7 @@ pre {
 /**
  * Remove the gray background on active links in IE 10.
  */
-a {
+a, .article-preview .article-more {
   background-color: transparent; }
 
 /**
@@ -302,9 +302,9 @@ template {
   font-weight: 400; }
 .title-2 {
   font-size: 32px;
-  line-height: 48px;
+  line-height: 40px;
   letter-spacing: 0px;
-  font-weight: 400; }
+  font-weight: 500; }
 .title-3, .article-full h3 {
   font-size: 28px;
   line-height: 44px;
@@ -315,16 +315,16 @@ template {
   line-height: 36px;
   letter-spacing: 0px;
   font-weight: 400; }
-.title-3 a, .article-full h3 a {
+.title-3 a, .article-full h3 a, .title-3 .article-preview .article-more, .article-preview .title-3 .article-more, .article-full h3 .article-preview .article-more, .article-preview .article-full h3 .article-more {
   color: #0E0926;
   text-decoration: none;
   border-bottom: 2px solid rgba(42, 2, 226, 0.16); }
 @media (min-width: 992px) {
   .title-2 {
-    font-size: 42px;
-    line-height: 48px;
-    letter-spacing: 0px;
-    font-weight: 400; }
+    font-size: 40px;
+    line-height: 52px;
+    letter-spacing: 0.1px;
+    font-weight: 500; }
   .title-3, .article-full h3 {
     font-size: 32px;
     line-height: 52px;
@@ -336,7 +336,7 @@ template {
     letter-spacing: 0.2px;
     font-weight: 400; } }
 @media (hover: hover) {
-  .title-3 a:hover, .article-full h3 a:hover {
+  .title-3 a:hover, .article-full h3 a:hover, .title-3 .article-preview .article-more:hover, .article-preview .title-3 .article-more:hover, .article-full h3 .article-preview .article-more:hover, .article-preview .article-full h3 .article-more:hover {
     color: #2A02E2;
     border-color: rgba(42, 2, 226, 0.4); } }
 
@@ -356,29 +356,52 @@ template {
     letter-spacing: 0px;
     font-weight: 400; }
   .body-serif, .article-full p, .article-full ul li {
-    font-family: "Crimson Text", serif;
-    font-size: 23px;
+    font-family: "Vollkorn", serif;
+    font-size: 20px;
     line-height: 32px;
-    letter-spacing: -0.06px;
+    letter-spacing: -0.1px;
     font-weight: 400; }
-    .body-serif a, .article-full p a, .article-full ul li a {
+    .body-serif a, .article-full p a, .article-full ul li a, .body-serif .article-preview .article-more, .article-preview .body-serif .article-more, .article-full p .article-preview .article-more, .article-preview .article-full p .article-more, .article-full ul li .article-preview .article-more, .article-preview .article-full ul li .article-more {
       font-weight: 400;
       text-decoration: underline;
       transition: all 60ms; }
-      .body-serif a:hover, .article-full p a:hover, .article-full ul li a:hover {
+      .body-serif a:hover, .article-full p a:hover, .article-full ul li a:hover, .body-serif .article-preview .article-more:hover, .article-preview .body-serif .article-more:hover, .article-full p .article-preview .article-more:hover, .article-preview .article-full p .article-more:hover, .article-full ul li .article-preview .article-more:hover, .article-preview .article-full ul li .article-more:hover {
         opacity: 0.6; }
   @media (min-width: 992px) {
     .body-small, time {
       font-size: 18px;
       line-height: 24px;
       letter-spacing: 0px;
+      font-weight: 400; }
+    .body-serif, .article-full p, .article-full ul li {
+      font-family: "Vollkorn", serif;
+      font-size: 22px;
+      line-height: 36px;
+      letter-spacing: -0.1px;
       font-weight: 400; } }
+
+a.body-serif, .article-preview .body-serif.article-more, .article-preview .article-full p.article-more, .article-full .article-preview p.article-more, .article-preview .article-full ul li.article-more, .article-full ul .article-preview li.article-more {
+  font-family: "Vollkorn", serif;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: -0.1px;
+  font-weight: 600;
+  color: #2A02E2;
+  position: relative; }
+  a.body-serif::after, .article-preview .body-serif.article-more::after, .article-preview .article-full p.article-more::after, .article-full .article-preview p.article-more::after, .article-preview .article-full ul li.article-more::after, .article-full ul .article-preview li.article-more::after {
+    content: '';
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid rgba(42, 2, 226, 0.1);
+    position: absolute;
+    bottom: 3px;
+    z-index: -1; }
 
 .button-text {
   font-size: 13px;
   line-height: 16px;
   letter-spacing: 0.7px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   padding-bottom: 1px;
   border-bottom: 2px solid rgba(14, 9, 38, 0.1);
@@ -726,7 +749,7 @@ img {
   margin: auto;
   position: relative; }
   .container-narrow {
-    max-width: calc(586px + 60px); }
+    max-width: calc(556px + 60px); }
 
 .grid, .grid-2 {
   display: grid;
@@ -739,7 +762,7 @@ img {
  * Header
  */
 .header-main {
-  padding: 48px 0 80px 0; }
+  padding: 48px 0; }
   .header-main .header-navigation {
     justify-self: end;
     align-self: center; }
@@ -772,6 +795,8 @@ img {
   .page-home .intro-text {
     max-width: 556px;
     margin-bottom: 64px; }
+    .page-home .intro-text * {
+      margin-bottom: 24px; }
   .page-home .contacts {
     margin-bottom: 72px;
     grid-gap: 0; }
@@ -792,21 +817,21 @@ img {
     .page-home .contacts .email {
       grid-column: 1 / 3;
       margin-bottom: 32px; }
-      .page-home .contacts .email a {
+      .page-home .contacts .email a, .page-home .contacts .email .article-preview .article-more, .article-preview .page-home .contacts .email .article-more {
         position: relative; }
-      .page-home .contacts .email a span {
+      .page-home .contacts .email a span, .page-home .contacts .email .article-preview .article-more span, .article-preview .page-home .contacts .email .article-more span {
         content: "";
         display: block;
         font-size: 12px;
         line-height: 16px;
         letter-spacing: 0.1px;
-        font-weight: 600;
+        font-weight: 500;
         width: 200%;
         position: absolute;
         top: -8px;
         left: calc(100% + 4px);
         transition: all 120ms; }
-    .page-home .contacts li:active a {
+    .page-home .contacts li:active a, .page-home .contacts li:active .article-preview .article-more, .article-preview .page-home .contacts li:active .article-more {
       color: #2A02E2; }
     .page-home .contacts li:active:before {
       opacity: 1; }
@@ -820,8 +845,6 @@ img {
           grid-gap: 30px; }
         .page-home .home-intro .intro-text {
           margin-bottom: 80px; }
-          .page-home .home-intro .intro-text * {
-            margin-bottom: 24px; }
         .page-home .home-intro .contacts {
           max-width: 560px;
           margin-bottom: 0; }
@@ -838,7 +861,7 @@ img {
             max-width: 360px;
             margin-top: 160px; } }
   @media (hover: hover) {
-    .page-home .contacts li:hover a {
+    .page-home .contacts li:hover a, .page-home .contacts li:hover .article-preview .article-more, .article-preview .page-home .contacts li:hover .article-more {
       color: #2A02E2; }
     .page-home .contacts li:hover:before {
       left: -26px; } }
@@ -848,11 +871,9 @@ img {
  * Page - Article
  */
 .page-articles {
-  margin-bottom: 120px; }
-  .page-articles .header-page {
-    margin-bottom: 64px; }
+  margin: 40px 0 120px 0; }
   .page-articles .article-preview:not(:last-child) {
-    margin-bottom: 64px; }
+    margin-bottom: 80px; }
   @media (min-width: 1000px) {
     .page-articles {
       margin-bottom: 200px; }
@@ -860,16 +881,13 @@ img {
         margin-bottom: 100px; } }
 
 .article-preview .article-title {
-  display: inline;
-  padding-bottom: 3px;
-  border-bottom: 2px solid rgba(14, 9, 38, 0.1);
-  line-height: 36px;
-  position: relative;
-  transition: all 80ms; }
-.article-preview .article-date {
-  margin-top: 12px; }
+  transition: all 80ms;
+  margin-bottom: 16px; }
+.article-preview .article-excerpt {
+  margin-bottom: 12px; }
+.article-preview .article-more {
+  display: inline-block; }
 .article-preview:active .article-title {
-  display: inline;
   color: #2A02E2; }
 @media (hover: hover) {
   .article-preview .article-title:hover {
@@ -877,10 +895,9 @@ img {
     border-color: rgba(42, 2, 226, 0.2); } }
 @media (min-width: 1000px) {
   .article-preview .article-title {
-    padding-bottom: 6px;
-    line-height: 44px; }
-  .article-preview .article-date {
-    margin-top: 16px; } }
+    margin-bottom: 24px; }
+  .article-preview .article-excerpt {
+    margin-bottom: 16px; } }
 
 /** 
  * Layout:
@@ -915,7 +932,7 @@ img {
   margin-top: 24px; }
 .article-full li {
   position: relative; }
-  .article-full li a {
+  .article-full li a, .article-full li .article-preview .article-more, .article-preview .article-full li .article-more {
     color: #2A02E2; }
   .article-full li ul {
     margin: 12px 0 24px; }
@@ -983,5 +1000,5 @@ img {
   background-size: cover; }
   @media (min-width: 1000px) {
     .logo {
-      width: 80px;
-      height: 80px; } }
+      width: 70px;
+      height: 70px; } }

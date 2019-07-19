@@ -7,14 +7,10 @@
 
 
 .page-articles {
-  margin-bottom: 120px;
-  
-  .header-page {
-    margin-bottom: 64px;
-  }
+  margin: 40px 0 120px 0;
 
   .article-preview:not(:last-child) {
-    margin-bottom: 64px;
+    margin-bottom: 80px;
   }
 
   @include mq-after(1000px) {
@@ -28,21 +24,21 @@
 
 .article-preview {
   .article-title {
-    display: inline;
-    padding-bottom: 3px;
-    border-bottom: 2px solid transparentize(get-color(text, primary), .9);
-    line-height: 36px;
-    position: relative;
     transition: all 80ms;
+    margin-bottom: 16px;
   }
 
-  .article-date {
-    margin-top: 12px;
+  .article-excerpt {
+    margin-bottom: 12px;
+  }
+
+  .article-more {
+    @extend a;
+    display: inline-block;
   }
 
   &:active {
     .article-title {
-      display: inline;
       color: get-color(brand, main);
     }
   }
@@ -54,14 +50,13 @@
     }
   }
 
-  @include mq-after(1000px) {
+  @include mq-after(1000px) {    
     .article-title {
-      padding-bottom: 6px;
-      line-height: 44px;
+      margin-bottom: 24px;
     }
 
-    .article-date {
-      margin-top: 16px;
+    .article-excerpt {
+      margin-bottom: 16px;
     }
   }
 }
