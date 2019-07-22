@@ -8,127 +8,203 @@
 
 // Full Article
 .article-full {
+  margin: 40px 0 200px;
 
   .article-header {
-    margin-bottom: 220px;
-  }
-
-  .article-title {
     margin-bottom: 32px;
-  }
 
-  .article-date {
-    margin-bottom: 56px;
+    .article-title {
+      text-align: center;
+    }
   }
 
   .article-content {
-    margin-bottom: 160px;
-  }
+    margin-bottom: 48px;
 
-  p {
-    @extend .body-serif;
-    margin-bottom: 28px;
-  }
-
-  p code,
-  li code {
-    font-size: 16px;
-    font-weight: 600;
-    padding: 0 4px;
-  }
-
-  h3,
-  h4 {
-    padding: 60px 0 32px;
-  }
-
-  h3 { @extend .title-3; }
-  
-  h4 { @extend .title-4; }
-
-  figure {
-    margin: 100px 0 90px;
-
-    img {
-      max-width: none;
-      width: calc(100% + 80px);
-      margin-left: -40px;
-    }
-  }
-
-  figcaption {
-    text-align: center;
-    margin-top: 24px;
-  }
-
-  li {
-    position: relative;
-    
-    a {
-      color: get-color(brand, main);
-    }
-
-    ul {
-      margin: 12px 0 24px;
-
-      li {
-        font-size: 20px;
-        line-height: 24px;
-      }
-    }
-  }
-
-  ul {
-    padding-left: 20px;
-    margin-bottom: 28px;
-
-    li {
+    p {
       @extend .body-serif;
-      padding-left: 4px;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
+    }
+  
+    p code,
+    li code {
+      font-size: 16px;
+      font-weight: 600;
+      padding: 0 4px;
+    }
+  
+    h2 {
+      @extend .title-2;
+      margin: 56px 0 20px;
+    }
+  
+    h3 {
+      @extend .title-3;
+      margin: 48px 0 16px;
+    }
 
-      &:before {
-        content: '';
-        display: block;
-        @include wh(6px);
-        background-color: get-color(text, primary);
-        border-radius: 6px;
-        @include pos-abs(16px, $left: -14px);
+    h4 {
+      @extend .title-4;
+      margin: 48px 0 16px;
+    }
+  
+    figure {
+      margin: 48px 0 40px;
+  
+      img {
+        max-width: none;
+        width: calc(100% + 20px);
+        margin-left: -10px;
       }
+    }
+  
+    figcaption {
+      text-align: center;
+      margin-top: 16px;
+    }
+  
+    li {
+      position: relative;
+      
+      a {
+        color: get-color(brand, main);
+      }
+  
+      ul {
+        margin: 12px 0 24px;
+  
+        li {
+          font-size: 20px;
+          line-height: 24px;
+        }
+      }
+    }
+  
+    ul {
+      padding-left: 20px;
+      margin-bottom: 28px;
+  
+      li {
+        @extend .body-serif;
+        padding-left: 4px;
+        margin-bottom: 12px;
+  
+        &:before {
+          content: '';
+          display: block;
+          @include wh(6px);
+          background-color: get-color(text, primary);
+          border-radius: 6px;
+          @include pos-abs(16px, $left: -14px);
+        }
+      }
+    }
+  
+    pre {
+      background-color: get-color(backgrounds, code-block);
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      overflow: scroll;
+    }
+  
+    .code-caption {
+      @include font(12, 16, 0, $regular, $font-code, get-color(text, secondary));
+      background-color: darken(get-color(backgrounds, code-block), 2%);
+      padding: 10px 24px;
+      text-align: center;
+      margin-bottom: 0;
+    }
+  
+    hr {
+      border: none;
+      height: 1px;
+      background-color: get-color(borders, primary);
+      margin: 48px 0;
     }
   }
 
-  pre {
-    background-color: get-color(backgrounds, code-block);
-    padding: 20px 24px;
-    margin-bottom: 28px;
-    overflow: scroll;
+  .article-footer {
+    margin-bottom: 56px;
   }
 
-  .code-caption {
-    @include font(12, 16, 0, $regular, $font-code, get-color(text, secondary));
-    background-color: darken(get-color(backgrounds, code-block), 2%);
-    padding: 10px 24px;
-    text-align: center;
-    margin-bottom: 0;
+  .article-date {
+    margin-bottom: 24px;
   }
 
-  hr {
-    border: none;
-    height: 1px;
-    background-color: get-color(borders, primary);
-    margin: 48px 0;
+  .article-share {
+    display: flex;
   }
 
-  .link-back {
-    @include flex(flex-start, center);
-  
-    &::before {
-      content: '';
-      display: block;
-      @include wh(28, 12);
-      @include background('icons/icon-arrow-left.svg');
-      margin-right: 20px;
+  .article-share a {
+    display: block;
+    @include wh(36px);
+
+    &.share-facebook {
+      @include background('buttons/button-share-facebook.svg');
+      margin-right: 24px;
+    }
+
+    &.share-twitter {
+      @include background('buttons/button-share-twitter.svg');
+    }
+  }
+
+  .article-about {
+    padding-top: 64px;
+    grid-gap: 24px;
+    border-top: 2px solid get-color(borders, primary);
+  }
+
+  .article-about img {
+    max-width: 166px;
+  }
+
+  .article-about p {
+    margin-top: 12px;
+    max-width: 340px;
+  }
+
+  @include mq-after(medium) {
+    .article-header {
+      margin-bottom: 80px;
+    }
+
+    .article-content {
+      margin-bottom: 56px;
+
+      h3 {
+        margin: 72px 0 24px;
+      }
+
+      h4 {
+        margin: 72px 0 16px;
+      }
+
+      figure {
+        margin: 48px 0 56px;
+      }
+    }
+
+    .article-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 100px;
+
+      .article-date {
+        margin-bottom: 0px;
+        order: 2;
+      }
+    }
+
+    .article-about {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .content {
+        max-width: 340px;
+      }
     }
   }
 }

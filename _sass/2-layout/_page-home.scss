@@ -23,6 +23,8 @@
 		
 		* {
 			margin-bottom: 24px;
+			font-weight: $regular;
+			line-height: 44px;
 		}
 	}
 
@@ -91,6 +93,10 @@
 
 			.intro-text {
 				margin-bottom: 80px;
+				
+				* {
+					line-height: 52px;
+				}
 			}
 
 			.contacts {

@@ -1,25 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% include head.html %}
+{% include head.html %}
 
-  <body>
-    {% include header.html %}
+<body>
+  {% include header.html %}
 
-    <article class="article-full">
-      <div class="container">
-        <header class="article-header">
-          <h1 class="article-title title-1">{{ page.title }}</h1>
-          <time class="article-date">{{ page.date | date: "%B %d, %Y" }}</time>
-        </header>
+  <article class="article-full">
+    <div class="container">
+      <header class="article-header">
+        <h1 class="article-title title-1">{{ page.title }}</h1>
+      </header>
+    </div>
+
+    <div class="container-narrow">
+      <div class="article-content">
+        {{ content }}
       </div>
-      
-      <div class="container-narrow">      
-        <div class="article-content">
-          {{ content }}
+
+      <div class="article-footer">
+        <time class="article-date">Published on {{ page.date | date: "%B %d, %Y" }}</time>
+
+        <!-- <div class="article-share">
+          <a href="#" class="share-facebook"></a>
+          <a href="#" class="share-twitter"></a>
+        </div> -->
+      </div>
+
+      <div class="article-about grid">
+        <img src="/assets/images/image-profile.png" />
+
+        <div class="content">
+          <h3 class="title-3">Hey there, I'm Vasco!</h3>
+          <p class="body-serif-small">I’m the author of this blog. Thank you for reading it!</p>
         </div>
       </div>
-    </article>
+    </div>
+  </article>
+</body>
 
-    {% include footer.html %}
-  </body>
 </html>

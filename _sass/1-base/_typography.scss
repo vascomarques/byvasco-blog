@@ -6,7 +6,7 @@
 // Titles
 .title {
   &-1 {
-    @include font(56, 64, -1, $regular);
+    @include font(40, 48, -0.1, $regular);
   }
 
   &-2 {
@@ -14,11 +14,11 @@
   }
 
   &-3 {
-    @include font(28, 44, 0.2, $regular);
+    @include font(28, 36, 0.2, $medium);
   }
 
   &-4 {
-    @include font(22, 36, 0, $regular);
+    @include font(22, 36, 0, $medium);
   }
 
   &-3 a {
@@ -28,16 +28,20 @@
   }
 
   @include mq-after(medium) {
+    &-1 {
+      @include font(52, 72, 0, $regular);
+    }
+
     &-2 {
       @include font(40, 52, .1, $medium);
     }
 
     &-3 {
-      @include font(32, 52, 0.1, $regular);
+      @include font(32, 44, 0.2, $medium);
     }
 
     &-4 {
-      @include font(24, 40, 0.2, $regular);
+      @include font(24, 40, 0.2, $medium);
     }
   }
 
@@ -75,6 +79,10 @@
     }
   }
 
+  &-serif-small {
+    @include font(18, 24, -0.1, $regular, $font-serif);
+  }
+
   @include mq-after(medium) {
     &-small {
       @include font(18, 24, 0, $regular);
@@ -82,6 +90,10 @@
 
     &-serif {
       @include font(22, 36, -0.1, $regular, $font-serif);
+    }
+
+    &-serif-small {
+      @include font(20, 32, -0.05, $regular, $font-serif);
     }
   }
 }
@@ -126,7 +138,8 @@ a {
 
 // Other Elements
 time {
-  @extend .body-small;
+  @include font(18, 24, 0.3, $regular, $font-serif);
+  font-style: italic;
   display: block;
 }
 
@@ -137,6 +150,14 @@ figcaption {
 pre,
 code {
   @include font(14, 24, 0, $regular, $font-code);
+}
+
+strong {
+  font-weight: $bold;
+}
+
+.navigation-link {
+  @include font(16, 24, 0.2, $semi);
 }
 
 // Text Selection

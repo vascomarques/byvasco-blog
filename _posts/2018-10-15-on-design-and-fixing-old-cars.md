@@ -9,8 +9,6 @@ permalink: /articles/:title
 categories: Design
 ---
 
-{% include image.html post=true name="image-cover.png" %}
-
 So my car just broke something while I was driving — I’m literally writing this while on the side of a highway waiting for the tow truck to arrive, and I thought it would be a perfect time to write this article.
 
 My professional life is dedicated to creating and designing things, but like a lot of people, I have some hobbies as well. In my case, one of them happens to be messing around and fixing my own (old) cars.
