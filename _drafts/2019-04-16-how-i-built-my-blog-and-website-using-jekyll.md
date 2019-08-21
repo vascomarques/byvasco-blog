@@ -1,8 +1,10 @@
 ---
 layout: article
 title: "How I built my blog and website using Jekyll"
+excerpt: "I’ve finally launched the blog here on my website!"
 ---
 
+*July 23, 2019 Update: The design has changed, but the*
 
 I’ve finally launched the blog here on my website! I wanted to do this for some time, because I want to start writing more and I want to build like an online home for myself, to host all my projects, my ideas, my thoughts, and even though I also share [my words on Medium](https://medium.com/@byvasco), it’s a good idea to have my own blog as well, so I can get full control.
 

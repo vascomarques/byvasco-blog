@@ -7,29 +7,27 @@
 
 
 .page-articles {
-  margin: 40px 0 120px 0;
+  margin-bottom: 120px;
 
-  .article-preview:not(:last-child) {
-    margin-bottom: 80px;
+  .article-preview {
+    padding: 40px 0;
   }
 
-  @include mq-after(1000px) {
+  @include mq-after(medium) {
     margin-bottom: 200px;
-    
-    .article-preview:not(:last-child) {
-      margin-bottom: 100px;
-    }
   }
 }
 
 .article-preview {
+  padding: 32px 0;
+
   .article-title {
     transition: all 80ms;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
   }
 
   .article-excerpt {
-    margin-bottom: 12px;
+    opacity: .7;
   }
 
   .article-more {
@@ -50,13 +48,11 @@
     }
   }
 
-  @include mq-after(1000px) {    
-    .article-title {
-      margin-bottom: 24px;
-    }
+  @include mq-after(medium) {
+    padding: 48px 0;
 
-    .article-excerpt {
-      margin-bottom: 16px;
+    .article-title {
+      margin-bottom: 12px;
     }
   }
 }

@@ -1,6 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
-  <g fill="none" fill-rule="evenodd">
-    <rect width="35.78" height="36" fill="#171717" rx="17.89"/>
-    <path fill="#FFF" fill-rule="nonzero" d="M19.3422523,27 L19.3422523,18.7899561 L21.9946933,18.7899561 L22.3926377,15.5894069 L19.3422523,15.5894069 L19.3422523,13.546323 C19.3422523,12.6199795 19.5889286,11.9886876 20.8694559,11.9886876 L22.5,11.9879914 L22.5,9.12530698 C22.2180203,9.08725079 21.2500838,9 20.1235058,9 C17.7710312,9 16.1604849,10.4912691 16.1604849,13.2293427 L16.1604849,15.5894069 L13.5,15.5894069 L13.5,18.7899561 L16.1604849,18.7899561 L16.1604849,27 L19.3422523,27 Z"/>
-  </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>button-share-facebook</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Blog" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-30.000000, -1524.000000)">
+            <g id="Group-9" transform="translate(30.000000, 1524.000000)">
+                <g id="button-share-facebook">
+                    <rect id="Rectangle" fill="#171717" x="0" y="0" width="40" height="40" rx="20"></rect>
+                    <path d="M21.4913914,30 L21.4913914,20.877729 L24.4385481,20.877729 L24.8807085,17.3215632 L21.4913914,17.3215632 L21.4913914,15.05147 C21.4913914,14.0221994 21.7654762,13.320764 23.1882844,13.320764 L25,13.3199905 L25,10.13923 C24.6866893,10.0969453 23.6112042,10 22.3594508,10 C19.7455902,10 17.9560943,11.6569657 17.9560943,14.6992697 L17.9560943,17.3215632 L15,17.3215632 L15,20.877729 L17.9560943,20.877729 L17.9560943,30 L21.4913914,30 Z" id="f_1_" fill="#FFFFFF" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
 </svg>

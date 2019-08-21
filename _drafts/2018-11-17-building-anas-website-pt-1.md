@@ -2,6 +2,7 @@
 layout: article
 
 title: "Building Ana's Website, Pt 1"
+excerpt: "Giving these grayscale compositions a bit of life!"
 image-dir: "Building Anas Website Pt 1"
 
 permalink: /articles/:title

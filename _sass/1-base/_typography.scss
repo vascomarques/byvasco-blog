@@ -10,38 +10,32 @@
   }
 
   &-2 {
-    @include font(32, 40, 0, $medium);
+    @include font(28, 40, 0, $medium);
   }
 
   &-3 {
-    @include font(28, 36, 0.2, $medium);
+    @include font(22, 32, 0, $medium);
   }
 
   &-4 {
     @include font(22, 36, 0, $medium);
   }
 
-  &-3 a {
-    color: get-color(text, primary);
-    text-decoration: none;
-    border-bottom: 2px solid transparentize(get-color(brand, main), 0.84);
-  }
-
   @include mq-after(medium) {
     &-1 {
-      @include font(52, 72, 0, $regular);
+      @include font(46, 56, 0, $regular);
     }
 
     &-2 {
-      @include font(40, 52, .1, $medium);
-    }
-
-    &-3 {
       @include font(32, 44, 0.2, $medium);
     }
 
+    &-3 {
+      @include font(32, 56, 0.04, $regular);
+    }
+
     &-4 {
-      @include font(24, 40, 0.2, $medium);
+      @include font(22, 32, 0.2, $medium);
     }
   }
 
@@ -55,45 +49,21 @@
 
 // Body
 .body {
-  @include font(22, 36, 0.1, $regular);
-
-  &-large {
-    @include font(26, 36, 0.08, $regular);
-  }
+  @include font(18, 32, 0, $regular);
 
   &-small {
-    @include font(16, 24, 0, $regular);
+    @include font(16, 28, 0, $regular);
   }
 
   &-serif {
-    @include font(20, 32, -0.1, $regular, $font-serif);
-
-    a {
-      font-weight: $regular;
-      text-decoration: underline;
-      transition: all 60ms;
-
-      &:hover {
-        opacity: 0.6;
-      }
-    }
-  }
-
-  &-serif-small {
-    @include font(18, 24, -0.1, $regular, $font-serif);
+    @include font(16, 32, 0, $regular, $font-serif);
   }
 
   @include mq-after(medium) {
+    @include font(18, 32, 0.01, $regular);
+
     &-small {
-      @include font(18, 24, 0, $regular);
-    }
-
-    &-serif {
-      @include font(22, 36, -0.1, $regular, $font-serif);
-    }
-
-    &-serif-small {
-      @include font(20, 32, -0.05, $regular, $font-serif);
+      @include font(16, 28, 0.08, $regular);
     }
   }
 }
@@ -102,20 +72,12 @@ p {
   @extend .body;
 }
 
-a {
-  &.body-serif {
-    @include font(20, 32, -0.1, $semi, $font-serif, get-color(brand, main));
-    position: relative;
-    
-    &::after {
-      content: '';
-      display: block;
-      width: 100%;
-      border-bottom: 2px solid transparentize(get-color(brand, main), .9);
-      @include pos-abs($bottom: 3px);
-      z-index: -1;
-    }
-  }
+.link {
+  font-weight: $medium;
+  color: get-color(brand, main);
+  text-decoration: underline;
+
+  
 }
 
 // Text Button
@@ -138,7 +100,7 @@ a {
 
 // Other Elements
 time {
-  @include font(18, 24, 0.3, $regular, $font-serif);
+  @extend .body-small;
   font-style: italic;
   display: block;
 }
@@ -154,6 +116,10 @@ code {
 
 strong {
   font-weight: $bold;
+}
+
+li {
+  @extend .body;
 }
 
 .navigation-link {

@@ -1,21 +1,14 @@
-
-
 /** 
  * Layout:
  * Page - Article
  */
 
-
 // Full Article
 .article-full {
-  margin: 40px 0 200px;
+  margin-bottom: 200px;
 
   .article-header {
-    margin-bottom: 32px;
-
-    .article-title {
-      text-align: center;
-    }
+    @extend .page-header;
   }
 
   .article-content {
@@ -25,19 +18,23 @@
       @extend .body-serif;
       margin-bottom: 16px;
     }
-  
+
+    a {
+      @extend .link;
+    }
+
     p code,
     li code {
       font-size: 16px;
       font-weight: 600;
       padding: 0 4px;
     }
-  
+
     h2 {
       @extend .title-2;
-      margin: 56px 0 20px;
+      margin: 48px 0 16px;
     }
-  
+
     h3 {
       @extend .title-3;
       margin: 48px 0 16px;
@@ -47,66 +44,61 @@
       @extend .title-4;
       margin: 48px 0 16px;
     }
-  
+
     figure {
       margin: 48px 0 40px;
-  
+
       img {
         max-width: none;
         width: calc(100% + 20px);
         margin-left: -10px;
       }
     }
-  
+
     figcaption {
       text-align: center;
       margin-top: 16px;
     }
-  
+
     li {
       position: relative;
-      
+
       a {
         color: get-color(brand, main);
       }
-  
+
       ul {
         margin: 12px 0 24px;
-  
-        li {
-          font-size: 20px;
-          line-height: 24px;
-        }
       }
     }
-  
+
     ul {
       padding-left: 20px;
       margin-bottom: 28px;
-  
+
       li {
-        @extend .body-serif;
+        @extend .body;
         padding-left: 4px;
         margin-bottom: 12px;
-  
+
         &:before {
-          content: '';
+          content: "";
           display: block;
           @include wh(6px);
           background-color: get-color(text, primary);
           border-radius: 6px;
-          @include pos-abs(16px, $left: -14px);
+          @include pos-abs(13px, $left: -14px);
         }
       }
     }
-  
+
     pre {
       background-color: get-color(backgrounds, code-block);
       padding: 20px 24px;
       margin-bottom: 28px;
       overflow: scroll;
     }
-  
+
     .code-caption {
       @include font(12, 16, 0, $regular, $font-code, get-color(text, secondary));
       background-color: darken(get-color(backgrounds, code-block), 2%);
@@ -114,7 +106,7 @@
       text-align: center;
       margin-bottom: 0;
     }
-  
+
     hr {
       border: none;
       height: 1px;
@@ -137,15 +129,15 @@
 
   .article-share a {
     display: block;
-    @include wh(36px);
+    @include wh(40px);
 
     &.share-facebook {
-      @include background('buttons/button-share-facebook.svg');
+      @include background("buttons/button-share-facebook.svg");
       margin-right: 24px;
     }
 
     &.share-twitter {
-      @include background('buttons/button-share-twitter.svg');
+      @include background("buttons/button-share-twitter.svg");
     }
   }
 
@@ -165,23 +157,25 @@
   }
 
   @include mq-after(medium) {
-    .article-header {
-      margin-bottom: 80px;
-    }
-
     .article-content {
       margin-bottom: 56px;
+      max-width: 630px;
 
-      h3 {
+      h2 {
         margin: 72px 0 24px;
       }
 
-      h4 {
-        margin: 72px 0 16px;
+      h3 {
+        margin: 72px 0 20px;
       }
 
       figure {
         margin: 48px 0 56px;
+
+        img {
+          width: calc(100% + 40px);
+          margin-left: -20px;
+        }
       }
     }
 
@@ -199,11 +193,11 @@
 
     .article-about {
       display: flex;
-      justify-content: space-between;
       align-items: center;
 
       .content {
         max-width: 340px;
+        margin-left: 48px;
       }
     }
   }

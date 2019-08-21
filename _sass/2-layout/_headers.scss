@@ -26,3 +26,11 @@
     padding: 100px 0;
   }
 }
+
+.page-header {
+  padding: 16px 0 40px;
+  
+  @include mq-after(medium) {
+    padding: 0 0 56px;
+  }
+}
