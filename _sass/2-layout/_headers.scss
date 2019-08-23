@@ -8,22 +8,18 @@
 
 // Main Footer
 .header-main {
-  padding: 48px 0;
-
-  .header-navigation {
-    justify-self: end;
-    align-self: center;
-  }
-
-  .link-nav {
-
-    &:hover {
-      color: get-color(brand, main);
-    }
-  }
+  padding: 56px 0;
 
   @include mq-after(1000px) {
     padding: 100px 0;
+
+    .container {
+      grid-template-columns: 3fr 5fr;
+    }
+
+    .header-navigation {
+      grid-column-start: 2;
+    }
   }
 }
 

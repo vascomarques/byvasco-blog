@@ -14,11 +14,11 @@
   }
 
   &-3 {
-    @include font(22, 32, 0, $medium);
+    @include font(22, 32, 0, $regular);
   }
 
   &-4 {
-    @include font(22, 36, 0, $medium);
+    @include font(22, 32, 0, $regular);
   }
 
   @include mq-after(medium) {
@@ -35,14 +35,7 @@
     }
 
     &-4 {
-      @include font(22, 32, 0.2, $medium);
-    }
-  }
-
-  @include mq-hover {
-    &-3 a:hover {
-      color: get-color(brand, main);
-      border-color: transparentize(get-color(brand, main), 0.6)
+      @include font(24, 32, 0, $regular);
     }
   }
 }
@@ -73,11 +66,11 @@ p {
 }
 
 .link {
-  font-weight: $medium;
-  color: get-color(brand, main);
   text-decoration: underline;
 
-  
+  &:hover {
+    opacity: .5;
+  }
 }
 
 // Text Button
@@ -123,7 +116,11 @@ li {
 }
 
 .navigation-link {
-  @include font(16, 24, 0.2, $semi);
+  @include font(16, 20, 0.18, $regular);
+
+  @include mq-min(900) {
+    @include font(18, 20, 0.2, $regular);
+  }
 }
 
 // Text Selection

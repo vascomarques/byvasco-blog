@@ -1,0 +1,10 @@
+
+docs:
+
+- title: Home
+  url: /
+  url_full: /
+
+- title: Articles
+  url: /articles/
+  url_full: /articles.html

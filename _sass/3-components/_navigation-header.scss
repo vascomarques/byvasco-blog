@@ -1,0 +1,38 @@
+/** 
+ * Component:
+ * Navigation - Header
+ */
+
+.header-navigation {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+
+  a {
+    padding-left: 32px;
+    position: relative;
+  }
+
+  .active {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      display: block;
+      content: '';
+      @include wh(24px, 14px);
+      @include pos-abs($left: 0);
+      @include background('icons/icon-pointer.svg');
+    }
+  }
+
+  @include mq-after(1000px) {
+    a {
+      padding-left: 0;
+    }
+
+    .active::before {
+      left: -32px;
+    }
+  }
+}
