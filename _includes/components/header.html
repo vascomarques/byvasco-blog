@@ -1,0 +1,15 @@
+<header class="header-main {% if include.absolute %}absolute{% endif %}">
+  <div class="container grid-2">
+    {% if include.absolute %}
+      <a href="/" class="logo link-nav"></a>
+    {% else %}
+      <a href="/" class="logo link-nav">Vasco Marques</a>
+    {% endif %}
+
+    <nav class="header-navigation">
+      {% for doc in site.data.navigation.docs %}
+        {% if doc.show %}<a href="{{doc.url}}" class="link-nav">{{doc.title}}</a>{% endif %}
+      {% endfor %}
+    </nav>
+  </div>
+</header>

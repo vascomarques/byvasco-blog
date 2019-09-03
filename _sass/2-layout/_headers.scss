@@ -6,24 +6,22 @@
  */
 
 
-// Main Footer
+// Main Header
 .header-main {
-  padding: 48px 0;
+  padding: 80px 0;
 
   .header-navigation {
     justify-self: end;
     align-self: center;
   }
 
-  .link-nav {
-
-    &:hover {
-      color: get-color(brand, main);
-    }
+  @include mq-before(medium) {
+    padding: 48px 0;
   }
 
-  @include mq-after(1000px) {
-    padding: 100px 0;
+  &.absolute {
+    @include pos($z: 10);
+    width: 100%;
   }
 }
 

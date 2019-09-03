@@ -5,54 +5,10 @@
  * Page - Article
  */
 
+.article-preview + .article-preview {
+  margin-top: 100px;
 
-.page-articles {
-  margin-bottom: 120px;
-
-  .article-preview {
-    padding: 40px 0;
-  }
-
-  @include mq-after(medium) {
-    margin-bottom: 200px;
-  }
-}
-
-.article-preview {
-  padding: 32px 0;
-
-  .article-title {
-    transition: all 80ms;
-    margin-bottom: 8px;
-  }
-
-  .article-excerpt {
-    opacity: .7;
-  }
-
-  .article-more {
-    @extend a;
-    display: inline-block;
-  }
-
-  &:active {
-    .article-title {
-      color: get-color(brand, main);
-    }
-  }
-
-  @include mq-hover {
-    .article-title:hover {
-      color: get-color(brand, main);
-      border-color: transparentize(get-color(brand, main), .8);
-    }
-  }
-
-  @include mq-after(medium) {
-    padding: 48px 0;
-
-    .article-title {
-      margin-bottom: 12px;
-    }
+  @include mq-before(small) {
+    margin-top: 80px;
   }
 }

@@ -2,7 +2,6 @@
 layout: article
 
 title: "On Design and Fixing Old Cars"
-excerpt: "Some principles I apply to my work, that I learnt with my hobby."
 image-dir: "On Design and Fixing Old Cars"
 
 permalink: /articles/:title
@@ -19,7 +18,7 @@ I like old cars because almost everything is made of mechanical parts and system
 The interesting part is that, with time, I’ve realized that there are a few concepts that are present and apply to both my work and this hobby of mine.
 
 
-## Be patient
+#### Be patient
 I choose this one to be the first on the list because I struggle a bit with it. Patience, in my opinion, is something that is kind of difficult to have (at least for me), but the return of actually having it is pretty good.
 
 Every time I rush things I will probably end up with poor design work or something in my car that won’t work properly.
@@ -27,7 +26,7 @@ Every time I rush things I will probably end up with poor design work or somethi
 However, if I have the patience, and if I take the time to at least try to do things right, I’ll probably end up with better results.
 
 
-## Stay positive
+#### Stay positive
 As you can imagine, it’s not a great feeling to be on the side of a highway with a broken car, not knowing what the problem is, and not knowing how much money it will cost to fix it.
 
 Now, I only have a couple of mindsets I can have here: a negative, and a positive one.
@@ -43,7 +42,7 @@ I have one option, though: I can filter something positive out of this situation
 In my design work I also try to keep a positive mindset. Because I’m aware that positivity attracts positivity. That way, I feel more creative, happier and more optimistic.
 
 
-## Use mistakes as a learning experiences
+#### Use mistakes as a learning experiences
 One night, I was trying to change the starter engine of my Golf.
 
 It was my first time doing it and I ended up fucking things up — due to the way the starter engine is mounted, it was helping the car’s engine to stay in its place. So, as I removed the last bolt, the engine literally fell down a few centimeters, and as it did that, an electrical plug disconnected (and I haven’t realized that). I was able to install a new starter, but when I gave ignition, the car didn’t start.
@@ -57,13 +56,13 @@ I was clearly clueless about this, mainly because it was the first time I was ch
 We all make mistakes, and as a young designer, I’m obviously making a lot. But the key is to take responsibility, take a step back, see what went wrong, and learn from it.
 
 
-## Don’t force it
+#### Don’t force it
 This one will be short: rule of thumb, if a bolt, for example, needs to be forced to be installed, I’m probably doing something wrong and I might end up breaking or damaging something.
 
 As a designer, I can apply this when talking about inspiration. If I’m not feeling inspired, I think there’s no way of forcing good work to come out. Might as well take a break, go read a book, watch a video or even get out of the house for some fresh air.
 
 
-## Everything’s better in my head
+#### Everything’s better in my head
 When my Civic (my daily car) went for a paint job, I was already imagining it with its new color, with a perfect coat of fresh and shiny paint.
 
 Everything was perfect in my head.

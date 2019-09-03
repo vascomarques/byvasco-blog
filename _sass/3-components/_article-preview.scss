@@ -1,0 +1,25 @@
+/** 
+ * Component:
+ * Article Preview
+ */
+
+.article-preview {
+  .article-title {
+    margin-bottom: 12px;
+  }
+
+  .article-excerpt {
+    margin-bottom: 12px;
+    max-width: 484px;
+  }
+
+  &:hover {
+    opacity: .7;
+  }
+
+  @include mq-before(small) {
+    .article-title {
+      margin-bottom: 8px;
+    }
+  }
+}

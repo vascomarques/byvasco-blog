@@ -10,39 +10,31 @@
   }
 
   &-2 {
-    @include font(28, 40, 0, $medium);
+    @include font(40, 64, 0, $semi);
   }
 
   &-3 {
-    @include font(22, 32, 0, $medium);
+    @include font(30, 44, 0.11, $semi);
   }
 
   &-4 {
-    @include font(22, 36, 0, $medium);
-  }
-
-  @include mq-after(medium) {
-    &-1 {
-      @include font(46, 56, 0, $regular);
-    }
-
-    &-2 {
-      @include font(32, 44, 0.2, $medium);
-    }
-
-    &-3 {
-      @include font(32, 56, 0.04, $regular);
-    }
-
-    &-4 {
-      @include font(22, 32, 0.2, $medium);
-    }
+    @include font(22, 28, 0.1, $bold);
   }
 
   @include mq-hover {
     &-3 a:hover {
       color: get-color(brand, main);
       border-color: transparentize(get-color(brand, main), 0.6)
+    }
+  }
+
+  @include mq-before(small) {
+    &-2 {
+      @include font(32, 40, 0.09, $semi);
+    }
+    
+    &-3 {
+      @include font(26, 36, 0.1, $semi);
     }
   }
 }
@@ -55,15 +47,15 @@
     @include font(16, 28, 0, $regular);
   }
 
-  &-serif {
-    @include font(16, 32, 0, $regular, $font-serif);
+  &-large {
+    @include font(22, 44, 0, $regular);
   }
 
-  @include mq-after(medium) {
-    @include font(18, 32, 0.01, $regular);
+  @include mq-before(small) {
+    @include font(16, 28, 0.1, $regular);
 
-    &-small {
-      @include font(16, 28, 0.08, $regular);
+    &-large {
+      @include font(20, 36, 0.03, $regular);
     }
   }
 }
@@ -72,12 +64,32 @@ p {
   @extend .body;
 }
 
+
+// Links
 .link {
-  font-weight: $medium;
-  color: get-color(brand, main);
   text-decoration: underline;
 
-  
+  &-nav {
+    @include font(18, 32, 0, $regular);
+    
+    &:hover {
+      opacity: .6;
+    }
+  }
+
+  &:hover {
+    opacity: .6;
+  }
+
+  @include mq-before(small) {
+    &-nav {
+      @include font(16, 24, 0.1, $regular);
+    }
+  }
+}
+
+p a {
+  @extend .link; 
 }
 
 // Text Button
@@ -100,7 +112,6 @@ p {
 
 // Other Elements
 time {
-  @extend .body-small;
   font-style: italic;
   display: block;
 }
@@ -122,8 +133,8 @@ li {
   @extend .body;
 }
 
-.navigation-link {
-  @include font(16, 24, 0.2, $semi);
+.-bold {
+  font-weight: $semi;
 }
 
 // Text Selection

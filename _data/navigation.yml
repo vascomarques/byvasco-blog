@@ -1,0 +1,9 @@
+docs:
+
+- title: Home
+  url: /
+  show: false
+
+- title: Articles
+  url: /articles
+  show: true

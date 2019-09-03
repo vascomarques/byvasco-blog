@@ -52,9 +52,25 @@ $breakpoints: (
   align-items: $align;
 }
 
+// Sets display to grid
+@mixin grid($cols: null, $rows: null) {
+  display: grid;
+  grid-gap: $gap;
+  
+  @if $cols {
+    grid-template-columns: $cols;
+  }
+
+  @if $row {
+    grid-template-rows: $rows;
+  }
+}
+
+
+
 // Set absolute position and passed coordinates
-@mixin pos-abs($top: null, $right: null, $bottom: null, $left: null) {
-  position: absolute;
+@mixin pos($pos: absolute, $top: null, $right: null, $bottom: null, $left: null, $z: null) {
+  position: $pos;
 
   @if $top {
     top: $top;
@@ -67,6 +83,9 @@ $breakpoints: (
   }
   @if $left {
     left: $left;
+  }
+  @if $z {
+    z-index: $z;
   }
 }
 

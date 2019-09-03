@@ -6,12 +6,6 @@ page-title: My thoughts and ideas into words.
 has_footer: false
 ---
 
-<header class="page-header">
-  <div class="container-narrow">
-    <h1 class="page-title title-1">Articles</h1>
-  </div>
-</header>
-
 <section class="page-content section-articles">
   <div class="container-narrow">
     <ul class="articles-list">
@@ -19,7 +13,7 @@ has_footer: false
         <li class="article-preview">
           <a href="{{post.url}}">
             <h2 class="article-title title-3">{{ post.title }}</h2>
-            <p class="article-excerpt body-serif">{{ post.excerpt | strip_html }}</p>
+            <p class="article-excerpt body-small">{{ post.excerpt | strip_html }}</p>
           </a>
         </li>
       {% endfor %}
