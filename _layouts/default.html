@@ -3,7 +3,11 @@
   {% include head.html %}
 
   <body>
-    {% include header.html %}
+    {% if page.url == '/' %}
+      {% include components/header.html absolute=true %}
+    {% else %}
+      {% include components/header.html %}
+    {% endif %}
 
     <main class="{% if page.page_name %}page-{{ page.page_name }}{% else %}page{% endif %}"">
       {{ content }}

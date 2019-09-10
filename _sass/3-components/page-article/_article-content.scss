@@ -1,0 +1,28 @@
+/** 
+ * Component:
+ * Article Content
+ */
+
+
+.article-content {
+  p + p {
+    text-indent: 16px;
+    margin-top: 12px;
+  }
+
+  h3 {
+    @extend .title-3;
+    margin: 56px 0 16px 0;
+  }
+
+  h4 {
+    @extend .title-4;
+    margin: 56px 0 16px 0;
+  }
+
+  @include mq-before(small) {
+    p + p {
+      text-indent: 12px;
+    }
+  }
+}

@@ -1,41 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-{% include head.html %}
+---
+layout: default
+---
 
-<body>
-  {% include header.html %}
+<header class="header-article">
+  <div class="container-narrow">
+    <h1 class="title-2">{{page.title}}</h1>
+  </div>
+</header>
 
-  <article class="article-full">
-    <div class="container-narrow">
-      <header class="article-header">
-        <h1 class="article-title title-1">{{ page.title }}</h1>
-      </header>
-    </div>
+<article class="article-content">
+  <div class="container-narrow">
+    {{page.content}}
+  </div>
+</article>
 
-    <div class="container-narrow">
-      <div class="article-content">
-        {{ content }}
-      </div>
-
-      <div class="article-footer">
-        <time class="article-date">Published on {{ page.date | date: "%B %d, %Y" }}</time>
-
-        <!-- <div class="article-share">
-          <a href="#" class="share-facebook"></a>
-          <a href="#" class="share-twitter"></a>
-        </div> -->
-      </div>
-
-      <div class="article-about grid">
-        <img src="/assets/images/image-profile.png" />
-
-        <div class="content">
-          <h3 class="title-2">Hey there, I'm Vasco!</h3>
-          <p class="body-small">I’m the author of this blog. Thank you for reading it!</p>
-        </div>
-      </div>
-    </div>
-  </article>
-</body>
-
-</html>
+<footer class="footer-article">
+  <div class="container-narrow">
+    <p class="body-small">Posted in {{page.date | date: "%B %d, %Y"}}</p>
+  </div>
+</footer>

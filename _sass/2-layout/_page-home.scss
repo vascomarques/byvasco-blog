@@ -9,54 +9,55 @@
 .page-home {
 	margin-bottom: 120px;
 
+	.grid-2 {
+		grid-template-columns: 4fr 8fr;
+	}
+
 	.intro-text {
-		max-width: 610px;
-		margin-bottom: 64px;
-		
-		p {
-			@include font(22, 36, 0, $regular);
-			margin-bottom: 12px;
-		}
+		margin-top: 200px;
+		justify-self: center;
 
-		a {
-			@extend .link;
+		.content {
+			max-width: 586px;
+			margin-bottom: 80px;
+
+			p:not(:last-child) {
+				margin-bottom: 32px;
+			}
+
+			p:not(:first-child) {
+				text-indent: 24px;
+			}
 		}
 	}
 
-	.profile-image {
-		margin-bottom: 48px;
-		max-width: 360px;
-	}
 
-	@include mq-after(1000px) {
-		margin-bottom: 200px;
-
-		.container {
-			grid-template-columns: 3fr 5fr;
+	@include mq-before(small) {
+		.grid-2 {
+			grid-template-columns: 1fr;
 		}
 
 		.profile-image {
-			order: -1;
+			img {
+				max-height: 200px;
+			}
 		}
 
 		.intro-text {
-			margin-top: 80px;
-			
-			p {
-				@include font(32, 56, 0.04, $regular);
-				margin-bottom: 32px;
-			}
-		}
-	}
+			margin-top: 0;
+			justify-self: start;
 
-	@include mq-hover {
-		.contacts li:hover {
-			a {
-				color: get-color(brand, main);
-			}
+			.content {
+				max-width: 490px;
+				margin-bottom: 40px;
 
-			&:before {
-				left: -26px;
+				p:not(:last-child) {
+					margin-bottom: 20px;
+				}
+
+				p:not(:first-child) {
+					text-indent: 16px;
+				}
 			}
 		}
 	}

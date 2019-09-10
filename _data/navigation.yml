@@ -1,10 +1,9 @@
-
 docs:
 
 - title: Home
   url: /
-  url_full: /
+  show: false
 
 - title: Articles
-  url: /articles/
-  url_full: /articles.html
+  url: /articles
+  show: true

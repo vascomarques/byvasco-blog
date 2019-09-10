@@ -1,0 +1,13 @@
+/** 
+ * Component:
+ * Article Header
+ */
+
+
+.header-article {
+  padding: 56px 0;
+  
+  @include mq-before(small) {
+    padding: 64px 0 40px;
+  }
+}
