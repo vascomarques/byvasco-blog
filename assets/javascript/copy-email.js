@@ -1,4 +1,4 @@
-const emailLink = document.querySelector('.contacts .email a'),
+const emailLink = document.querySelector('.home-contacts .email'),
       emailAddress = emailLink.getAttribute('data-email'),
       label = emailLink.querySelector('span');
 

@@ -1,0 +1,9 @@
+<header class="header-main">
+  <div class="container grid-2">
+    <nav class="header-navigation">
+      {% for doc in site.data.navigation.docs %}
+        <a href="{{ doc.url }}" class="navigation-link {% if doc.url_full == page.url %}active{% endif %}">{{ doc.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>

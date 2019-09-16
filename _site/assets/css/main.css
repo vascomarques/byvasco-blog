@@ -1005,4 +1005,5 @@ img {
  * Page - Article
  */
 .logo {
-  font-weight: 600; }
+  display: block;
+  font-weight: 700; }
