@@ -3,11 +3,35 @@
  * Article Content
  */
 
-
 .article-content {
+  .iframe-container {
+    position: relative;
+    @include wh(100vw, 0, 920px);
+    padding-bottom: 81%;
+    margin: 72px 0 64px -140px;
+
+    iframe {
+      @include pos();
+      @include wh(100%, 100%);
+    }
+  }
+
+  blockquote {
+    max-width: 560px;
+    margin: 40px auto;
+  }
+
+  figure {
+    width: calc(100% + 280px);
+    margin: 48px 0 48px -140px;
+  }
+
+  .container-narrow > p {
+    @extend .body-long;
+  }
+
   p + p {
-    text-indent: 16px;
-    margin-top: 12px;
+    margin-top: 16px;
   }
 
   h3 {
@@ -17,12 +41,69 @@
 
   h4 {
     @extend .title-4;
-    margin: 56px 0 16px 0;
+    margin: 88px 0 24px 0;
+  }
+
+  ul,
+  ol,
+  li {
+    list-style: initial;
+  }
+
+  ul,
+  ol {
+    padding-left: 32px;
+    margin: 20px 0;
+
+    li {
+      line-height: 28px;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+  }
+
+  code {
+    padding: 4px 6px;
+    margin: 0 2px;
+  }
+
+  hr {
+    margin: 48px 0;
+    border: 0;
+    border-top: 1px solid get-color(border, primary);
+  }
+
+  @include mq-before(920px) {
+    .iframe-container {
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin-left: 0;
+    }
+
+    figure {
+      width: calc(100% + 60px);
+      margin: 72px 0 72px -30px;
+    }
   }
 
   @include mq-before(small) {
+    .iframe-container {
+      margin: 30px 0 32px;
+    }
+
     p + p {
-      text-indent: 12px;
+      margin-top: 12px;
+    }
+
+    blockquote {
+      margin: 32px auto;
+      padding: 0 10px;
+    }
+
+    h4 {
+      margin: 48px 0 20px;
     }
   }
 }

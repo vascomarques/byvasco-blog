@@ -33,15 +33,10 @@ $breakpoints: (
 }
 
 // Sets width and height, with 'px' as the default unir
-@mixin wh($width, $height: null) {
+@mixin wh($width, $height: null, $m-width: null) {
   width: $width;
-
-  // If $height is null, make it the same as $width
-  @if $height {
-    height: $height;
-  } @else {
-    height: $width;
-  }
+  height: $height;
+  max-width: $m-width;
 }
 
 // Sets display to flex, and assigns other properties
@@ -53,23 +48,17 @@ $breakpoints: (
 }
 
 // Sets display to grid
-@mixin grid($cols: null, $rows: null) {
+@mixin grid($cols: null, $rows: null, $gap: 0) {
   display: grid;
   grid-gap: $gap;
-  
-  @if $cols {
-    grid-template-columns: $cols;
-  }
-
-  @if $row {
-    grid-template-rows: $rows;
-  }
+  grid-template-columns: $cols;
+  grid-template-rows: $rows;
 }
 
 
 
 // Set absolute position and passed coordinates
-@mixin pos($pos: absolute, $top: null, $right: null, $bottom: null, $left: null, $z: null) {
+@mixin pos($top: null, $right: null, $bottom: null, $left: null, $z: null, $pos: absolute) {
   position: $pos;
 
   @if $top {

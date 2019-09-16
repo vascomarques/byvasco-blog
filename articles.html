@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Articles
 page_name: articles
 page-title: My thoughts and ideas into words.
@@ -12,8 +12,8 @@ has_footer: false
       {% for post in site.posts %}
         <li class="article-preview">
           <a href="{{post.url}}">
-            <h2 class="article-title title-3">{{ post.title }}</h2>
-            <p class="article-excerpt body-small">{{ post.excerpt | strip_html }}</p>
+            <time class="article-date">{{post.date | date: "%B %d, %Y"}}</time>
+            <h2 class="article-title title-5">{{post.title}}</h2>
           </a>
         </li>
       {% endfor %}

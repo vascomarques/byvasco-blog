@@ -4,9 +4,9 @@
   Image comes from "assets/posts/<date-title>"
 -->
 
-{% capture post-image-path %}
-  {% if page.image-dir %}
-    {{ page.date | date: "%Y-%m-%d" }}-{{ page.image-dir | slugify }}/{{ include.name }}
+{% capture post_image_path %}
+  {% if page.image_dir %}
+    {{ page.date | date: "%Y-%m-%d" }}-{{ page.image_dir | slugify }}/{{ include.name }}
   {% else %}
     {{ page.date | date: "%Y-%m-%d" }}-{{ page.title | slugify }}/{{ include.name }}
   {% endif %}
@@ -16,7 +16,7 @@
   <figure>
     <a href="{{ include.href }}">
       <img
-        src="/assets/posts/{{ post-image-path | slugify: 'raw'}}"
+        src="/assets/posts/{{ post_image_path | slugify: 'raw'}}"
         {% if include.alt %}alt="{{ include.alt }}"{% endif %}
       />
     </a>
@@ -25,7 +25,7 @@
 {% elsif include.caption && include.type == 'post' %}
   <figure>
     <img
-      src="/assets/posts/{{ post-image-path | slugify: 'raw'}}"
+      src="/assets/posts/{{ post_image_path | slugify: 'raw'}}"
       {% if include.alt %}alt="{{ include.alt }}"{% endif %}
     />
     <figcaption class="text-smaller caption">{{ include.caption }}</figcaption>
@@ -34,7 +34,7 @@
 {% elsif include.type == 'post' %}
   <figure>
     <img 
-      src="/assets/posts/{{ post-image-path | slugify: 'raw'}}"
+      src="/assets/posts/{{ post_image_path | slugify: 'raw'}}"
       {% if include.alt %}alt="{{ include.alt }}"{% endif %}
     />
   </figure>

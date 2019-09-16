@@ -14,9 +14,14 @@
   margin: auto;
   position: relative;
 
+  &-medium {
+    @extend .container;
+    max-width: calc(920px + 60px);
+  }
+
   &-narrow {
     @extend .container;
-    max-width: calc(586px + 60px);
+    max-width: calc(640px + 60px);
   }
 }
 
@@ -29,5 +34,19 @@
   &-2 {
     @extend .grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+// Flexbox helpers
+.flex {
+  @include flex();
+
+  &-center-hor {
+    @include flex(center);
+  }
+
+  &-center-all {
+    @include flex(center, center, column);
   }
 }

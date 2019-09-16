@@ -1,21 +1,30 @@
 ---
 layout: default
+page_name: article
 ---
 
-<header class="header-article">
+<header class="article-header">
   <div class="container-narrow">
-    <h1 class="title-2">{{page.title}}</h1>
+    <h1 class="article-title title-1">{{ page.title }}</h1>
   </div>
 </header>
 
 <article class="article-content">
   <div class="container-narrow">
-    {{page.content}}
+    {{ page.content }}
   </div>
 </article>
 
 <footer class="footer-article">
-  <div class="container-narrow">
-    <p class="body-small">Posted in {{page.date | date: "%B %d, %Y"}}</p>
+  <div class="article-date">
+    <div class="container-narrow">
+      <time>Posted in {{ page.date | date: '%B %d, %Y' }}</time>
+    </div>
+  </div>
+
+  <div class="back">
+    <div class="container-narrow flex-center-all">
+      <a href="/articles" class="link-stealth body-large">Back to Articles</a>
+    </div>
   </div>
 </footer>

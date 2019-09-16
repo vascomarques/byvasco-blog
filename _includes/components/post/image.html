@@ -1,0 +1,7 @@
+<figure>
+  <img src="/assets/images/articles/{{ include.folder }}/{{ include.image | strip }}" />
+
+  {% if include.caption %}
+  <figcaption>{{ include.caption }}</figcaption>
+  {% endif %}
+</figure>

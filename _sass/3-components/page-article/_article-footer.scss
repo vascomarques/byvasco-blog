@@ -5,9 +5,17 @@
 
 
 .footer-article {
-  padding: 100px 0 200px 0;
+  padding: 80px 0 160px;
 
-  p {
-    opacity: .5;
+  .back {
+    padding: 100px 0;
+  }
+
+  @include mq-before(small) {
+    padding: 40px 0 72px;
+
+    .back {
+      padding: 72px 0;
+    }
   }
 }

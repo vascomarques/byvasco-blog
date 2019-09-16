@@ -6,19 +6,23 @@
 // Titles
 .title {
   &-1 {
-    @include font(40, 48, -0.1, $regular);
+    @include font(56, 60, 0.1, $bold);
   }
 
   &-2 {
-    @include font(40, 64, 0, $semi);
+    @include font(40, 56, 0, $semi);
   }
 
   &-3 {
-    @include font(30, 44, 0.11, $semi);
+    @include font(40, 60, 0.07, $bold);
   }
 
   &-4 {
-    @include font(22, 28, 0.1, $bold);
+    @include font(30, 32, 0.1, $bold);
+  }
+
+  &-5 {
+    @include font(24, 32, 0.1, $bold);
   }
 
   @include mq-hover {
@@ -29,33 +33,55 @@
   }
 
   @include mq-before(small) {
+    &-1 {
+      @include font(38, 44, 0, $bold);
+    }
+
     &-2 {
-      @include font(32, 40, 0.09, $semi);
+      @include font(32, 40, 0.09, $bold);
     }
     
     &-3 {
-      @include font(26, 36, 0.1, $semi);
+      @include font(26, 36, 0.1, $bold);
+    }
+    
+    &-4 {
+      @include font(26, 28, 0, $bold);
+    }
+
+    &-5 {
+      @include font(22, 28, 0.1, $bold);
     }
   }
 }
 
 // Body
 .body {
-  @include font(18, 32, 0, $regular);
+  @include font(20, 32, 0, $regular);
 
   &-small {
     @include font(16, 28, 0, $regular);
   }
 
   &-large {
-    @include font(22, 44, 0, $regular);
+    @include font(24, 44, 0, $regular);
+  }
+
+  &-long {
+    @extend .body;
+    line-height: 34px;
+    color: get-color(text, secondary);
   }
 
   @include mq-before(small) {
-    @include font(16, 28, 0.1, $regular);
+    @include font(18, 28, 0, $regular);
+
+    &-long {
+      line-height: 32px;
+    }
 
     &-large {
-      @include font(20, 36, 0.03, $regular);
+      @include font(20, 34, 0.1, $regular);
     }
   }
 }
@@ -64,10 +90,19 @@ p {
   @extend .body;
 }
 
+.caption {
+  @include font(16, 24, 0, $regular);
+
+  @include mq-before(small) {
+    @include font(14, 20, 0.01, $regular);
+  }
+}
+
 
 // Links
 .link {
   text-decoration: underline;
+  color: get-color(brand, main);
 
   &-nav {
     @include font(18, 32, 0, $regular);
@@ -79,6 +114,11 @@ p {
 
   &:hover {
     opacity: .6;
+  }
+
+  &-stealth {
+    @extend .link;
+    color: get-color(text, primary);
   }
 
   @include mq-before(small) {
@@ -112,8 +152,23 @@ p a {
 
 // Other Elements
 time {
-  font-style: italic;
+  @extend .caption;
   display: block;
+  color: get-color(text, light);
+}
+
+blockquote {
+  p {
+    @extend .body-large;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  @include mq-before(small) {
+    p {
+      line-height: 32px;
+    }
+  }
 }
 
 figcaption {
@@ -123,6 +178,7 @@ figcaption {
 pre,
 code {
   @include font(14, 24, 0, $regular, $font-code);
+  background-color: transparentize(get-color(brand, main), 0.94);
 }
 
 strong {
@@ -133,6 +189,8 @@ li {
   @extend .body;
 }
 
+
+// Modifiers
 .-bold {
   font-weight: $semi;
 }

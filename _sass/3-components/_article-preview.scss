@@ -4,13 +4,8 @@
  */
 
 .article-preview {
-  .article-title {
-    margin-bottom: 12px;
-  }
-
-  .article-excerpt {
-    margin-bottom: 12px;
-    max-width: 484px;
+  .article-date {
+    margin-bottom: 8px;
   }
 
   &:hover {

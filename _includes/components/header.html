@@ -1,9 +1,9 @@
-<header class="header-main {% if include.absolute %}absolute{% endif %}">
+<header class="header-main">
   <div class="container grid-2">
-    {% if include.absolute %}
-      <a href="/" class="logo link-nav"></a>
-    {% else %}
+    {% if include.logo %}
       <a href="/" class="logo link-nav">Vasco Marques</a>
+    {% else %}
+      <a href="/" class="logo link-nav"></a>
     {% endif %}
 
     <nav class="header-navigation">

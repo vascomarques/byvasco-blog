@@ -1,7 +1,8 @@
-
 // Components
 // Page - Article
 
-@import "article-header";
-@import "article-content";
-@import "article-footer";
+.page-article {
+  @import 'article-header';
+  @import 'article-content';
+  @import 'article-footer';
+}

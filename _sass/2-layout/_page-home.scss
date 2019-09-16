@@ -9,54 +9,68 @@
 .page-home {
 	margin-bottom: 120px;
 
-	.grid-2 {
-		grid-template-columns: 4fr 8fr;
+	.home-intro {
+		margin-top: 80px;
+	}
+
+	.profile-image {
+		width: 100%;
+		@include pos(0, $z: -1);
+
+		img {
+			width: 280px;
+			transform: translateX(-50%);
+		}
 	}
 
 	.intro-text {
-		margin-top: 200px;
 		justify-self: center;
 
 		.content {
-			max-width: 586px;
-			margin-bottom: 80px;
+			margin-bottom: 64px;
 
-			p:not(:last-child) {
-				margin-bottom: 32px;
+			p:first-child {
+				margin-bottom: 24px;
+			}
+
+			p {
+				margin-bottom: 16px;
 			}
 
 			p:not(:first-child) {
-				text-indent: 24px;
+				text-indent: 16px;
 			}
 		}
 	}
 
-
-	@include mq-before(small) {
-		.grid-2 {
-			grid-template-columns: 1fr;
-		}
-
+	@include mq-before(1060px) {
 		.profile-image {
 			img {
-				max-height: 200px;
+				width: 165px;
+				transform: translateX(0%);
 			}
 		}
+	}
 
+	@include mq-before(medium) {
+		.home-intro {
+			margin-top: 140px;
+		}
+	}
+
+	@include mq-before(small) {
 		.intro-text {
-			margin-top: 0;
-			justify-self: start;
 
 			.content {
-				max-width: 490px;
+				max-width: 390px;
 				margin-bottom: 40px;
 
-				p:not(:last-child) {
-					margin-bottom: 20px;
+				p {
+					margin-bottom: 12px;
 				}
 
 				p:not(:first-child) {
-					text-indent: 16px;
+					text-indent: 12px;
 				}
 			}
 		}

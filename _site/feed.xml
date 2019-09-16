@@ -1,4 +1,124 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-02T22:30:34+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">On Design and Fixing Old Cars</title><link href="http://localhost:4000/articles/on-design-and-fixing-old-cars" rel="alternate" type="text/html" title="On Design and Fixing Old Cars" /><published>2018-10-15T00:00:00+01:00</published><updated>2018-10-15T00:00:00+01:00</updated><id>http://localhost:4000/articles/on-design-and-fixing-old-cars</id><content type="html" xml:base="http://localhost:4000/articles/on-design-and-fixing-old-cars">&lt;p&gt;So my car just broke something while I was driving — I’m literally writing this while on the side of a highway waiting for the tow truck to arrive, and I thought it would be a perfect time to write this article.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-16T01:37:08+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">How I organize Sass projects</title><link href="http://localhost:4000/articles/organizing-sass-projects" rel="alternate" type="text/html" title="How I organize Sass projects" /><published>2019-09-11T00:00:00+01:00</published><updated>2019-09-11T00:00:00+01:00</updated><id>http://localhost:4000/articles/organizing-sass-projects-</id><content type="html" xml:base="http://localhost:4000/articles/organizing-sass-projects">&lt;p&gt;These last few days I’ve been busy working on cleaning all the stylesheets from the &lt;a href=&quot;https://hole19golf.com&quot;&gt;H19&lt;/a&gt; website. It may seem tedious and boring but I’m actually enjoying it, I like the idea of transforming chaos into order.&lt;/p&gt;
+
+&lt;p&gt;Ever since I work with Sass, I wanted to get a stable workflow and a way of organizing my files in a specific order. I have also recently started to learn and work with React, which uses components to structure everything, and that inspired me to organize the Sass files in this way, at least for larger projects. So let’s get started.&lt;/p&gt;
+
+&lt;p&gt;The main idea is to separate things into 3 parts:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Base&lt;/strong&gt;: things like base styles, resets, typography, variables, mixins, etc.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Components&lt;/strong&gt;: the different pieces of the website.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Layout&lt;/strong&gt;: how the components relate to each other.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I like to think like this: a component works with padding, a layout works with margins. But let’s see how this might work in a project.&lt;/p&gt;
+
+&lt;h4 id=&quot;getting-started&quot;&gt;Getting started&lt;/h4&gt;
+&lt;p&gt;The first thing I do whenever I start a new project is to first create the folders where the code will live, then the “index” partial for each of them, and lastly the main file where those 3 partials will be imported.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/organizing-sass-projects/getting-started.jpg&quot; /&gt;
+
+  
+&lt;/figure&gt;
+
+&lt;p&gt;Perfect. So now we don’t mess around with that &lt;code class=&quot;highlighter-rouge&quot;&gt;main.scss&lt;/code&gt; because its main job is to import those 3 files.&lt;/p&gt;
+
+&lt;h4 id=&quot;base&quot;&gt;Base&lt;/h4&gt;
+&lt;p&gt;With all that created, we can start to create the base styles. I usually have a &lt;code class=&quot;highlighter-rouge&quot;&gt;_base.scss&lt;/code&gt;, a&lt;code class=&quot;highlighter-rouge&quot;&gt;_typography.scss&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;_variables.scss&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;_helpers.scss&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;_reset.scss&lt;/code&gt; and that’s it.&lt;/p&gt;
+
+&lt;p&gt;Remember to use the &lt;code class=&quot;highlighter-rouge&quot;&gt;_&lt;/code&gt; before the name of the file so that Sass knows that it’s a partial.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/organizing-sass-projects/base.jpg&quot; /&gt;
+
+  
+&lt;/figure&gt;
+
+&lt;p&gt;Then we just need to import each of these in our &lt;code class=&quot;highlighter-rouge&quot;&gt;_base-index.scss&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;components&quot;&gt;Components&lt;/h4&gt;
+&lt;p&gt;Time to take care of the components. Let’s take a look at this example right here:&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/organizing-sass-projects/website-example.jpg&quot; /&gt;
+
+  
+&lt;/figure&gt;
+
+&lt;p&gt;As you can see, this fictional web page has these 3 components: header, content and the footer.&lt;/p&gt;
+
+&lt;p&gt;The way I do this is basically by creating a partial for each of those components. So we would have &lt;code class=&quot;highlighter-rouge&quot;&gt;_header.scss&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;_content.scss&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;_footer.scss&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then all those partials are imported on the &lt;code class=&quot;highlighter-rouge&quot;&gt;_components-index.scss&lt;/code&gt; file and that’s it!&lt;/p&gt;
+
+&lt;p&gt;Now, we could go in even more detail and assume that the header would have a logo component and a menu component for example. So I would create a &lt;code class=&quot;highlighter-rouge&quot;&gt;header&lt;/code&gt; folder, and inside that, I’d place the &lt;code class=&quot;highlighter-rouge&quot;&gt;_header.scss&lt;/code&gt; but also a &lt;code class=&quot;highlighter-rouge&quot;&gt;_logo.scss&lt;/code&gt; and a &lt;code class=&quot;highlighter-rouge&quot;&gt;_menu.scss&lt;/code&gt;. And not to forget a &lt;code class=&quot;highlighter-rouge&quot;&gt;_header-index.scss&lt;/code&gt; to import all those, which is then imported on the &lt;code class=&quot;highlighter-rouge&quot;&gt;_components-index.scss&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Something like this:&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/organizing-sass-projects/components.jpg&quot; /&gt;
+
+  
+&lt;/figure&gt;
+
+&lt;h4 id=&quot;layout&quot;&gt;Layout&lt;/h4&gt;
+&lt;p&gt;Lastly, we have the layouts. In here I like to at least have a &lt;code class=&quot;highlighter-rouge&quot;&gt;_structure.scss&lt;/code&gt; file where I define my containers and all that, and this is also the place where I create a file to control the layout for each page of the website I’m creating. So if I’m working with a website that has a Home and an About page, I’d have a &lt;code class=&quot;highlighter-rouge&quot;&gt;_page-home.scss&lt;/code&gt; and a &lt;code class=&quot;highlighter-rouge&quot;&gt;_page-about.scss&lt;/code&gt; file. Nothing too complicated.&lt;/p&gt;
+
+&lt;p&gt;Now, what are we doing in these layouts? Let’s take a look at our website again:&lt;/p&gt;
+
+&lt;p&gt;Img&lt;/p&gt;
+
+&lt;p&gt;We’re controlling the margins between each component of the page. In this case, for example, we would do something like this:&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/organizing-sass-projects/layout.jpg&quot; /&gt;
+
+  
+&lt;/figure&gt;
+
+&lt;p&gt;Simple!&lt;/p&gt;
+
+&lt;h4 id=&quot;real-example&quot;&gt;Real example&lt;/h4&gt;
+&lt;p&gt;This was an oversimplified example, so let’s take a look at how I’m structuring the Sass on the &lt;a href=&quot;https://hole19golf.com&quot;&gt;H19&lt;/a&gt; website.&lt;/p&gt;
+
+&lt;p&gt;Here’s the base folder:&lt;/p&gt;
+
+&lt;p&gt;The components:&lt;/p&gt;
+
+&lt;p&gt;And the layouts:&lt;/p&gt;
+
+&lt;p&gt;As you can see this has a bit more stuff to work with. A useful tip is to separate everything into folders as it helps to keep everything organized, and it’s much easier to find the code you’re looking for. And I find it to be pretty easy to scale as the project grows.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;This is how I’m currently working but I’m always looking to improve my process so this is a constant work in progress.&lt;/p&gt;
+
+&lt;p&gt;Hope you find this useful and that it helps with your future projects. See you next time, and happy coding!&lt;/p&gt;</content><author><name></name></author><summary type="html">These last few days I’ve been busy working on cleaning all the stylesheets from the H19 website. It may seem tedious and boring but I’m actually enjoying it, I like the idea of transforming chaos into order.</summary></entry><entry><title type="html">Creating content, documenting and giving value</title><link href="http://localhost:4000/articles/content-documenting-value" rel="alternate" type="text/html" title="Creating content, documenting and giving value" /><published>2019-09-04T00:00:00+01:00</published><updated>2019-09-04T00:00:00+01:00</updated><id>http://localhost:4000/articles/content-documenting-value</id><content type="html" xml:base="http://localhost:4000/articles/content-documenting-value">&lt;p&gt;I’ve been somewhat thoughtful and slightly overthinking the topic of creating content, and building a personal brand for myself.&lt;/p&gt;
+
+&lt;p&gt;First of all, why even bother creating a personal brand? In my opinion is one of the greatest assets we can have, specially for the work side of our lives. My motivation is to be able to connect with people from all over the world, to create future opportunities, and to do something that is actually valuable or help someone.&lt;/p&gt;
+
+&lt;p&gt;Now, this last part – giving value – is what have been bothering me for quite some time. Because what do I know, right? I’m currently 22, and even though I’ve been working as a designer and a developer since I was 17, I really don’t think I have something special, or some special knowledge to give to people. So ok, I can’t go through that route.&lt;/p&gt;
+
+&lt;p&gt;There’s this &lt;strong&gt;document, don’t create&lt;/strong&gt; concept GaryVee came up with, and if you follow his work like me, you’re most likely aware of what I’m talking about. If you don’t it’s basically this: we should document what we’re doing, and position ourselves not like an expert on something (if we’re not), but rather as someone who is trying to become something. So we should document our process on becoming a web designer, on becoming a developer, or a writer, or a racing driver, or whatever we want to become.&lt;/p&gt;
+
+&lt;p&gt;Now, I love that, because it alleviates me from not feeling accredited to give advice, I can just document what I’m doing and just give my opinions. However, I still couldn’t understand how that could possibly bring value to somebody, because at the end of the day I’d be just constantly talking about myself… Until about 10 minutes ago!&lt;/p&gt;
+
+&lt;div class=&quot;iframe-container&quot;&gt;
+&lt;iframe src=&quot;https://www.youtube-nocookie.com/embed/RVKofRN1dyI&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I was on my lunch break, listening to Gary’s video “Document, Don’t Create” for the 1000th time (👆🏼 this one right here) and there’s a clip of him talking where he says this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“If I actually, from where I started, go on to buy a 4B$ sports organization and I documented the entire journey… My words are motivating and I’m good at that. But, the reason I do DailyVee and the reason I’m documenting so much is: if I can put out a body of work 40 years from now that showed the process of a young man that put in the work, had the vision, did it the right way, tried to help people along the way and then I actually accomplish it, well that becomes a real great American Dream story”.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And that got me thinking, because that’s the value I’m adding. Me and everyone else that’s documenting their journeys. We can be an inspiration for the future people that come after us. And  that can be in 40 years, on in 40 days.&lt;/p&gt;
+
+&lt;p&gt;Like &lt;a href=&quot;https://twitter.com/thepatwalls&quot;&gt;@thepatwalls&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/levelsio&quot;&gt;@levelsio&lt;/a&gt;, or &lt;a href=&quot;https://twitter.com/ajlkn&quot;&gt;@ajlkn&lt;/a&gt; : they’re doing their own stuff, documenting the process while doing it, and sharing with the world, which is quite inspiring!&lt;/p&gt;
+
+&lt;p&gt;So yeah, just a quick thought I wanted to put into words because I want to do this. I want to record the process of me trying to go where I want to go, and the things that I learn along the way.&lt;/p&gt;
+
+&lt;p&gt;Have a great day!&lt;/p&gt;</content><author><name></name></author><summary type="html">I’ve been somewhat thoughtful and slightly overthinking the topic of creating content, and building a personal brand for myself.</summary></entry><entry><title type="html">On Design and Fixing Old Cars</title><link href="http://localhost:4000/articles/on-design-and-fixing-old-cars" rel="alternate" type="text/html" title="On Design and Fixing Old Cars" /><published>2018-10-15T00:00:00+01:00</published><updated>2018-10-15T00:00:00+01:00</updated><id>http://localhost:4000/articles/on-design-and-fixing-old-cars</id><content type="html" xml:base="http://localhost:4000/articles/on-design-and-fixing-old-cars">&lt;p&gt;So my car just broke something while I was driving — I’m literally writing this while on the side of a highway waiting for the tow truck to arrive, and I thought it would be a perfect time to write this article.&lt;/p&gt;
 
 &lt;p&gt;My professional life is dedicated to creating and designing things, but like a lot of people, I have some hobbies as well. In my case, one of them happens to be messing around and fixing my own (old) cars.&lt;/p&gt;
 

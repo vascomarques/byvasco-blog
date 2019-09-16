@@ -11,8 +11,7 @@ $medium: 500;
 $semi: 600;
 $bold: 700;
 
-$font-main: "Inter", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-serif: "Libre Baskerville", serif;
+$font-main: acumin-pro, "Inter", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-code: Menlo, Consolas, "Courier New", Courier, monospace;
 
 
@@ -40,12 +39,12 @@ $colors: (
   ),
 
   text: (
-    primary: #24292E,
-    secondary: #717079,
-    light: #F0F0F0
+    primary: #141A27,
+    secondary: #31394B,
+    light: #7B8292
   ),
 
-  borders: (
+  border: (
     primary: #F0F0F0
   ),
 

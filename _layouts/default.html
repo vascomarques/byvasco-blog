@@ -4,12 +4,12 @@
 
   <body>
     {% if page.url == '/' %}
-      {% include components/header.html absolute=true %}
+      {% include components/header.html  %}
     {% else %}
-      {% include components/header.html %}
+      {% include components/header.html logo=true %}
     {% endif %}
 
-    <main class="{% if page.page_name %}page-{{ page.page_name }}{% else %}page{% endif %}"">
+    <main class="{% if page.page_name %}page-{{page.page_name}}{% elsif layout.page_name %}page-{{layout.page_name}}{% else %}page{% endif %}">
       {{ content }}
     </main>
 
